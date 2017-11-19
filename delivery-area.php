@@ -62,6 +62,7 @@ $banner_position = get_field_object('banner_position');
 				$('.banner').addClass('Small');
 				map_marker = document.createElement('div');
 				map_marker.id = 'marker';
+				$(window).scrollTop(0);
 
 				new mapboxgl.Marker(map_marker)
 				.setLngLat(e.result.center)
