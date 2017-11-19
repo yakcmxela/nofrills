@@ -697,7 +697,8 @@ nav .blanket {
           border-radius: 20px 20px 0px 40px;
           background-color: white;
           padding: 24px;
-          text-align: center; }
+          text-align: center;
+          margin: 12px 0px; }
         .page-content.Our-Company .section-block .row .block .review p:last-of-type {
           text-align: center; }
       .page-content.Our-Company .section-block .row .plus {
@@ -713,8 +714,12 @@ nav .blanket {
           left: 100%; }
         .page-content.Our-Company .section-block .row .plus.last {
           left: 0%; }
-    .page-content.Our-Company .section-block .community-logos img {
-      margin: 64px; }
+    .page-content.Our-Company .section-block .community-logos {
+      max-width: 1200px;
+      padding-top: 64px;
+      margin: auto; }
+      .page-content.Our-Company .section-block .community-logos .logo {
+        margin: auto; }
   .page-content.Our-Company .intro {
     padding: 0px 32px; }
     .page-content.Our-Company .intro h2, .page-content.Our-Company .intro h5 {
@@ -1180,16 +1185,16 @@ nav .blanket {
   .page-content.Our-Company .intro .images .image img {
     width: 150px;
     height: 150px; }
-  .page-content.Our-Company .section-block .block {
+  .page-content.Our-Company .section-block .row .block {
     margin-bottom: 32px; }
-  .page-content.Our-Company .section-block .plus {
+  .page-content.Our-Company .section-block .row .plus {
     font-size: 64px; }
-    .page-content.Our-Company .section-block .plus.first {
+    .page-content.Our-Company .section-block .row .plus.first {
       left: 50%;
       top: initial;
       bottom: -28px;
       transform: translateX(-50%); }
-    .page-content.Our-Company .section-block .plus.last {
+    .page-content.Our-Company .section-block .row .plus.last {
       left: 50%;
       top: -42px;
       bottom: intial;
@@ -1214,6 +1219,14 @@ nav .blanket {
     .section-block.footer-menus .contact {
       text-align: center;
       margin: auto; } }
+@media (max-width: 991px) {
+  .page-content.Our-Company .intro .images .image img {
+    width: 150px;
+    height: 150px; }
+  .page-content.Our-Company .section-block .community-logos .logo {
+    margin-bottom: 32px; }
+    .page-content.Our-Company .section-block .community-logos .logo img {
+      width: 25%; } }
 @media (max-width: 925px) {
   .page-content.Price-Plans .section-block .plans .block {
     max-width: 100%; }
@@ -1247,7 +1260,7 @@ nav .blanket {
 @media (max-width: 650px) {
   .page-content.Products-Services .section-block .block .category-select .arrow-container {
     display: none; } }
-@media (max-width: 540px) {
+@media (max-width: 575px) {
   nav .nav-full {
     padding: 96px 24px 0px 24px;
     height: 100%;
@@ -1280,18 +1293,34 @@ nav .blanket {
       nav .nav-container .nav-bar .logo {
         max-width: 150px; }
 
-  .page-content.Price-Plans .section-block .plans .block {
-    padding: 32px; }
-  .page-content.Products-Services .section-block .block .category-select .icons {
-    flex-wrap: wrap; }
-    .page-content.Products-Services .section-block .block .category-select .icons .icon {
-      width: 24%;
-      height: 24%; }
-  .page-content.Products-Services .section-block .block .description-container .info {
-    padding: 24px; }
-  .page-content.Contact .section-block .block {
-    padding: 24px; }
-  .page-content.Contact .section-block .contact-form {
-    min-width: initial; } }
+  .page-content.Our-Company {
+    padding-top: 96px; }
+    .page-content.Our-Company .intro .images .image {
+      margin: 0px; }
+    .page-content.Our-Company .section-block .row .block {
+      padding: 24px 0px; }
+  .page-content.Price-Plans {
+    padding-top: 96px; }
+    .page-content.Price-Plans .section-block .plans .block {
+      padding: 32px; }
+  .page-content.Products-Services {
+    padding-top: 96px; }
+    .page-content.Products-Services .section-block .block .category-select .icons {
+      flex-wrap: wrap; }
+      .page-content.Products-Services .section-block .block .category-select .icons .icon {
+        width: 24%;
+        height: 24%; }
+    .page-content.Products-Services .section-block .block .description-container .info {
+      padding: 24px; }
+  .page-content.Customer-Resources {
+    padding-top: 96px; }
+  .page-content.Contact {
+    padding-top: 96px; }
+    .page-content.Contact .section-block .block {
+      padding: 24px; }
+    .page-content.Contact .section-block .contact-form {
+      min-width: initial; }
+  .page-content.Delivery-Area {
+    padding-top: 96px; } }
 
 /*# sourceMappingURL=style.css.map */

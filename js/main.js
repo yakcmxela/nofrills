@@ -21,7 +21,7 @@ $(document).ready(function() {
 		}
 	// Footer
 		function footerToDefaults() {
-			
+
 		}
 
 		function footerTablet() {

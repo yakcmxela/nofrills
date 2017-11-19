@@ -384,6 +384,7 @@ nav
 								background-color: white
 								padding: 24px
 								text-align: center
+								margin: 12px 0px
 							&:last-of-type
 								text-align: center	
 				.plus
@@ -400,8 +401,11 @@ nav
 					&.last
 						left: 0%
 			.community-logos
-				img
-					margin: 64px
+				max-width: 1200px
+				padding-top: 64px
+				margin: auto
+				.logo
+					margin: auto
 		.intro
 			padding: 0px 32px
 			h2, h5
@@ -807,20 +811,21 @@ nav
 							width: 150px
 							height: 150px
 			.section-block 
-				.block
-					margin-bottom: 32px
-				.plus
-					font-size: 64px
-					&.first,
-						left: 50%
-						top: initial
-						bottom: -28px
-						transform: translateX(-50%)
-					&.last
-						left: 50%
-						top: -42px
-						bottom: intial
-						transform: translateX(-50%)
+				.row
+					.block
+						margin-bottom: 32px
+					.plus
+						font-size: 64px
+						&.first,
+							left: 50%
+							top: initial
+							bottom: -28px
+							transform: translateX(-50%)
+						&.last
+							left: 50%
+							top: -42px
+							bottom: intial
+							transform: translateX(-50%)
 		&.Price-Plans
 		&.Products-Services
 		&.Customer-Resources
@@ -876,6 +881,27 @@ nav
 				margin: auto
 
 @media (max-width: 991px)
+	.page-content
+		&.Our-Company
+			.intro
+				.images
+					.image
+						img
+							width: 150px
+							height: 150px
+			.section-block 
+				.community-logos
+					.logo
+						margin-bottom: 32px
+						img
+							width: 25%
+		&.Price-Plans
+		&.Products-Services
+		&.Customer-Resources
+		&.FAQ
+		&.Sign-Up
+		&.Contact
+		&.Delivery-Area
 
 @media (max-width: 925px)
 	.page-content
@@ -936,7 +962,7 @@ nav
 		&.Delivery-Area
 
 
-@media (max-width: 540px)
+@media (max-width: 575px)
 	nav
 		.nav-full 
 			padding: 96px 24px 0px 24px
@@ -968,13 +994,24 @@ nav
 					max-width: 150px
 	.page-content
 		&.Our-Company
+			padding-top: 96px
+			.intro
+				.images
+					.image
+						margin: 0px
+			.section-block
+				.row
+					.block
+						padding: 24px 0px
+
 		&.Price-Plans
+			padding-top: 96px
 			.section-block
 				.plans
 					.block
 						padding: 32px
-
 		&.Products-Services
+			padding-top: 96px
 			.section-block
 				.block
 					.category-select
@@ -987,15 +1024,18 @@ nav
 						.info
 							padding: 24px
 		&.Customer-Resources
+			padding-top: 96px
 		&.FAQ
 		&.Sign-Up
 		&.Contact
+			padding-top: 96px
 			.section-block
 				.block
 					padding: 24px
 				.contact-form
 					min-width: initial
 		&.Delivery-Area
+			padding-top: 96px
 
 // Media Queries
 // Heights

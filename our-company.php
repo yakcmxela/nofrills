@@ -21,18 +21,24 @@ $banner_position = get_field_object('banner_position');
 			<h5>A locally owned and operated family business.</h5>
 			<p>September of 1980 was marked by the birth of Charlie and Kathy Birdsall's youngest son and by the beginning of a business venture that would change their lives. Hard work, honesty, and devotion to family and community were values that nurtured Charlie and Kathy's business and children.</p>
 			<p>No Frills Oil was the first successful cash oil company in the Ellsworth area and the first oil company to offer Pre-Paid oil. No Frills has and always will put the needs of its customers first.</p>
-			<div class="images d-flex justify-content-center">
-				<div class="image">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/johana.png">
-					<p><strong>Johana Birdsall</strong><br/>Commander</p>
+			<div class="images row justify-content-center">
+				<div class="col-sm-4">
+					<div class="image">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/johana.png">
+						<p><strong>Johana Birdsall</strong><br/>Commander</p>
+					</div>
 				</div>
-				<div class="image">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/filling.png">
-					<p><strong>Charlie Birdsall</strong><br/>Oil Ninja<br/></p>
+				<div class="col-sm-4">
+					<div class="image">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/filling.png">
+						<p><strong>Charlie Birdsall</strong><br/>Oil Ninja<br/></p>
+					</div>
 				</div>
-				<div class="image">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/office.png">
-					<p><strong>Kathy Birdsall</strong><br/>Phone Wizard</p>
+				<div class="col-sm-4">
+					<div class="image">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/office.png">
+						<p><strong>Kathy Birdsall</strong><br/>Phone Wizard</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -94,10 +100,16 @@ $banner_position = get_field_object('banner_position');
 				</div>
 			</div>
 			<h6 class="center c-mg">We proudly support:</h6>
-			<div class="d-flex justify-content-center community-logos">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/maine-coast.png">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/girl-scouts.png">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/ymca.png">
+			<div class="row community-logos">
+				<div class="col-lg-4 center">
+					<img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/maine-coast.png">
+				</div>
+				<div class="col-lg-4 center">
+					<img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/girl-scouts.png">
+				</div>
+				<div class="col-lg-4 center">
+					<img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/ymca.png">
+				</div>
 			</div>
 		</div>
 		
