@@ -1437,7 +1437,8 @@ nav .blanket {
       font-size: 18px; }
   .page-content.Landing .banner .prices {
     flex-direction: column;
-    height: auto; }
+    height: auto;
+    padding: 12px 0px; }
     .page-content.Landing .banner .prices h6 {
       font-size: 18px;
       margin-bottom: 6px; }
