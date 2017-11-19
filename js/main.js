@@ -45,7 +45,6 @@ $(document).ready(function() {
 	function landingPageMobile() {
 		$('.Landing .banner-contents .buttons h6 a').eq(0).html('Sign Up');
 		$('.Landing .banner-contents .buttons h6 a').eq(1).html('Pay Bill');
-		console.log('ht')
 
 	}
 	// Our Company
@@ -316,6 +315,25 @@ function setInputLength() {
 	}
 }
 
+function parallax(div, scrollSpeed, axis) {
+	$.each(div, function() {
+		divPosition = $(this).offset().top;
+		divHeight = $(this).height();
+		pageLocation = $(window).scrollTop();
+		scroll = (pageLocation / (divPosition + divHeight)) * scrollSpeed;
+		scrollDirection = 'background-position-' + axis;
+
+		if (scroll < 100 && scroll > 0) {
+			$(div).css(scrollDirection, scroll + '%');
+		} else if (scroll < 0 && scroll > -100) {
+			$(div).css(scrollDirection, scroll - scrollSpeed + '%');
+		}
+	});
+};
+
+var landingPageBanner = $('.Landing .banner');
+
+
 // On Load
 defineViewport();
 optimizePages();
@@ -326,6 +344,11 @@ setInputLength();
 $(window).on('resize', function() {
 	defineViewport();
 	optimizePages();
-})
+});
+
+// On window scroll
+$(window).on('scroll', function() {
+	parallax(landingPageBanner, 100, 'y');
+});
 
 });

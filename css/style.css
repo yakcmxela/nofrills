@@ -589,9 +589,10 @@ nav .blanket {
 .page-content.Landing .banner {
   height: 100vh;
   background-size: cover;
+  background-position-x: 70%;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   box-shadow: inset 50px -50px 50px -50px rgba(0, 0, 0, 0.25);
-  background-attachment: fixed;
   position: relative; }
   .page-content.Landing .banner .banner-contents {
     margin: auto; }
@@ -1334,7 +1335,8 @@ nav .blanket {
     text-align: center;
     margin-top: auto; }
   .page-content.Landing .banner .banner-contents .buttons h6 {
-    text-align: center; }
+    text-align: center;
+    padding: 12px 24px; }
   .page-content.Landing .banner .banner-contents .buttons a {
     font-size: 18px; }
   .page-content.Landing .banner .prices {
