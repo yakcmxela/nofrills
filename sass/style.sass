@@ -721,6 +721,11 @@ nav
 			position: relative
 			padding-top: 140px
 			overflow: hidden
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 1
+			width: 100%
 			+transition(all .5s linear)
 			&.Small
 				height: 0vh
@@ -787,7 +792,7 @@ nav
 			left: 0
 			z-index: 1
 			width: 100%
-			padding: 64px 0px 32px 0px
+			padding: 64px 0px 42px 0px
 			+transition(all .75s linear)
 			a
 				color: $yellow
@@ -801,6 +806,28 @@ nav
 				height: 50px
 				border-radius: 100%
 				background-color: $yellow
+			.return-to-search-icon
+				position: fixed
+				z-index: 1
+				bottom: 64px
+				left: 50%
+				transform: translateX(-50%) rotate(0deg)
+				background-color: $dark-grey
+				color: white
+				border-radius: 100%
+				width: 50px
+				height: 50px
+				opacity: 0
+				visibility: hidden
+				+transition(all .5s linear)
+				i
+					position: absolute
+					top: 50%
+					left: 50%
+					transform: translate(-50%, -50%) rotate(180deg)
+				&.Active
+					opacity: 1
+					visibility: visible
 	&.Sign-Up
 		padding-top: 140px
 // Media Queries
@@ -1240,13 +1267,12 @@ nav
 				&.Active
 					top: 64px
 
-@media (max-width: 575px)
+@media (max-width: 321px)
 	h3
 		font-size: 22px
 	.page-content
 		&.Delivery-Area
 			.banner
-				padding-top: 96px
 				.search-box-container
 					.title
 						font-size: 22px

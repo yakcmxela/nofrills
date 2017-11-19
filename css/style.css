@@ -1111,6 +1111,11 @@ nav .blanket {
     position: relative;
     padding-top: 140px;
     overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
     -webkit-transition: all 0.5s linear;
     -o-transition: all 0.5s linear;
     -moz-transition: all 0.5s linear;
@@ -1185,7 +1190,7 @@ nav .blanket {
     left: 0;
     z-index: 1;
     width: 100%;
-    padding: 64px 0px 32px 0px;
+    padding: 64px 0px 42px 0px;
     -webkit-transition: all 0.75s linear;
     -o-transition: all 0.75s linear;
     -moz-transition: all 0.75s linear;
@@ -1205,6 +1210,32 @@ nav .blanket {
       height: 50px;
       border-radius: 100%;
       background-color: #ffc600; }
+    .page-content.Delivery-Area #map .return-to-search-icon {
+      position: fixed;
+      z-index: 1;
+      bottom: 64px;
+      left: 50%;
+      transform: translateX(-50%) rotate(0deg);
+      background-color: #101e28;
+      color: white;
+      border-radius: 100%;
+      width: 50px;
+      height: 50px;
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transition: all 0.5s linear;
+      -o-transition: all 0.5s linear;
+      -moz-transition: all 0.5s linear;
+      -ms-transition: all 0.5s linear;
+      transition: all 0.5s linear; }
+      .page-content.Delivery-Area #map .return-to-search-icon i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(180deg); }
+      .page-content.Delivery-Area #map .return-to-search-icon.Active {
+        opacity: 1;
+        visibility: visible; }
 .page-content.Sign-Up {
   padding-top: 140px; }
 
@@ -1498,13 +1529,11 @@ nav .blanket {
     .page-content.Delivery-Area .no-service.Active,
     .page-content.Delivery-Area .yes-service.Active {
       top: 64px; } }
-@media (max-width: 575px) {
+@media (max-width: 321px) {
   h3 {
     font-size: 22px; }
 
-  .page-content.Delivery-Area .banner {
-    padding-top: 96px; }
-    .page-content.Delivery-Area .banner .search-box-container .title {
-      font-size: 22px; } }
+  .page-content.Delivery-Area .banner .search-box-container .title {
+    font-size: 22px; } }
 
 /*# sourceMappingURL=style.css.map */

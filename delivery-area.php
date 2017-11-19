@@ -22,8 +22,7 @@ $banner_position = get_field_object('banner_position');
 			<div class="search-box">
 			</div>
 		</div>
-		<p class="view-full"><a href="#map">View Full Service Area<br/><i class="fa fa-angle-down fa-3x"></i></a></p>
-		
+		<p class="view-full">View Full Service Area<br/><i class="fa fa-angle-down fa-3x"></i></p>
 	</div>
 	<div class="yes-service Yes d-flex flex-column justify-content-center align-items-center">
 		<h5 class="return-to-search c-y">Return to search</h5>
@@ -34,6 +33,9 @@ $banner_position = get_field_object('banner_position');
 		<h5>Uh oh! Looks like we aren't delivering to your area yet. <a href="<?php echo get_site_url(); ?>/contact-us">Request service.</a></h5>
 	</div>
 	<div id="map">
+		<div class="return-to-search-icon">
+			<i class="fa fa-angle-down fa-2x"></i>
+		</div>
 		<script type="text/javascript">
 			// Initialize leaflet map	
 			mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleHBtY2theSIsImEiOiJjajd0MHgxZGg1MHN4MndxdTM5ODh6MnJzIn0.rf5yQmrxDvzkGR0XU30lpQ';

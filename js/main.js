@@ -322,6 +322,16 @@ function setInputLength() {
 		var input_box = $('.mapboxgl-ctrl-geocoder input');
 		input_box.val('');
 	});
+	$('.view-full').on('click', function() {
+		$('.banner').addClass('Small');
+		$('.return-to-search-icon').addClass('Active');
+	});
+	$('.return-to-search-icon').on('click', function() {
+		$(this).removeClass('Active');
+		$('.banner').removeClass('Small');
+		$('.yes-service').removeClass('Active');
+		$('.no-service').removeClass('Active');
+	});
 function parallax(div, scrollSpeed, axis) {
 	$.each(div, function() {
 		divPosition = $(this).offset().top;
