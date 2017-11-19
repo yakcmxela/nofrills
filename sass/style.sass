@@ -249,6 +249,7 @@ nav
 						color: $yellow
 		.contact
 			margin-left: auto
+			text-align: right
 			li
 				&:first-of-type
 					font-weight: 400
@@ -813,7 +814,7 @@ nav
 			.section-block
 				.plans
 					.block
-						max-width: 50%
+						max-width: 48%
 						margin: 12px 0px
 		&.Products-Services
 		&.Customer-Resources
@@ -902,6 +903,11 @@ nav
 
 @media (max-width: 991px)
 	.page-content
+		&.Landing
+			.banner
+				.banner-contents
+					h1
+						font-size: 48px
 		&.Our-Company
 			.intro
 				.images
@@ -978,6 +984,27 @@ nav
 	.section-block
 		padding: 32px 24px
 	.page-content
+		&.Landing 
+			.banner
+				.banner-contents
+					h1
+						font-size: 36px
+				.prices
+					.product
+						h6
+							margin: 4px
+							font-size: 18px
+							&:last-of-type
+								font-size: 18px
+			.section-block
+				h3
+					margin-top: 24px
+					padding-bottom: 0px
+				.icons
+					.col-lg-4
+						max-width: 600px
+						margin: auto
+						margin-bottom: 24px
 		&.Our-Company
 			padding-top: 96px
 		&.Price-Plans
@@ -1099,6 +1126,8 @@ nav
 				.icons
 					padding: 0px
 					.col-lg-4
+						max-width: 600px
+						margin: auto
 						margin-bottom: 24px
 						padding: 0px
 						img
