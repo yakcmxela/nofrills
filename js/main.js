@@ -320,7 +320,7 @@ function parallax(div, scrollSpeed, axis) {
 		divPosition = $(this).offset().top;
 		divHeight = $(this).height();
 		pageLocation = $(window).scrollTop();
-		scroll = (pageLocation / (divPosition + divHeight)) * scrollSpeed;
+		scroll = Math.abs((pageLocation / (divPosition + divHeight)) * scrollSpeed);
 		scrollDirection = axis;
 
 		if (scroll < 100 && scroll > 0) {
@@ -348,7 +348,7 @@ $(window).on('resize', function() {
 
 // On window scroll
 $(window).on('scroll', function() {
-	parallax(landingPageBanner, 75, 'top');
+	parallax(landingPageBanner, 25, 'top');
 });
 
 });
