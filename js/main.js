@@ -321,17 +321,17 @@ function parallax(div, scrollSpeed, axis) {
 		divHeight = $(this).height();
 		pageLocation = $(window).scrollTop();
 		scroll = (pageLocation / (divPosition + divHeight)) * scrollSpeed;
-		scrollDirection = 'background-position-' + axis;
+		scrollDirection = axis;
 
 		if (scroll < 100 && scroll > 0) {
-			$(div).css(scrollDirection, scroll + '%');
+			$(div).css(scrollDirection, scroll + 50 + '%');
 		} else if (scroll < 0 && scroll > -100) {
-			$(div).css(scrollDirection, scroll - scrollSpeed + '%');
+			$(div).css(scrollDirection, scroll + 50 - scrollSpeed + '%');
 		}
 	});
 };
 
-var landingPageBanner = $('.Landing .banner');
+var landingPageBanner = $('.landing-page-banner');
 
 
 // On Load
@@ -348,7 +348,7 @@ $(window).on('resize', function() {
 
 // On window scroll
 $(window).on('scroll', function() {
-	parallax(landingPageBanner, 100, 'y');
+	parallax(landingPageBanner, 75, 'top');
 });
 
 });

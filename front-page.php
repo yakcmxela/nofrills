@@ -14,25 +14,26 @@
 
 
 <div class="page-content Landing">
-	<div class="banner d-flex flex-column justify-content-center align-items-start" style="background-image: url('<?php echo $banner_image['url']; ?>');">
-			<div class="banner-contents">
-				<h1>Going the extra mile <a href="<?php echo get_site_url(); ?>">since 1980.</a></h1>
-				<div class="buttons mt-l d-flex justify-content-center">
-					<h6><a href="<?php echo get_site_url(); ?>/sign-up">Become a Customer</a></h6>
-					<h6><a href="<?php echo get_site_url(); ?>/online-bill-pay">Online Bill Pay</a></h6>
-				</div>
+	<div class="banner d-flex flex-column justify-content-center align-items-start">
+		<img class="landing-page-banner" src="<?php echo $banner_image['url']; ?>">
+		<div class="banner-contents">
+			<h1>Going the extra mile <a href="<?php echo get_site_url(); ?>">since 1980.</a></h1>
+			<div class="buttons mt-l d-flex justify-content-center">
+				<h6><a href="<?php echo get_site_url(); ?>/sign-up">Become a Customer</a></h6>
+				<h6><a href="<?php echo get_site_url(); ?>/online-bill-pay">Online Bill Pay</a></h6>
 			</div>
-			<div class="prices d-flex align-items-center justify-content-center">
-				<h6>Today's Fuel Prices</h6>
-				<div class="product">
-					<h6>Oil #2</h6>
-					<h6>$2.319</h6>
-				</div>
-				<div class="product">
-					<h6>Kerosene</h6>
-					<h6>$3.099</h6>
-				</div>
+		</div>
+		<div class="prices d-flex align-items-center justify-content-center">
+			<h6>Today's Fuel Prices</h6>
+			<div class="product">
+				<h6>Oil #2</h6>
+				<h6>$2.319</h6>
 			</div>
+			<div class="product">
+				<h6>Kerosene</h6>
+				<h6>$3.099</h6>
+			</div>
+		</div>
 	</div>
 	<div class="section-block">
 		<div class="container-fluid p-0 center">
