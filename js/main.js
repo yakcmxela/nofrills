@@ -310,11 +310,18 @@ function setInputLength() {
 		input_box.on('click', function() {
 			clearInterval(counter);
 			input_box.attr('placeholder', '');
+			input_box.css('max-width', 'initial')
 			$('.map-search-button').addClass('Active');
 		});
-	}
-}
-
+	};
+};
+	$('.return-to-search').on('click', function() {
+		$('.banner').removeClass('Small');
+		$('.yes-service').removeClass('Active');
+		$('.no-service').removeClass('Active');
+		var input_box = $('.mapboxgl-ctrl-geocoder input');
+		input_box.val('');
+	});
 function parallax(div, scrollSpeed, axis) {
 	$.each(div, function() {
 		divPosition = $(this).offset().top;

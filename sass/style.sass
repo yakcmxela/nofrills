@@ -715,13 +715,16 @@ nav
 					border-radius: 100%
 					box-shadow: 1px 1px 3px rgba(0, 0, 0, .65)
 	&.Delivery-Area
+		position: relative
 		.banner
 			height: 100vh
 			position: relative
 			padding-top: 140px
-			+transition(all .25s linear)
+			overflow: hidden
+			+transition(all .5s linear)
 			&.Small
-				height: 50vh
+				height: 0vh
+				min-height: 0vh
 				.view-full
 					opacity: 0
 					visibility: hidden
@@ -776,17 +779,22 @@ nav
 						display: none
 		.no-service,
 		.yes-service
-			height: 0px
+			top: -100%
 			overflow: hidden
 			background-color: $dark-grey
 			color: white
-			+transition(all .25s linear)
+			position: absolute
+			left: 0
+			z-index: 1
+			width: 100%
+			padding: 64px 0px 32px 0px
+			+transition(all .75s linear)
 			a
 				color: $yellow
 			&.Active
-				padding: 32px
+				top: 140px
 		#map
-			height: 64vh
+			height: 100vh
 			width: 100%
 			#marker
 				width: 50px
@@ -1037,8 +1045,15 @@ nav
 						.mapboxgl-ctrl-geocoder
 							font-size: 24px
 							margin: 0px
-			.geocoder-icon
+			.geocoder-icon,
+			.mapboxgl-ctrl-top-right
 				display: none
+			.no-service,
+			.yes-service
+				padding: 24px
+				text-align: center
+				&.Active
+					top: 96px
 
 @media (max-width: 650px)
 	.page-content
@@ -1213,8 +1228,18 @@ nav
 							margin: 0px
 							input
 								height: 64px
-			.geocoder-icon
+				&.Small
+					padding: 0px
+			.geocoder-icon,
+			.mapboxgl-ctrl-top-right
 				display: none
+			.no-service,
+			.yes-service
+				padding: 12px
+				text-align: center
+				&.Active
+					top: 64px
+
 @media (max-width: 575px)
 	h3
 		font-size: 22px

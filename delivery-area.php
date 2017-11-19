@@ -25,10 +25,12 @@ $banner_position = get_field_object('banner_position');
 		<p class="view-full"><a href="#map">View Full Service Area<br/><i class="fa fa-angle-down fa-3x"></i></a></p>
 		
 	</div>
-	<div class="yes-service Yes d-flex justify-content-center align-items-center">
+	<div class="yes-service Yes d-flex flex-column justify-content-center align-items-center">
+		<h5 class="return-to-search c-y">Return to search</h5>
 		<h5>Good news, we deliver to you! <a href="<?php echo get_site_url(); ?>/sign-up">Sign up for service!</a></h5>
 	</div>
-	<div class="no-service No d-flex justify-content-center align-items-center">
+	<div class="no-service No d-flex flex-column justify-content-center align-items-center">
+		<h5 class="return-to-search c-y">Return to search</h5>
 		<h5>Uh oh! Looks like we aren't delivering to your area yet. <a href="<?php echo get_site_url(); ?>/contact-us">Request service.</a></h5>
 	</div>
 	<div id="map">
