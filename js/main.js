@@ -348,7 +348,7 @@ $(window).on('resize', function() {
 
 // On window scroll
 $(window).on('scroll', function() {
-	parallax(landingPageBanner, 25, 'top');
+	parallax(landingPageBanner, 35, 'top');
 });
 
 });

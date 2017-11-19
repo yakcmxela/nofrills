@@ -758,8 +758,6 @@ nav
 							padding: 0px 12px
 							font-size: 62px
 							line-height: 62px
-							&::placeholder
-								color: $dark-grey
 					.map-search-button
 						color: white
 						padding-left: 12px
@@ -964,31 +962,56 @@ nav
 		font-size: 24px
 	h5
 		font-size: 18px
+	nav
+		.nav-full 
+			+transition(all .25s linear)
+			ul
+				&.right-menu
+					.connect-icons
+			&.Active
+				top: 96px
+		.nav-container
+			height: 96px
+			.nav-bar
+				.logo
+					width: 200px
 	.section-block
 		padding: 32px 24px
 	.page-content
+		&.Our-Company
+			padding-top: 96px
+		&.Price-Plans
+			padding-top: 96px
+		&.Products-Services
+			padding-top: 96px
+		&.Customer-Resources
+		&.FAQ
+		&.Sign-Up
+			padding-top: 96px
+		&.Contact
+			padding-top: 96px
 		&.Delivery-Area
-				.banner
-					padding: 0px
-					.search-box-container
-						.title
-							font-size: 48px
-							margin-bottom: 3px
-						i
-							margin-left: 16px
-							display: block
-							color: white
-							font-size: 2em
-						.title,
-						i
-							padding-bottom: 12px
-						.search-box
-							justify-content: center
-							.mapboxgl-ctrl-geocoder
-								font-size: 24px
-								margin: 0px
-				.geocoder-icon
-					display: none
+			.banner
+				padding: 0px
+				.search-box-container
+					.title
+						font-size: 48px
+						margin-bottom: 3px
+					i
+						margin-left: 16px
+						display: block
+						color: white
+						font-size: 2em
+					.title,
+					i
+						padding-bottom: 12px
+					.search-box
+						justify-content: center
+						.mapboxgl-ctrl-geocoder
+							font-size: 24px
+							margin: 0px
+			.geocoder-icon
+				display: none
 
 @media (max-width: 650px)
 	.page-content
@@ -1032,11 +1055,11 @@ nav
 				top: 0px
 				left: 0px
 		.nav-container
-			height: 96px
+			height: 64px
 			.nav-bar
 				padding: 0px 12px
 				.logo
-					max-width: 150px
+					display: none
 	.page-content
 		&.Landing
 			.banner
@@ -1052,6 +1075,7 @@ nav
 						a
 					h3
 					.buttons
+						display: none !important
 						h6
 							text-align: center
 							padding: 12px 24px
@@ -1062,6 +1086,8 @@ nav
 					flex-direction: column
 					height: auto
 					h6
+						font-size: 18px
+						margin-bottom: 6px
 					.product
 						h6
 							font-size: 18px
@@ -1114,10 +1140,18 @@ nav
 							.info
 								padding: 24px
 		&.Customer-Resources
+		&.Our-Company
+			padding-top: 64px
+		&.Price-Plans
+			padding-top: 64px
+		&.Products-Services
+			padding-top: 64px
 		&.FAQ
+			padding-top: 64px
 		&.Sign-Up
+			padding-top: 64px
 		&.Contact
-			padding-top: 96px
+			padding-top: 64px
 			.section-block
 				.block
 					padding: 24px
