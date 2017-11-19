@@ -15,11 +15,11 @@
 
 <div class="page-content Landing">
 	<div class="banner d-flex flex-column justify-content-center align-items-start" style="background-image: url('<?php echo $banner_image['url']; ?>'); background-position: <?php echo $banner_position['value']; ?>;">
-			<div class="m-auto mx-auto">
+			<div class="banner-contents">
 				<h1>Going the extra mile <a href="<?php echo get_site_url(); ?>">since 1980.</a></h1>
 				<div class="buttons mt-l d-flex justify-content-center">
-					<h6>Become a Customer</h6>
-					<h6>Online Bill Pay</h6>
+					<h6><a href="<?php echo get_site_url(); ?>/sign-up">Become a Customer</a></h6>
+					<h6><a href="<?php echo get_site_url(); ?>/online-bill-pay">Online Bill Pay</a></h6>
 				</div>
 			</div>
 			<div class="prices d-flex align-items-center justify-content-center">
@@ -35,22 +35,25 @@
 			</div>
 	</div>
 	<div class="section-block">
-		<div class="container-fluid center">
-			<h3 class="p-xl">Heat your <a class="c-y" href="/">home</a>, fuel your <a class="c-y" href="">business</a>, save <a class="c-g" href="">money.</a></h4>
+		<div class="container-fluid p-0 center">
+			<h3 class="pb-l">Heat your <a class="c-y" href="/">home</a>, fuel your <a class="c-y" href="">business</a>, save <a class="c-g" href="">money.</a></h4>
 			<div class="row icons">
-				<div class="col-lg-4 p-l">
+				<div class="col-lg-4">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/icons/house.png">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+					<a href="<?php echo get_site_url(); ?>/delivery-area">Delivery Area</a>
 				</div>
-				<div class="col-lg-4 p-l">
+				<div class="col-lg-4">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/icons/business-truck.png">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+					<a href="<?php echo get_site_url(); ?>/products-services">Products &amp; Services</a>
 				</div>
-				<div class="col-lg-4 p-l">
+				<div class="col-lg-4">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/icons/money.png">
 					<p>We offer comprehensive pricing plans to suited for families and businesses of all budgets. Let's find the right plan for you.</p>
+					<a href="<?php echo get_site_url(); ?>/price-plans">Price Plans</a>
 				</div>
 			</div>
 		</div>
@@ -147,6 +150,8 @@
 					});
 
 				});
+				map.addControl(new mapboxgl.NavigationControl());
+				map.scrollZoom.disable();
 	</script>
 	</div>
 	<div class="page-section" id="front-page-section-3" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/aerial-road-woods.jpg');">

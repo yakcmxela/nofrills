@@ -15,12 +15,14 @@ $banner_position = get_field_object('banner_position');
 
 <div class="page-content Delivery-Area">
 	<div class="banner" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/roadway-river.jpg');">
-		<div class="search-box-container d-flex flex-wrap justify-content-center align-items-center">
-			<h3 class="title c-w">On-time delivery to</h3>
-			<div class="search-box d-flex">
+		<div class="search-box-container justify-content-center align-items-center">
+			<div class="d-flex align-items-center">
+				<h3 class="title c-w">On-time delivery to</h3><i class="fa fa-search"></i>
+			</div>
+			<div class="search-box">
 			</div>
 		</div>
-		<p class="view-full">View Full Service Area<br/><i class="fa fa-angle-down fa-3x"></i></p>
+		<p class="view-full"><a href="#map">View Full Service Area<br/><i class="fa fa-angle-down fa-3x"></i></a></p>
 		
 	</div>
 	<div class="yes-service Yes d-flex justify-content-center align-items-center">
@@ -46,6 +48,8 @@ $banner_position = get_field_object('banner_position');
 				country: 'US'
 			});
 
+			map.scrollZoom.disable();
+			map.addControl(new mapboxgl.NavigationControl());
 			map.addControl(geocoder);
 
 			var search_coordinates;

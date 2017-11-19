@@ -14,10 +14,10 @@ $banner_position = get_field_object('banner_position');
 
 
 <div class="page-content Products-Services">
-	<div class="banner" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/aerial-road-woods.jpg');">
+	<div class="banner" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/farmer-business.jpg');">
 	</div>
 	<div class="section-block">
-		<div class="intro my-xl p-xl">
+		<div class="intro p-xl">
 			<h2>Heat your <a class="c-y" href="">home</a>, fuel your <a class="c-g" href="">business</a>.</h2>
 			<h5>Professional service, on-time delivery. No Frills.</h5>
 		</div>

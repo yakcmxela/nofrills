@@ -18,6 +18,10 @@ $banner_position = get_field_object('banner_position');
 	</div>
 	<div class="section-block hard-shadow">
 		<div class="block contact-form">
+			<a  class="d-flex align-items-center my-s" href="tel:2074223581">
+				<i class="fa fa-map fa-2x"></i>
+				<p>1166 Us Hwy Ste. A<br/> Hancock, ME 04640</p>
+			</a>
 			<a class="d-flex align-items-center my-s" href="tel:2074223581">
 				<i class="fa fa-phone-square fa-2x"></i>
 				<p>(207)422-3581</p>
@@ -53,7 +57,8 @@ $banner_position = get_field_object('banner_position');
 				.setLngLat([-68.27784, 44.535858])
 				.setPopup(popup)
 				.addTo(map);
-
+				map.addControl(new mapboxgl.NavigationControl());
+				map.scrollZoom.disable();
 
 			</script>
 		</div>

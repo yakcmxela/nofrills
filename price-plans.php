@@ -14,14 +14,14 @@ $banner_position = get_field_object('banner_position');
 
 
 <div class="page-content Price-Plans">
-	<div class="banner" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/cozy-home.jpg');">
+	<div class="banner" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/bills-people.jpg');">
+	</div>
+	<div class="intro mx-auto p-xl center">
+		<h2>Pricing Plans</h2>
+		<p>We understand that our customers have varying budgets and unique energy needs. Our goal is to offer you the best plan at the greatest value. Electronic payments are available for all of our pricing plans.</p>
+		<p><strong>Select a plan below to sign-up.</strong></p>
 	</div>
 	<div class="section-block">
-		<div class="intro mx-auto my-l center">
-			<h2>Pricing Plans</h2>
-			<p>We understand that our customers have varying budgets and unique energy needs. Our goal is to offer you the best plan at the greatest value. Electronic payments are available for all of our pricing plans.</p>
-			<p><strong>Select a plan below to sign-up.</strong></p>
-		</div>
 		<div class="plans">
 			<div class="block hard-shadow mx-auto">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/icons/downside-protection.png">

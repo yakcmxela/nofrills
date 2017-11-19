@@ -32,7 +32,7 @@ $nav_bg = get_field('nav_bg', 'option');
 				<div class="line"></div>
 				<div class="line"></div>
 			</div>
-			<img class="logo" src="<?php echo $logo['url']; ?>">
+			<a href="<?php echo get_site_url(); ?>/"><img class="logo" src="<?php echo $logo['url']; ?>"></a>
 		</div>
 	</div>
 	<div class="nav-full">
