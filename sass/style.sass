@@ -172,10 +172,11 @@ nav
 		z-index: 99
 		background-color: $dark-grey
 		position: fixed
-		top: -50%
-		right: 0
+		top: 0px
+		right: 0px
+		transform: translateY(-100%)
 		visibility: hidden
-		+transition(all .5s linear)
+		+transition(all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1))
 		ul
 			li
 				color: white
@@ -204,7 +205,7 @@ nav
 					display: flex
 					justify-content: flex-end
 		&.Active
-			top: 140px
+			transform: translateY(140px)
 			right: 0
 			opacity: 1
 			visibility: visible
@@ -729,9 +730,9 @@ nav
 			left: 0
 			z-index: 1
 			width: 100%
-			+transition(all .5s linear)
+			+transition(all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1))
 			&.Small
-				height: 0vh
+				transform: translateY(-100%)
 				min-height: 0vh
 				.view-full
 					opacity: 0
@@ -787,7 +788,8 @@ nav
 						display: none
 		.no-service,
 		.yes-service
-			top: -100%
+			top: 0px
+			transform: translateY(-100%)
 			overflow: hidden
 			background-color: $dark-grey
 			color: white
@@ -796,11 +798,11 @@ nav
 			z-index: 1
 			width: 100%
 			padding: 64px 0px 42px 0px
-			+transition(all .75s linear)
+			+transition(all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1))
 			a
 				color: $yellow
 			&.Active
-				top: 140px
+				transform: translateY(140px)
 		#map
 			height: 100vh
 			width: 100%
@@ -1013,14 +1015,14 @@ nav
 				&.right-menu
 					.connect-icons
 			&.Active
-				top: 96px
+				transform: translateY(96px)
 		.nav-container
 			height: 96px
 			.nav-bar
 				.logo
 					width: 200px
 	.section-block
-		padding: 32px 24px
+		padding: 32px 0px
 	.page-content
 		&.Landing 
 			.banner
@@ -1083,7 +1085,7 @@ nav
 				padding: 24px
 				text-align: center
 				&.Active
-					top: 96px
+					transform: translateY(96px)
 
 @media (max-width: 650px)
 	.page-content
@@ -1111,7 +1113,7 @@ nav
 			align-items: start
 			justify-content: center
 			right: initial
-			left: -100%
+			transform: translate(-100%, 0px)
 			top: 0px
 			+transition(all .25s linear)
 			ul
@@ -1124,8 +1126,7 @@ nav
 					.connect-icons
 						justify-content: flex-start
 			&.Active
-				top: 0px
-				left: 0px
+				transform: translate(0%, 0px)
 		.nav-container
 			height: 64px
 			.nav-bar
@@ -1269,7 +1270,7 @@ nav
 				padding: 12px
 				text-align: center
 				&.Active
-					top: 64px
+					transform: translateY(64px)
 
 @media (max-width: 321px)
 	h3
