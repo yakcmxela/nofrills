@@ -315,6 +315,7 @@ function setInputLength() {
 		});
 	};
 };
+
 	$('.return-to-search').on('click', function() {
 		$('.banner').removeClass('Small');
 		$('.yes-service').removeClass('Active');
@@ -341,9 +342,9 @@ function parallax(div, scrollSpeed, axis) {
 		scrollDirection = axis;
 
 		if (scroll < 100 && scroll > 0) {
-			$(div).css(scrollDirection, scroll + 50 + '%');
+			$(div).css('transform', 'translate' + axis + '(' + scroll + '%)');
 		} else if (scroll < 0 && scroll > -100) {
-			$(div).css(scrollDirection, scroll + 50 - scrollSpeed + '%');
+			$(div).css('transform', 'translate' + axis + '(' + scroll + 50 - scrollSpeed + '%)');
 		}
 	});
 };
@@ -365,7 +366,7 @@ $(window).on('resize', function() {
 
 // On window scroll
 $(window).on('scroll', function() {
-	parallax(landingPageBanner, 35, 'top');
+	parallax(landingPageBanner, 30, 'Y');
 });
 
 });
