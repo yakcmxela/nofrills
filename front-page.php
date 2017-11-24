@@ -15,7 +15,7 @@
 
 <div class="page-content Landing">
 	<div class="banner d-flex flex-column justify-content-center align-items-start">
-		<img class="landing-page-banner" src="<?php echo $banner_image['url']; ?>">
+		<div class="landing-page-banner" style="background-image: url('<?php echo $banner_image['url']; ?>');"></div>
 		<div class="banner-contents">
 			<h1>Going the extra mile <a href="<?php echo get_site_url(); ?>">since 1980.</a></h1>
 			<div class="buttons mt-l d-flex justify-content-center">

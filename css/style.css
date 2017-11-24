@@ -581,6 +581,7 @@ nav .blanket {
   background-repeat: no-repeat;
   background-position: 0% 40%; }
 .page-content .section-block {
+  background-color: white;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center; }
@@ -597,10 +598,13 @@ nav .blanket {
   position: relative;
   overflow: hidden; }
   .page-content.Landing .banner .landing-page-banner {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
-    height: 125%;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
     z-index: -1; }
   .page-content.Landing .banner .banner-contents {
     margin: auto; }
