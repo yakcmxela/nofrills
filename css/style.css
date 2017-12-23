@@ -712,7 +712,8 @@ nav .blanket {
     text-shadow: initial;
     font-weight: 600; }
 .page-content.Landing #map {
-  height: 600px; }
+  height: 600px;
+  background-color: #c4c4c3; }
 .page-content.Our-Company {
   padding-top: 140px; }
   .page-content.Our-Company h2 {
