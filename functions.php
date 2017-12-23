@@ -12,6 +12,7 @@
 		wp_register_script('turf-js', 'https://npmcdn.com/@turf/turf/turf.min.js', true);
 		wp_register_script('tether',  'https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js', false, '1.4.0', true);	
 		wp_register_script('bootstrap-js', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js', false, '4.0.0-alpha.6', true);
+		wp_register_script('jquery-validate-js', 'https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js', true);
 		wp_enqueue_script('tether');
 		wp_enqueue_script('bootstrap-js');
 		wp_enqueue_script('main');
@@ -19,6 +20,7 @@
 		wp_enqueue_script('mapbox-js');
 		wp_enqueue_script('turf-js');
 		wp_enqueue_script('mapbox-geocoder-js');
+		wp_enqueue_script('jquery-validate-js');
 	}
 	function get_nofrills_styles() {
 		wp_enqueue_style('leaflet', get_template_directory_uri() . '/leaflet/leaflet.css');

@@ -6,10 +6,11 @@
 <?php
 // Custom Fields
 $banner_image = get_field('banner_image');
-$banner_header_text = get_field('banner_header_text');
-$banner_link_text = get_field('banner_link_text');
-$banner_link = get_field('banner_link');
 $banner_position = get_field_object('banner_position');
+$intro_heading = get_field('intro_heading');
+$intro_subheading = get_field('intro_subheading');
+$intro_text = get_field('intro_text');
+$sponsorship = get_field('sponsorship')
 ?>
 
 
@@ -17,102 +18,57 @@ $banner_position = get_field_object('banner_position');
 	<div class="banner" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/history.jpg');"></div>
 	<div class="container-fluid p-0">
 		<div class="intro mt-xl mb-s mx-auto">
-			<h2>Going the extra mile since 1980.</h2>
-			<h5>A locally owned and operated family business.</h5>
-			<p>September of 1980 was marked by the birth of Charlie and Kathy Birdsall's youngest son and by the beginning of a business venture that would change their lives. Hard work, honesty, and devotion to family and community were values that nurtured Charlie and Kathy's business and children.</p>
-			<p>No Frills Oil was the first successful cash oil company in the Ellsworth area and the first oil company to offer Pre-Paid oil. No Frills has and always will put the needs of its customers first.</p>
+			<h2><?php echo $intro_heading ?></h2>
+			<h5><?php echo $intro_subheading ?></h5>
+			<p><?php echo $intro_text ?></p>
+			<?php if ( have_rows('employees') ) : ?>
 			<div class="images row justify-content-center">
-				<div class="col-sm-4">
-					<div class="image">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/johana.png">
-						<p><strong>Johana Birdsall</strong><br/>Commander</p>
+				<?php while ( have_rows('employees') ) : the_row(); ?>
+					<div class="col-sm-3">
+						<div class="image">
+							<img src="<?php the_sub_field('employee_image'); ?>">
+						</div>
+						<p><strong><?php the_sub_field('employee_name'); ?></strong><br/><?php the_sub_field('employee_title'); ?></p>
 					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="image">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/filling.png">
-						<p><strong>Charlie Birdsall</strong><br/>Oil Ninja<br/></p>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="image">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/office.png">
-						<p><strong>Kathy Birdsall</strong><br/>Phone Wizard</p>
-					</div>
-				</div>
+				<?php endwhile; ?>
+			<?php endif; ?>
 			</div>
 		</div>
 		<div class="section-block">
-			<div class="row justify-content-center center mb-xl mx-auto">
-				<div class="col-xl-4">
-					<h1 class="plus first">+</h1>
-					<div class="block mx-auto">
-						<h2>Value</h2>
-						<p>We understand what it takes to earn a buck and know how important is to save where you can. Our products and services are delivered at a fair price by conscientious, quality-driven employees.</p>
-						<div class="review">
-							<p class="block-shadow">"Friendly, professional, really good prices."</p>
-							<p>Blake K.</p>
+			<?php if ( have_rows('oc_blocks') ) : ?>
+				<div class="row justify-content-center center mb-xl mx-auto">
+					<?php while ( have_rows('oc_blocks') ) : the_row(); ?>
+						<div class="col-xl-4 oc-block">
+							<h1 class="plus">+</h1>
+							<div class="block mx-auto">
+								<h2><?php the_sub_field('oc_block_heading'); ?></h2>
+								<?php the_sub_field('oc_block_content'); ?>
+								<div class="review">
+									<p class="block-shadow">"<?php the_sub_field('oc_review'); ?>"</p>
+									<p><?php the_sub_field('oc_reviewer'); ?></p>
+								</div>
+								<div class="d-flex justify-content-center c-y">
+								<?php $numStars = get_sub_field('oc_stars'); ?>
+								<?php for ($i = 0; $i < $numStars; $i++) {
+									echo '<i class="fa fa-star"></i>';
+								} ?>
+								</div>
+							</div>
 						</div>
-						<div class="d-flex justify-content-center c-y">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
+					<?php endwhile; ?>
+				</div>
+			<?php endif; ?>
+			<?php if (have_rows('sponsorship_logos') ) : ?>
+				<h6 class="center c-mg"><?php echo $sponsorship ?></h6>
+				<div class="row community-logos">
+					<?php while (have_rows('sponsorship_logos') ) : the_row(); ?>
+						<div class="col-lg-4 center">
+							<img class="logo" src="<?php the_sub_field('oc_logo'); ?>">
 						</div>
-					</div>
+					<?php endwhile; ?>
 				</div>
-				<div class="col-xl-4">
-					<div class="block mx-auto">
-						<h2>Service</h2>
-						<p>Our customer service is second to none. Whether you buy 100 gallons or 100,000 gallons -- a warm friendly member of the No Frills team will be there to greet you every time.</p>
-						<div class="review">
-							<p class="block-shadow">"Awesome people here. Always the best. Prompt courteous service."</p>
-							<p>Coref F. Gordon</p>
-						</div>
-						<div class="d-flex justify-content-center c-y">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4">
-					<h1 class="plus last">+</h1>
-					<div class="block mx-auto">
-						<h2>Community</h2>
-						<p class="my-s">Giving back to the community is a part of what makes us who we are. Each year we pledge our support to many wonderful local organizations.</p>
-
-						<div class="review">
-							<p class="block-shadow">"A very awesome, community oriented company! The Maine Veterans Project had a need and No Frills stepped up to the plate without hesitation!"</p>
-							<p>Doc Goodwin</p>
-						</div>
-						<div class="d-flex justify-content-center c-y">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-						</div>
-					</div>
-				</div>
-			</div>
-			<h6 class="center c-mg">We proudly support:</h6>
-			<div class="row community-logos">
-				<div class="col-lg-4 center">
-					<img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/maine-coast.png">
-				</div>
-				<div class="col-lg-4 center">
-					<img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/girl-scouts.png">
-				</div>
-				<div class="col-lg-4 center">
-					<img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/ymca.png">
-				</div>
-			</div>
-		</div>
-		
+			<?php endif; ?>
+		</div>	
 	</div>
 </div>
 

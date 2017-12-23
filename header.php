@@ -47,22 +47,13 @@ $nav_bg = get_field('nav_bg', 'option');
 				<a href="<?php echo get_site_url(); ?>/products-services"><h4>Products &amp; Services</h4></a>
 			</li>
 			<li>
-				<a href="<?php echo get_site_url(); ?>/customer-resources"><h4>Customer Resources</h4></a>
-			</li>
-			<li>
 				<a href="<?php echo get_site_url(); ?>/delivery-area"><h4>Delivery Area</h4></a>
 			</li>
 			<li>
 				<a href="<?php echo get_site_url(); ?>/price-plans"><h4>Price Plans</h4></a>
 			</li>
-			<li>
-				<a href="<?php echo get_site_url(); ?>/faq"><h4>FAQ</h4></a>
-			</li>
 		</ul>
 		<ul class="right-menu">
-			<li>
-				<a href="<?php echo get_site_url(); ?>/bill-pay"><h4>Online Bill Pay</h4></a>
-			</li>
 			<li>
 				<a href="<?php echo get_site_url(); ?>/sign-up"><h4>Become a Customer</h4></a>
 			</li>
@@ -70,9 +61,9 @@ $nav_bg = get_field('nav_bg', 'option');
 				<a href="<?php echo get_site_url(); ?>/contact-us"><h4>Contact Us</h4></a>
 			</li>
 			<li class="connect-icons">
-				<a href=""><i class="fa fa-phone-square fa-2x"></i></a>
-				<a href=""><i class="fa fa-envelope-square fa-2x"></i></a>
-				<a href=""><i class="fa fa-facebook-square fa-2x"></i></a>
+				<a href="tel:2074223581"><i class="fa fa-phone-square fa-2x"></i></a>
+				<a href="mailto:info@nofrillsoil.com"><i class="fa fa-envelope-square fa-2x"></i></a>
+				<a href="https://www.facebook.com/No-Frills-Oil-157836401223/"><i class="fa fa-facebook-square fa-2x"></i></a>
 			</li>
 		</ul>
 	</div>

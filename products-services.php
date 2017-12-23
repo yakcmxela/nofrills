@@ -6,20 +6,21 @@
 <?php
 // Custom Fields
 $banner_image = get_field('banner_image');
-$banner_header_text = get_field('banner_header_text');
-$banner_link_text = get_field('banner_link_text');
-$banner_link = get_field('banner_link');
 $banner_position = get_field_object('banner_position');
+$intro_heading = get_field('intro_heading');
+$intro_subheading = get_field('intro_subheading');
+$intro_content = get_field('intro_content');
 ?>
 
 
 <div class="page-content Products-Services">
-	<div class="banner" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/farmer-business.jpg');">
+	<div class="banner" style="background-image: url('<?php echo $banner_image['url']; ?>');">
 	</div>
 	<div class="section-block">
 		<div class="intro p-xl">
-			<h2>Heat your <a class="c-y" href="">home</a>, fuel your <a class="c-g" href="">business</a>.</h2>
-			<h5>Professional service, on-time delivery. No Frills.</h5>
+			<h2><?php echo $intro_heading; ?></h2>
+			<h5><?php echo $intro_subheading; ?></h5>
+			<?php echo $intro_content; ?>
 		</div>
 		<div class="block d-flex flex-column align-items-end hard-shadow">
 			<?php if ( have_rows('product') ) : ?>
@@ -65,7 +66,7 @@ $banner_position = get_field_object('banner_position');
 							<?php endwhile; ?>
 						<?php endif; ?>
 						<div class="button d-flex">
-							<a href="">
+							<a href="<?php echo get_site_url(); ?>/sign-up">
 								<h6>Sign up for <?php the_sub_field('product_title'); ?></h6>
 							</a>
 						</div>

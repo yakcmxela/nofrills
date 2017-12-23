@@ -6,33 +6,36 @@
 <?php
 // Custom Fields
 $banner_image = get_field('banner_image');
-$banner_header_text = get_field('banner_header_text');
-$banner_link_text = get_field('banner_link_text');
-$banner_link = get_field('banner_link');
 $banner_position = get_field_object('banner_position');
+$address = get_field('address');
+$phone_number = get_field('phone_number');
+$email_address = get_field('email_address');
+$m_f_hours = get_field('m_f_hours');
+$sat_hours = get_field('sat_hours');
+$sun_hours = get_field('sun_hours');
 ?>
 
 
 <div class="page-content Contact">
-	<div class="banner" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/aerial-road-woods.jpg');">
+	<div class="banner" style="background-image: url('<?php echo $banner_image['url']; ?>');">
 	</div>
 	<div class="section-block hard-shadow">
 		<div class="block contact-form">
-			<a  class="d-flex align-items-center my-s" href="tel:2074223581">
+			<div  class="d-flex align-items-center my-s">
 				<i class="fa fa-map fa-2x"></i>
-				<p>1166 Us Hwy Ste. A<br/> Hancock, ME 04640</p>
-			</a>
-			<a class="d-flex align-items-center my-s" href="tel:2074223581">
+				<?php echo $address; ?>
+			</div>
+			<div class="d-flex align-items-center my-s">
 				<i class="fa fa-phone-square fa-2x"></i>
-				<p>(207)422-3581</p>
-			</a>
-			<a class="d-flex align-items-center my-s" href="mailto:info@nofrillsoil.com">
+				<?php echo $phone_number ?>
+			</div>
+			<div class="d-flex align-items-center my-s">
 				<i class="fa fa-envelope-square fa-2x"></i>
-				<p>info@nofrillsoil.com</p>
-			</a>
+				<?php echo $email_address ?>
+			</div>
 			<div class="d-flex align-items-center mt-s mb-l">
 				<i class="fa fa-calendar fa-2x"></i>
-				<p>Monday - Friday: 7AM - 5PM<br/>Saturday - Sunday: Closed</p>
+				<p>Monday - Friday: <?php echo $m_f_hours; ?><br/>Saturday: <?php echo $sat_hours; ?><br/>Sunday: <?php echo $sun_hours ?></p>
 			</div>
 			<?php echo do_shortcode('[ninja_form id=1]'); ?>
 		</div>

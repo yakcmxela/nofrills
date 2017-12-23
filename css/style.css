@@ -329,7 +329,8 @@ p {
 
 a {
   color: inherit;
-  font-weight: inherit; }
+  font-weight: inherit;
+  display: inline-block; }
 
 a:hover {
   color: inherit;
@@ -449,6 +450,7 @@ nav .nav-container {
         height: 4px;
         background-color: white;
         position: absolute;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
         -webkit-transition: transform 0.5s linear, opacity 0.75s linear;
         -o-transition: transform 0.5s linear, opacity 0.75s linear;
         -moz-transition: transform 0.5s linear, opacity 0.75s linear;
@@ -493,31 +495,33 @@ nav .nav-full {
   -moz-transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
   -ms-transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
   transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1); }
-  nav .nav-full ul li {
-    color: white;
-    align-items: center; }
-    nav .nav-full ul li h4 {
-      margin-bottom: 0px;
-      padding: 4px;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75); }
-    nav .nav-full ul li a:hover {
-      color: #ffc600; }
-    nav .nav-full ul li i {
-      padding: 4px;
-      color: rgba(196, 196, 195, 0.5); }
-      nav .nav-full ul li i:hover {
+  nav .nav-full ul {
+    margin-bottom: 0px; }
+    nav .nav-full ul li {
+      color: white;
+      align-items: center; }
+      nav .nav-full ul li h4 {
+        margin-bottom: 0px;
+        padding: 4px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75); }
+      nav .nav-full ul li a:hover {
         color: #ffc600; }
-  nav .nav-full ul.left-menu {
-    padding-left: 12px;
-    border-left: 5px solid #ffc600;
-    text-align: left; }
-  nav .nav-full ul.right-menu {
-    padding-right: 12px;
-    border-right: 5px solid #ffc600;
-    text-align: right; }
-    nav .nav-full ul.right-menu .connect-icons {
-      display: flex;
-      justify-content: flex-end; }
+      nav .nav-full ul li i {
+        padding: 4px;
+        color: rgba(196, 196, 195, 0.5); }
+        nav .nav-full ul li i:hover {
+          color: #ffc600; }
+    nav .nav-full ul.left-menu {
+      padding-left: 12px;
+      border-left: 5px solid #ffc600;
+      text-align: left; }
+    nav .nav-full ul.right-menu {
+      padding-right: 12px;
+      border-right: 5px solid #ffc600;
+      text-align: right; }
+      nav .nav-full ul.right-menu .connect-icons {
+        display: flex;
+        justify-content: flex-end; }
   nav .nav-full.Active {
     transform: translateY(140px);
     right: 0;
@@ -553,6 +557,27 @@ nav .blanket {
 .section-block {
   padding: 64px; }
 
+.button h6,
+.button .title-link {
+  margin: 12px 12px 0px 12px;
+  color: white;
+  border-radius: 4px;
+  font-style: initial;
+  background-color: #00853c;
+  -webkit-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  transition: all 0.1s linear; }
+  .button h6:hover,
+  .button .title-link:hover {
+    transform: translateY(-4px);
+    background-color: rgba(0, 133, 60, 0.75); }
+  .button h6 a,
+  .button .title-link a {
+    font-style: inherit;
+    padding: 18px; }
+
 .section-block.footer-menus {
   display: flex; }
   .section-block.footer-menus ul li {
@@ -585,7 +610,8 @@ nav .blanket {
   background-color: white;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center; }
+  background-position: center center;
+  z-index: 10; }
   .page-content .section-block .block {
     max-width: 600px;
     padding: 64px; }
@@ -608,6 +634,13 @@ nav .blanket {
     z-index: -1; }
   .page-content.Landing .banner .banner-contents {
     margin: auto; }
+    .page-content.Landing .banner .banner-contents .button h6 a {
+      font-style: initial;
+      border: 4px solid #ffc600;
+      box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      background-color: #101e28;
+      font-size: 24px; }
     .page-content.Landing .banner .banner-contents .background-gradient {
       position: absolute;
       left: 0;
@@ -624,11 +657,6 @@ nav .blanket {
       height: 90%;
       border-bottom: 5px solid #ffc600;
       border-right: 5px solid #ffc600; }
-    .page-content.Landing .banner .banner-contents .fa-bars {
-      position: absolute;
-      top: 0;
-      cursor: pointer;
-      color: white; }
     .page-content.Landing .banner .banner-contents h1,
     .page-content.Landing .banner .banner-contents a {
       font-style: italic;
@@ -640,24 +668,6 @@ nav .blanket {
         color: #ffc600; }
     .page-content.Landing .banner .banner-contents h3 {
       color: white; }
-    .page-content.Landing .banner .banner-contents .buttons h6 {
-      margin: 12px 12px 0px 12px;
-      color: white;
-      font-style: initial;
-      padding: 18px;
-      border: 4px solid #ffc600;
-      box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5), 1px 1px 3px 0px rgba(0, 0, 0, 0.25);
-      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-      background-color: rgba(0, 0, 0, 0.5);
-      -webkit-transition: all 0.1s linear;
-      -o-transition: all 0.1s linear;
-      -moz-transition: all 0.1s linear;
-      -ms-transition: all 0.1s linear;
-      transition: all 0.1s linear; }
-      .page-content.Landing .banner .banner-contents .buttons h6:hover {
-        background-color: rgba(0, 0, 0, 0.9); }
-    .page-content.Landing .banner .banner-contents .buttons a {
-      font-style: inherit; }
   .page-content.Landing .banner .prices {
     width: 100%;
     height: 96px;
@@ -686,19 +696,21 @@ nav .blanket {
           font-size: 32px; }
 .page-content.Landing .section-block .icons {
   max-width: 1600px;
-  margin: auto;
-  padding: 32px; }
+  margin: auto; }
   .page-content.Landing .section-block .icons img {
     height: 150px;
     margin: 24px; }
-  .page-content.Landing .section-block .icons h3 {
-    font-weight: 700; }
+  .page-content.Landing .section-block .icons h5 {
+    font-weight: 900;
+    margin-bottom: 12px;
+    font-style: italic; }
   .page-content.Landing .section-block .icons p {
     padding: 12px; }
   .page-content.Landing .section-block .icons a {
-    font-weight: 900;
-    color: #00853c;
-    font-size: 24px; }
+    padding: 12px;
+    box-shadow: initial;
+    text-shadow: initial;
+    font-weight: 600; }
 .page-content.Landing #map {
   height: 600px; }
 .page-content.Our-Company {
@@ -710,10 +722,10 @@ nav .blanket {
     box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.05); }
     .page-content.Our-Company .section-block .row {
       max-width: 1650px; }
-      .page-content.Our-Company .section-block .row .block {
+      .page-content.Our-Company .section-block .row .oc-block .block {
         padding: 32px;
         z-index: 10; }
-        .page-content.Our-Company .section-block .row .block .review p:first-of-type {
+        .page-content.Our-Company .section-block .row .oc-block .block .review p:first-of-type {
           font-style: italic;
           font-weight: 900;
           border-radius: 20px 20px 0px 40px;
@@ -721,9 +733,9 @@ nav .blanket {
           padding: 24px;
           text-align: center;
           margin: 12px 0px; }
-        .page-content.Our-Company .section-block .row .block .review p:last-of-type {
+        .page-content.Our-Company .section-block .row .oc-block .block .review p:last-of-type {
           text-align: center; }
-      .page-content.Our-Company .section-block .row .plus {
+      .page-content.Our-Company .section-block .row .oc-block .plus {
         color: #00853c;
         font-style: italic;
         opacity: 0.25;
@@ -731,11 +743,10 @@ nav .blanket {
         position: absolute;
         top: 50%;
         transform: translate(-50%, -75%);
-        z-index: 0; }
-        .page-content.Our-Company .section-block .row .plus.first {
-          left: 100%; }
-        .page-content.Our-Company .section-block .row .plus.last {
-          left: 0%; }
+        z-index: 0;
+        left: 100%; }
+      .page-content.Our-Company .section-block .row .oc-block:last-of-type .plus {
+        display: none; }
     .page-content.Our-Company .section-block .community-logos {
       max-width: 1200px;
       padding-top: 64px;
@@ -748,24 +759,37 @@ nav .blanket {
       text-align: center;
       font-weight: 900; }
     .page-content.Our-Company .intro h5 {
-      margin: 32px 0px;
-      color: #ffc600; }
+      margin: 18px 0px;
+      color: rgba(0, 133, 60, 0.75); }
     .page-content.Our-Company .intro p {
       margin: auto;
       margin-bottom: 24px;
       text-align: center;
-      max-width: 800px; }
+      max-width: 1000px;
+      margin-top: 18px; }
     .page-content.Our-Company .intro .images {
       max-width: 1450px;
-      margin: auto; }
+      margin: auto;
+      text-align: center; }
       .page-content.Our-Company .intro .images .image {
         margin: 24px;
-        text-align: center; }
+        text-align: center;
+        border-radius: 100%;
+        border: 5px solid white;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        margin-bottom: 12px;
+        overflow: hidden;
+        min-height: 300px;
+        min-width: 300px;
+        max-width: 300px;
+        max-height: 300px;
+        margin: auto;
+        position: relative; }
         .page-content.Our-Company .intro .images .image img {
-          border-radius: 100%;
-          border: 5px solid white;
-          box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-          margin-bottom: 12px; }
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); }
 .page-content.Price-Plans {
   padding-top: 140px; }
   .page-content.Price-Plans .banner {
@@ -805,12 +829,13 @@ nav .blanket {
             text-align: center;
             color: #101e28;
             padding: 12px; }
-        .page-content.Price-Plans .section-block .plans .block .button {
+        .page-content.Price-Plans .section-block .plans .block .button h6 {
           background-color: #00853c;
           color: white;
           padding: 12px;
           margin-top: 64px;
-          cursor: pointer; }
+          cursor: pointer;
+          border: none; }
 .page-content.Products-Services {
   padding-top: 140px; }
   .page-content.Products-Services h1 {
@@ -822,7 +847,14 @@ nav .blanket {
       max-width: initial;
       text-align: center; }
       .page-content.Products-Services .section-block .intro h5 {
-        margin: 16px 0px; }
+        margin: 16px 0px;
+        color: #00853c; }
+      .page-content.Products-Services .section-block .intro p {
+        max-width: 1000px;
+        margin: auto;
+        margin-top: 18px;
+        margin-bottom: 24px;
+        text-align: center; }
     .page-content.Products-Services .section-block .block {
       background-color: #101e28;
       width: 100%;
@@ -940,7 +972,8 @@ nav .blanket {
           .page-content.Products-Services .section-block .block .category-select .arrow-container .arrow {
             color: white;
             height: 200%;
-            width: 100%; }
+            width: 100%;
+            cursor: pointer; }
             .page-content.Products-Services .section-block .block .category-select .arrow-container .arrow:hover {
               color: #00853c; }
         .page-content.Products-Services .section-block .block .category-select .icon {
@@ -948,7 +981,8 @@ nav .blanket {
           height: 75px;
           margin: 4px;
           background-color: white;
-          border-radius: 100%; }
+          border-radius: 100%;
+          cursor: pointer; }
           .page-content.Products-Services .section-block .block .category-select .icon:hover {
             background-color: #ffc600; }
           .page-content.Products-Services .section-block .block .category-select .icon.Active {
@@ -980,8 +1014,11 @@ nav .blanket {
             border-left: 5px solid #ffc600; }
           .page-content.Products-Services .section-block .block .description-container .info .button h6 {
             padding: 12px;
-            background-color: #ffc600;
-            color: #101e28; }
+            color: white;
+            background-color: #00853c;
+            border: none;
+            box-shadow: initial;
+            text-shadow: initial; }
           .page-content.Products-Services .section-block .block .description-container .info.Active {
             opacity: 1;
             transform: translateX(-50%); }
@@ -1060,7 +1097,8 @@ nav .blanket {
       background-color: white;
       border-right: 1px solid rgba(196, 196, 195, 0.25); }
     .page-content.Contact .section-block .contact-form {
-      background-color: white; }
+      background-color: white;
+      min-height: 900px; }
       .page-content.Contact .section-block .contact-form p {
         margin-bottom: 0px; }
         .page-content.Contact .section-block .contact-form p:last-of-type {
@@ -1081,7 +1119,7 @@ nav .blanket {
         color: white;
         border: 1px solid #00853c; }
     .page-content.Contact .section-block #map {
-      height: 880px;
+      height: 900px;
       width: 100%; }
       .page-content.Contact .section-block #map .map-infos {
         position: absolute;
@@ -1241,31 +1279,260 @@ nav .blanket {
       .page-content.Delivery-Area #map .return-to-search-icon.Active {
         opacity: 1;
         visibility: visible; }
-.page-content.Sign-Up {
+.page-content.ACH-Auth {
+  min-height: 100vh;
   padding-top: 140px; }
+  .page-content.ACH-Auth input,
+  .page-content.ACH-Auth select {
+    margin: 6px 0px; }
+  .page-content.ACH-Auth label {
+    margin-bottom: 0px; }
+  .page-content.ACH-Auth .form-container {
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 64px;
+    padding: 64px 24px; }
+    .page-content.ACH-Auth .form-container .intro {
+      width: 100%; }
+      .page-content.ACH-Auth .form-container .intro h1 {
+        margin-bottom: 24px; }
+    .page-content.ACH-Auth .form-container form {
+      position: relative;
+      max-width: 100%; }
+      .page-content.ACH-Auth .form-container form .error {
+        color: #ff0000; }
+      .page-content.ACH-Auth .form-container form .not-applicable,
+      .page-content.ACH-Auth .form-container form .yes-applicable,
+      .page-content.ACH-Auth .form-container form .same-as-applicant {
+        color: #00853c; }
+        .page-content.ACH-Auth .form-container form .not-applicable p,
+        .page-content.ACH-Auth .form-container form .yes-applicable p,
+        .page-content.ACH-Auth .form-container form .same-as-applicant p {
+          font-weight: 700;
+          cursor: default; }
+        .page-content.ACH-Auth .form-container form .not-applicable .checkbox,
+        .page-content.ACH-Auth .form-container form .yes-applicable .checkbox,
+        .page-content.ACH-Auth .form-container form .same-as-applicant .checkbox {
+          width: 24px;
+          height: 24px;
+          border: 1px solid #c4c4c3;
+          margin-right: 6px;
+          position: relative; }
+          .page-content.ACH-Auth .form-container form .not-applicable .checkbox span,
+          .page-content.ACH-Auth .form-container form .yes-applicable .checkbox span,
+          .page-content.ACH-Auth .form-container form .same-as-applicant .checkbox span {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(39, 40, 34, 0.75);
+            opacity: 0;
+            cursor: default; }
+          .page-content.ACH-Auth .form-container form .not-applicable .checkbox.Selected span,
+          .page-content.ACH-Auth .form-container form .yes-applicable .checkbox.Selected span,
+          .page-content.ACH-Auth .form-container form .same-as-applicant .checkbox.Selected span {
+            opacity: 1; }
+      .page-content.ACH-Auth .form-container form .form-row {
+        margin: 0;
+        margin-bottom: 24px; }
+      .page-content.ACH-Auth .form-container form .terms-conditions {
+        max-height: 350px;
+        overflow: scroll;
+        padding: 12px;
+        border: 2px solid #5bc0de;
+        border-radius: 5px;
+        margin-bottom: 24px; }
+      .page-content.ACH-Auth .form-container form button {
+        line-height: 24px; }
+      .page-content.ACH-Auth .form-container form h5 {
+        margin: 12px 0px; }
+.page-content.Sign-Up {
+  min-height: 100vh;
+  padding-top: 140px; }
+  .page-content.Sign-Up input,
+  .page-content.Sign-Up select {
+    margin: 6px 0px; }
+  .page-content.Sign-Up label {
+    margin-bottom: 0px; }
+    .page-content.Sign-Up label.date {
+      position: absolute;
+      color: #a9a9a9;
+      z-index: 1;
+      right: 72px;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-bottom: 0px;
+      letter-spacing: 0; }
+  .page-content.Sign-Up .form-container {
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 64px;
+    padding: 64px 24px; }
+    .page-content.Sign-Up .form-container .intro {
+      width: 100%; }
+      .page-content.Sign-Up .form-container .intro h1 {
+        margin-bottom: 24px; }
+    .page-content.Sign-Up .form-container .form-nav {
+      width: 100%;
+      margin: auto;
+      position: relative;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(196, 196, 195, 0.25); }
+      .page-content.Sign-Up .form-container .form-nav .dotted-line {
+        position: absolute;
+        height: 50%;
+        width: 100%;
+        border-bottom: 2px dotted #ffc600;
+        z-index: -1; }
+      .page-content.Sign-Up .form-container .form-nav ol {
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        list-style-position: inside;
+        padding-left: 0px; }
+        .page-content.Sign-Up .form-container .form-nav ol li {
+          font-size: 12px;
+          padding: 12px;
+          background-color: white;
+          color: rgba(39, 40, 34, 0.5);
+          font-weight: 700;
+          cursor: pointer;
+          position: relative;
+          -webkit-transition: all 0.15s linear;
+          -o-transition: all 0.15s linear;
+          -moz-transition: all 0.15s linear;
+          -ms-transition: all 0.15s linear;
+          transition: all 0.15s linear; }
+          .page-content.Sign-Up .form-container .form-nav ol li:first-of-type {
+            color: #101e28; }
+          .page-content.Sign-Up .form-container .form-nav ol li:hover {
+            transform: translateY(-4px);
+            color: #101e28 !important; }
+          .page-content.Sign-Up .form-container .form-nav ol li.Errors:after {
+            content: "!";
+            position: absolute;
+            top: 6px;
+            color: white;
+            background-color: red;
+            font-size: 12px;
+            width: 24px;
+            height: 24px;
+            left: 50%;
+            transform: translateX(-50%); }
+    .page-content.Sign-Up .form-container form {
+      position: relative;
+      max-width: 100%; }
+      .page-content.Sign-Up .form-container form .error {
+        color: #ff0000; }
+      .page-content.Sign-Up .form-container form .not-applicable,
+      .page-content.Sign-Up .form-container form .yes-applicable,
+      .page-content.Sign-Up .form-container form .same-as-applicant {
+        color: #00853c; }
+        .page-content.Sign-Up .form-container form .not-applicable p,
+        .page-content.Sign-Up .form-container form .yes-applicable p,
+        .page-content.Sign-Up .form-container form .same-as-applicant p {
+          font-weight: 700;
+          cursor: default; }
+        .page-content.Sign-Up .form-container form .not-applicable .checkbox,
+        .page-content.Sign-Up .form-container form .yes-applicable .checkbox,
+        .page-content.Sign-Up .form-container form .same-as-applicant .checkbox {
+          width: 24px;
+          height: 24px;
+          border: 1px solid #c4c4c3;
+          margin-right: 6px;
+          position: relative; }
+          .page-content.Sign-Up .form-container form .not-applicable .checkbox span,
+          .page-content.Sign-Up .form-container form .yes-applicable .checkbox span,
+          .page-content.Sign-Up .form-container form .same-as-applicant .checkbox span {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(39, 40, 34, 0.75);
+            opacity: 0;
+            cursor: default; }
+          .page-content.Sign-Up .form-container form .not-applicable .checkbox.Selected span,
+          .page-content.Sign-Up .form-container form .yes-applicable .checkbox.Selected span,
+          .page-content.Sign-Up .form-container form .same-as-applicant .checkbox.Selected span {
+            opacity: 1; }
+      .page-content.Sign-Up .form-container form .form-row {
+        margin: 0;
+        margin-bottom: 24px; }
+      .page-content.Sign-Up .form-container form button {
+        line-height: 24px; }
+      .page-content.Sign-Up .form-container form h5 {
+        margin: 12px 0px; }
+      .page-content.Sign-Up .form-container form .form-group {
+        background-color: white;
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: all 0.35s ease-in-out;
+        -o-transition: all 0.35s ease-in-out;
+        -moz-transition: all 0.35s ease-in-out;
+        -ms-transition: all 0.35s ease-in-out;
+        transition: all 0.35s ease-in-out; }
+        .page-content.Sign-Up .form-container form .form-group .terms-conditions {
+          max-height: 350px;
+          overflow: scroll;
+          padding: 12px;
+          border: 2px solid #5bc0de;
+          border-radius: 5px;
+          margin-bottom: 24px; }
+        .page-content.Sign-Up .form-container form .form-group.Active {
+          opacity: 1;
+          visibility: visible; }
+        .page-content.Sign-Up .form-container form .form-group .btn {
+          padding: 12px 24px; }
+          .page-content.Sign-Up .form-container form .form-group .btn:hover {
+            transform: translateY(-4px); }
+        .page-content.Sign-Up .form-container form .form-group .buttons {
+          justify-content: flex-end; }
+          .page-content.Sign-Up .form-container form .form-group .buttons .next,
+          .page-content.Sign-Up .form-container form .form-group .buttons .back {
+            margin-right: 6px;
+            background-color: #00853c;
+            cursor: pointer;
+            border-radius: 0.25rem;
+            -webkit-transition: all 0.15s ease-in-out;
+            -o-transition: all 0.15s ease-in-out;
+            -moz-transition: all 0.15s ease-in-out;
+            -ms-transition: all 0.15s ease-in-out;
+            transition: all 0.15s ease-in-out; }
+            .page-content.Sign-Up .form-container form .form-group .buttons .next p,
+            .page-content.Sign-Up .form-container form .form-group .buttons .back p {
+              padding: 12px 24px;
+              color: white;
+              margin-bottom: 0px; }
+            .page-content.Sign-Up .form-container form .form-group .buttons .next:hover,
+            .page-content.Sign-Up .form-container form .form-group .buttons .back:hover {
+              background-color: rgba(0, 133, 60, 0.75);
+              transform: translateY(-4px); }
+        .page-content.Sign-Up .form-container form .form-group .back {
+          background-color: #e9ecef; }
 
 @media (max-width: 1375px) {
   .page-content.Price-Plans .section-block .plans .block {
     max-width: 48%;
     margin: 12px 0px; } }
 @media (max-width: 1250px) {
-  .page-content.Our-Company .intro .images .image img {
-    width: 150px;
-    height: 150px; }
-  .page-content.Our-Company .section-block .row .block {
+  .page-content.Our-Company .intro .images .image {
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 200px;
+    min-height: 200px; }
+    .page-content.Our-Company .intro .images .image img {
+      width: 200px;
+      height: 200px; } }
+@media (max-width: 1199px) {
+  .page-content.Our-Company .section-block .row .oc-block .block {
     margin-bottom: 32px; }
-  .page-content.Our-Company .section-block .row .plus {
-    font-size: 64px; }
-    .page-content.Our-Company .section-block .row .plus.first {
-      left: 50%;
-      top: initial;
-      bottom: -28px;
-      transform: translateX(-50%); }
-    .page-content.Our-Company .section-block .row .plus.last {
-      left: 50%;
-      top: -42px;
-      bottom: intial;
-      transform: translateX(-50%); } }
+  .page-content.Our-Company .section-block .row .oc-block .plus {
+    font-size: 64px;
+    left: 50%;
+    top: initial;
+    bottom: -28px;
+    transform: translateX(-50%); } }
 @media (max-width: 1100px) {
   .page-content.Delivery-Area .banner .search-box-container {
     flex-direction: column; }
@@ -1394,7 +1661,9 @@ nav .blanket {
       transform: translateY(96px); } }
 @media (max-width: 650px) {
   .page-content.Products-Services .section-block .block .category-select .arrow-container {
-    display: none; } }
+    display: none; }
+  .page-content.Sign-Up .form-container .form-nav ol li h6 {
+    font-size: 16px; } }
 @media (max-width: 575px) {
   nav .nav-full {
     padding: 96px 24px 0px 24px;
@@ -1501,6 +1770,12 @@ nav .blanket {
     padding-top: 64px; }
   .page-content.Sign-Up {
     padding-top: 64px; }
+    .page-content.Sign-Up .form-container .form-nav ol li {
+      padding: 4px; }
+      .page-content.Sign-Up .form-container .form-nav ol li h6 {
+        font-size: 12px; }
+    .page-content.Sign-Up .form-container form .form-group .buttons {
+      justify-content: center; }
   .page-content.Contact {
     padding-top: 64px; }
     .page-content.Contact .section-block .block {
