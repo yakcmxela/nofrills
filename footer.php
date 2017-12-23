@@ -7,7 +7,7 @@
 ?>
 <?php wp_footer(); ?>
 <footer>
-	<div class="section-block footer-menus">
+	<div class="section-block footer-menus p-l">
 		<ul class="mr-xl">
 			<li>Company</li>
 			<hr>

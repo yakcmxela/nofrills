@@ -1550,10 +1550,12 @@ nav .blanket {
       max-width: initial; }
 
   .section-block.footer-menus {
+    padding: 24px;
     flex-direction: column; }
     .section-block.footer-menus .contact {
       text-align: center;
-      margin: auto; } }
+      margin: auto;
+      margin-top: 24px; } }
 @media (max-width: 991px) {
   .page-content.Landing .banner .banner-contents h1 {
     font-size: 48px; }
@@ -1702,13 +1704,13 @@ nav .blanket {
     font-size: 32px;
     text-align: center;
     margin-top: auto; }
-  .page-content.Landing .banner .banner-contents .buttons {
-    display: none !important; }
-    .page-content.Landing .banner .banner-contents .buttons h6 {
-      text-align: center;
-      padding: 12px 24px; }
-    .page-content.Landing .banner .banner-contents .buttons a {
-      font-size: 18px; }
+  .page-content.Landing .banner .banner-contents .button h6 {
+    text-align: center;
+    background-color: initial;
+    padding: 12px 24px; }
+    .page-content.Landing .banner .banner-contents .button h6 a {
+      font-size: 18px;
+      padding: 12px; }
   .page-content.Landing .banner .prices {
     flex-direction: column;
     height: auto;
@@ -1731,6 +1733,8 @@ nav .blanket {
       padding: 0px; }
       .page-content.Landing .section-block .icons .col-lg-4 a {
         font-size: 18px; }
+    .page-content.Landing .section-block .icons .p-l {
+      padding: 24px 4px; }
   .page-content.Landing.Our-Company {
     padding-top: 96px; }
     .page-content.Landing.Our-Company .intro .images .image {
