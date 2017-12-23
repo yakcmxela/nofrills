@@ -597,7 +597,6 @@ $(document).ready(function() {
 				      phoneUS: true
 				    },
 				    applicantEmail: {
-				      required: true,
 				      email: true
 				    },
 				    applicantSocial: {
