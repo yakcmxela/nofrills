@@ -2,8 +2,8 @@
 header("Location: nofrills/application-submit");
 // Connection to db
 	$host = "localhost";
-	$user = "root";
-	$pass = "";
+	$user = "alex";
+	$pass = "Spartan12#";
 	$db = "nofrills";
 	$charset = "utf8";
 
