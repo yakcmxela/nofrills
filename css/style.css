@@ -794,7 +794,8 @@ nav .blanket {
 .page-content.Price-Plans {
   padding-top: 140px; }
   .page-content.Price-Plans .banner {
-    height: 30vh; }
+    height: 30vh;
+    background-position: 20% center; }
   .page-content.Price-Plans .intro {
     max-width: initial;
     background-color: white;
@@ -845,6 +846,7 @@ nav .blanket {
   .page-content.Products-Services .section-block {
     padding: 0px; }
     .page-content.Products-Services .section-block .intro {
+      padding: 64px;
       max-width: initial;
       text-align: center; }
       .page-content.Products-Services .section-block .intro h5 {
@@ -1561,9 +1563,6 @@ nav .blanket {
 @media (max-width: 991px) {
   .page-content.Landing .banner .banner-contents h1 {
     font-size: 48px; }
-  .page-content.Our-Company .intro .images .image img {
-    width: 150px;
-    height: 150px; }
   .page-content.Our-Company .section-block .community-logos .logo {
     margin-bottom: 32px; }
     .page-content.Our-Company .section-block .community-logos .logo img {
@@ -1765,14 +1764,23 @@ nav .blanket {
     padding-top: 64px; }
     .page-content.Price-Plans .intro {
       padding: 64px 24px; }
-    .page-content.Price-Plans .section-block .plans .block {
-      padding: 64px 24px; }
-      .page-content.Price-Plans .section-block .plans .block .button {
-        margin-top: 24px; }
+    .page-content.Price-Plans .section-block {
+      padding: 12px 0px; }
+      .page-content.Price-Plans .section-block .plans .block {
+        padding: 64px 24px; }
+        .page-content.Price-Plans .section-block .plans .block .button {
+          margin-top: 24px; }
   .page-content.Products-Services {
     padding-top: 64px; }
-    .page-content.Products-Services .section-block .category-select .icons {
+    .page-content.Products-Services .section-block .intro {
+      padding: 64px 24px; }
+    .page-content.Products-Services .section-block .block .category-select .icons {
       flex-wrap: wrap; }
+      .page-content.Products-Services .section-block .block .category-select .icons .icon {
+        width: 25%;
+        height: auto; }
+    .page-content.Products-Services .section-block .block .description-container .info {
+      padding: 24px; }
   .page-content.FAQ {
     padding-top: 64px; }
   .page-content.Sign-Up {

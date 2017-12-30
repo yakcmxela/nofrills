@@ -17,7 +17,7 @@ $banner_position = get_field_object('banner_position');
 		<div class="landing-page-banner" style="background-image: url('<?php echo $banner_image['url']; ?>');"></div>
 		<div class="banner-contents">
 			<?php echo $banner_header_text ?>
-			<div class="button mt-l d-flex justify-content-center">
+			<div class="button mt-s d-flex justify-content-center">
 				<?php echo $banner_link ?>
 			</div>
 		</div>
