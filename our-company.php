@@ -16,29 +16,33 @@ $sponsorship = get_field('sponsorship')
 
 <div class="page-content Our-Company">
 	<div class="banner" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/history.jpg');"></div>
-	<div class="container-fluid p-0">
-		<div class="intro mt-xl mb-s mx-auto">
-			<h2><?php echo $intro_heading ?></h2>
-			<h5><?php echo $intro_subheading ?></h5>
-			<p><?php echo $intro_text ?></p>
-			<?php if ( have_rows('employees') ) : ?>
-			<div class="images row justify-content-center">
-				<?php while ( have_rows('employees') ) : the_row(); ?>
-					<div class="col-sm-3">
-						<div class="image">
-							<img src="<?php the_sub_field('employee_image'); ?>">
-						</div>
-						<p><strong><?php the_sub_field('employee_name'); ?></strong><br/><?php the_sub_field('employee_title'); ?></p>
-					</div>
-				<?php endwhile; ?>
-			<?php endif; ?>
+	<div class="section-block">
+		<div class="intro">
+			<div class="container-fluid p-0">
+				<h2><?php echo $intro_heading ?></h2>
+				<h5><?php echo $intro_subheading ?></h5>
+				<?php echo $intro_text ?>
+				<?php if ( have_rows('employees') ) : ?>
+					<div class="images row justify-content-center">
+						<?php while ( have_rows('employees') ) : the_row(); ?>
+							<div class="col-sm-3">
+								<div class="image">
+									<img src="<?php the_sub_field('employee_image'); ?>">
+								</div>
+								<p><strong><?php the_sub_field('employee_name'); ?></strong><br/><?php the_sub_field('employee_title'); ?></p>
+							</div>
+						<?php endwhile; ?>
+					<?php endif; ?>
+				</div>
 			</div>
 		</div>
-		<div class="section-block">
+	</div>
+	<div class="section-block">
+		<div class="container-fluid p-0">
 			<?php if ( have_rows('oc_blocks') ) : ?>
 				<div class="row justify-content-center center mb-xl mx-auto">
 					<?php while ( have_rows('oc_blocks') ) : the_row(); ?>
-						<div class="col-xl-4 oc-block">
+						<div class="col-xl-4 p-0 oc-block">
 							<h1 class="plus">+</h1>
 							<div class="block mx-auto">
 								<h2><?php the_sub_field('oc_block_heading'); ?></h2>
@@ -48,10 +52,10 @@ $sponsorship = get_field('sponsorship')
 									<p><?php the_sub_field('oc_reviewer'); ?></p>
 								</div>
 								<div class="d-flex justify-content-center c-y">
-								<?php $numStars = get_sub_field('oc_stars'); ?>
-								<?php for ($i = 0; $i < $numStars; $i++) {
-									echo '<i class="fa fa-star"></i>';
-								} ?>
+									<?php $numStars = get_sub_field('oc_stars'); ?>
+									<?php for ($i = 0; $i < $numStars; $i++) {
+										echo '<i class="fa fa-star"></i>';
+									} ?>
 								</div>
 							</div>
 						</div>

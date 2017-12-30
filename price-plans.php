@@ -18,10 +18,12 @@ $intro_text = get_field('intro_text');
 <div class="page-content Price-Plans">
 	<div class="banner" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/bills-people.jpg');">
 	</div>
-	<div class="intro mx-auto p-xl center">
-		<h2><?php echo $intro_title; ?></h2>
-		<p><?php echo $intro_text; ?></p>
-		<p><strong>Select a plan below to sign-up.</strong></p>
+	<div class="section-block">
+		<div class="intro mx-auto">
+			<h2><?php echo $intro_title; ?></h2>
+			<h5><strong>Select a plan below to sign-up.</strong></h5>
+			<p><?php echo $intro_text; ?></p>
+		</div>
 	</div>
 	<div class="section-block">
 		<div class="plans">
@@ -33,7 +35,7 @@ $intro_text = get_field('intro_text');
 							<h5><?php the_sub_field('plan_name') ?></h5>
 							<p><?php the_sub_field('plan_description') ?></p>
 						</div>
-						<div class="button mt-xl" data-plan="">
+						<div class="button" data-plan="">
 							<h6>Select Plan</h6>
 						</div>	
 					</div>

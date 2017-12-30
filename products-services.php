@@ -22,6 +22,8 @@ $intro_content = get_field('intro_content');
 			<h5><?php echo $intro_subheading; ?></h5>
 			<?php echo $intro_content; ?>
 		</div>
+	</div>
+	<div class="section-block">
 		<div class="block d-flex flex-column align-items-end hard-shadow">
 			<?php if ( have_rows('product') ) : ?>
 				<?php while ( have_rows('product') ) : the_row(); ?>
