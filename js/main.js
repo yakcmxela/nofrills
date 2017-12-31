@@ -11,6 +11,11 @@ $(document).ready(function() {
 	$('.nav-button').on('click', function() {
 		$('.nav-full').toggleClass('Active');
 		$('.nav-button').toggleClass('Active');
+		if (viewportWidth <= 575) {
+			$('.page-content').toggleClass('Hidden');
+		} else {
+			$('.page-content').removeClass('Hidden');
+		}
 	});
 
 	$('.page-content').on('click', function() {

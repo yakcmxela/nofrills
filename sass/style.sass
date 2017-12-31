@@ -1213,7 +1213,7 @@ nav
 		font-size: 18px
 	nav
 		.nav-full 
-			+transition(all .25s linear)
+			+transition(all .25s ease-in-out)
 			ul
 				&.right-menu
 					.connect-icons
@@ -1317,7 +1317,7 @@ nav
 			right: initial
 			transform: translate(-100%, 0px)
 			top: 0px
-			+transition(all .25s linear)
+			+transition(all .25s ease-in-out)
 			ul
 				&.right-menu
 					text-align: left
@@ -1339,8 +1339,11 @@ nav
 		&.footer-menus
 			padding: 24px
 	.page-content
+		+transition(all .25s linear)
 		.section-block
 			padding: 32px 18px
+		&.Hidden
+			opacity: 0
 		&.Landing
 			.banner
 				.background-gradient
