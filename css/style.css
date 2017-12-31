@@ -297,7 +297,7 @@ h1 {
 
 h2 {
   font-size: 56px;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
   font-weight: 900; }
 
 h3 {
@@ -312,13 +312,14 @@ h4 {
 
 h5 {
   font-size: 28px;
-  font-weight: 800;
+  font-weight: 300;
   margin-bottom: 12px; }
 
 h6 {
   font-size: 22px;
   line-height: 26px;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  font-weight: 300; }
 
 p {
   font-size: 16px;
@@ -490,6 +491,7 @@ nav .nav-full {
   right: 0px;
   transform: translateY(-100%);
   visibility: hidden;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   -webkit-transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
   -o-transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
   -moz-transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -554,9 +556,9 @@ nav .blanket {
   height: 100%;
   width: 100%; }
 
-.button h6,
-.button .title-link {
-  margin: 12px 12px 0px 12px;
+.button a {
+  padding: 12px;
+  cursor: pointer;
   color: white;
   border-radius: 4px;
   font-style: initial;
@@ -566,43 +568,48 @@ nav .blanket {
   -moz-transition: all 0.1s linear;
   -ms-transition: all 0.1s linear;
   transition: all 0.1s linear; }
-  .button h6:hover,
-  .button .title-link:hover {
+  .button a:hover {
     transform: translateY(-4px);
     background-color: rgba(0, 133, 60, 0.75); }
-  .button h6 a,
-  .button .title-link a {
+  .button a a {
     font-style: inherit;
     padding: 18px; }
 
-.section-block.footer-menus {
-  display: flex; }
-  .section-block.footer-menus ul li {
-    color: white;
-    font-weight: 400; }
-    .section-block.footer-menus ul li:first-of-type {
-      font-size: 22px;
-      font-weight: 700; }
-    .section-block.footer-menus ul li a {
-      font-size: 16px; }
-      .section-block.footer-menus ul li a:hover {
-        color: #ffc600; }
-  .section-block.footer-menus .contact {
-    margin-left: auto;
-    text-align: right; }
-    .section-block.footer-menus .contact li:first-of-type {
-      font-weight: 400;
-      font-size: 16px; }
-    .section-block.footer-menus .contact li a {
-      color: #ffc600; }
-      .section-block.footer-menus .contact li a:hover {
-        color: #00853c; }
+.section-block {
+  padding: 64px; }
+  .section-block.footer-menus {
+    display: flex; }
+    .section-block.footer-menus ul {
+      margin-right: 64px; }
+      .section-block.footer-menus ul li {
+        color: white;
+        font-weight: 300; }
+        .section-block.footer-menus ul li:first-of-type {
+          font-size: 22px;
+          font-weight: 700; }
+        .section-block.footer-menus ul li a {
+          font-size: 14px; }
+          .section-block.footer-menus ul li a:hover {
+            color: #ffc600; }
+    .section-block.footer-menus .contact {
+      margin-left: auto;
+      margin-right: 0px;
+      text-align: right; }
+      .section-block.footer-menus .contact li:first-of-type {
+        font-weight: 400;
+        font-size: 16px; }
+      .section-block.footer-menus .contact li a {
+        color: #ffc600;
+        font-weight: 900; }
+        .section-block.footer-menus .contact li a:hover {
+          color: #00853c; }
 
 .page-content .banner {
-  min-height: 40vh;
+  min-height: 50vh;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 0% 40%; }
+  background-position: center center;
+  box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.25); }
 .page-content .section-block {
   position: relative;
   background-color: white;
@@ -618,8 +625,12 @@ nav .blanket {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto; }
+  .page-content .section-block .intro h2 {
+    font-style: italic; }
   .page-content .section-block .intro h5 {
-    color: #00853c; }
+    color: #00853c;
+    margin-bottom: 24px;
+    margin-top: 24px; }
   .page-content .section-block .block {
     max-width: 600px;
     padding: 64px; }
@@ -642,13 +653,18 @@ nav .blanket {
     z-index: -1; }
   .page-content.Landing .banner .banner-contents {
     margin: auto; }
-    .page-content.Landing .banner .banner-contents .button h6 a {
-      font-style: initial;
-      border: 4px solid #ffc600;
-      box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
-      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-      background-color: #101e28;
-      font-size: 24px; }
+    .page-content.Landing .banner .banner-contents .button {
+      background-color: initial; }
+      .page-content.Landing .banner .banner-contents .button h6 {
+        background-color: initial; }
+        .page-content.Landing .banner .banner-contents .button h6 a {
+          font-style: initial;
+          border: 4px solid #ffc600;
+          box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
+          text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+          background-color: #101e28;
+          font-size: 24px;
+          padding: 18px; }
     .page-content.Landing .banner .banner-contents .background-gradient {
       position: absolute;
       left: 0;
@@ -713,7 +729,9 @@ nav .blanket {
     margin-bottom: 12px;
     font-style: italic; }
   .page-content.Landing .section-block .icons p {
-    padding: 12px; }
+    padding: 12px;
+    max-width: 600px;
+    margin: auto; }
   .page-content.Landing .section-block .icons a {
     padding: 12px;
     box-shadow: initial;
@@ -787,8 +805,7 @@ nav .blanket {
 .page-content.Price-Plans {
   padding-top: 140px; }
   .page-content.Price-Plans .banner {
-    height: 30vh;
-    background-position: 20% center; }
+    background-position: center center; }
   .page-content.Price-Plans .section-block:last-of-type {
     background-color: rgba(196, 196, 195, 0.25); }
   .page-content.Price-Plans .section-block .plans {
@@ -819,13 +836,8 @@ nav .blanket {
           padding: 12px; }
       .page-content.Price-Plans .section-block .plans .block .button {
         width: 100%; }
-        .page-content.Price-Plans .section-block .plans .block .button h6 {
-          background-color: #00853c;
-          color: white;
-          padding: 12px;
-          margin-top: 32px;
-          cursor: pointer;
-          border: none; }
+        .page-content.Price-Plans .section-block .plans .block .button a {
+          width: 100%; }
 .page-content.Products-Services {
   padding-top: 140px; }
   .page-content.Products-Services h1 {
@@ -850,6 +862,7 @@ nav .blanket {
       background-size: cover;
       opacity: 0;
       z-index: 0;
+      box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
       -webkit-transition: all 0.25s linear;
       -o-transition: all 0.25s linear;
       -moz-transition: all 0.25s linear;
@@ -976,7 +989,7 @@ nav .blanket {
         left: 50%;
         border-radius: 32px;
         padding: 64px;
-        background-color: rgba(255, 255, 255, 0.85);
+        background-color: white;
         -webkit-transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         -o-transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         -moz-transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -991,9 +1004,7 @@ nav .blanket {
         .page-content.Products-Services .section-block .block .description-container .info .pl-s {
           border-left: 5px solid #ffc600; }
         .page-content.Products-Services .section-block .block .description-container .info .button h6 {
-          padding: 12px;
           color: white;
-          background-color: #00853c;
           border: none;
           box-shadow: initial;
           text-shadow: initial; }
@@ -1219,10 +1230,17 @@ nav .blanket {
     transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1); }
     .page-content.Delivery-Area .no-service a,
     .page-content.Delivery-Area .yes-service a {
-      color: #ffc600; }
+      color: #ffc600;
+      font-weight: 700;
+      margin-top: 12px; }
     .page-content.Delivery-Area .no-service.Active,
     .page-content.Delivery-Area .yes-service.Active {
       transform: translateY(140px); }
+    .page-content.Delivery-Area .no-service .return-to-search,
+    .page-content.Delivery-Area .yes-service .return-to-search {
+      cursor: pointer;
+      font-style: italic;
+      margin-bottom: 0px; }
   .page-content.Delivery-Area #map {
     height: 100vh;
     width: 100%; }
@@ -1232,8 +1250,9 @@ nav .blanket {
       border-radius: 100%;
       background-color: #ffc600; }
     .page-content.Delivery-Area #map .return-to-search-icon {
-      position: fixed;
+      position: absolute;
       z-index: 1;
+      font-weight: 900;
       bottom: 64px;
       left: 50%;
       transform: translateX(-50%) rotate(0deg);
@@ -1526,23 +1545,24 @@ nav .blanket {
       width: 100%; }
     .page-content.Contact .section-block #map {
       width: 100%;
-      max-width: initial; }
-
-  .section-block.footer-menus {
-    padding: 24px;
-    flex-direction: column; }
-    .section-block.footer-menus .contact {
-      text-align: center;
-      margin: auto;
-      margin-top: 24px; } }
+      max-width: initial; } }
 @media (max-width: 991px) {
   .page-content.Landing .banner .banner-contents h1 {
     font-size: 48px; }
   .page-content.Our-Company .section-block .community-logos .logo {
-    margin-bottom: 32px; }
-    .page-content.Our-Company .section-block .community-logos .logo img {
-      width: 25%; } }
+    margin-bottom: 32px;
+    max-width: 175px; } }
 @media (max-width: 925px) {
+  .section-block.footer-menus {
+    padding: 64px;
+    flex-direction: column; }
+    .section-block.footer-menus ul {
+      margin-right: 0px; }
+    .section-block.footer-menus .contact {
+      text-align: center;
+      margin: auto;
+      margin-top: 24px; }
+
   .page-content.Price-Plans .section-block .plans .block {
     max-width: 100%; }
   .page-content.Products-Services .section-block .block .description-container .info {
@@ -1633,8 +1653,15 @@ nav .blanket {
   .page-content.Sign-Up .form-container .form-nav ol li h6 {
     font-size: 16px; } }
 @media (max-width: 575px) {
+  h2 {
+    font-size: 42px;
+    font-weight: 900; }
+
+  h5 {
+    font-size: 20px; }
+
   p {
-    font-size: 14px; }
+    font-size: 13px; }
 
   nav .nav-full {
     padding: 96px 24px 0px 24px;
@@ -1667,11 +1694,14 @@ nav .blanket {
       nav .nav-container .nav-bar .logo {
         display: none; }
 
+  .section-block.footer-menus {
+    padding: 24px; }
+
   .page-content .section-block {
-    padding: 32px; }
+    padding: 32px 18px; }
   .page-content.Landing .banner .banner-contents h1,
   .page-content.Landing .banner .banner-contents a {
-    font-size: 32px;
+    font-size: 42px;
     text-align: center;
     margin-top: auto; }
   .page-content.Landing .banner .banner-contents .button h6 {
@@ -1692,8 +1722,6 @@ nav .blanket {
       font-size: 18px; }
       .page-content.Landing .banner .prices .product h6:last-of-type {
         font-size: 18px; }
-  .page-content.Landing .section-block h3 {
-    padding-top: 32px; }
   .page-content.Landing .section-block .icons {
     padding: 0px; }
     .page-content.Landing .section-block .icons .col-lg-4 {
@@ -1731,14 +1759,10 @@ nav .blanket {
       margin-top: 12px; }
   .page-content.Price-Plans {
     padding-top: 64px; }
-    .page-content.Price-Plans .intro {
-      padding: 64px 24px; }
-    .page-content.Price-Plans .section-block {
-      padding: 12px; }
-      .page-content.Price-Plans .section-block .plans .block {
-        padding: 64px 24px; }
-        .page-content.Price-Plans .section-block .plans .block .button h6 {
-          margin-top: 24px; }
+    .page-content.Price-Plans .section-block .plans .block {
+      padding: 42px 24px; }
+      .page-content.Price-Plans .section-block .plans .block .info {
+        margin-bottom: 24px; }
   .page-content.Products-Services {
     padding-top: 64px; }
     .page-content.Products-Services .section-block .block .category-select .icons {

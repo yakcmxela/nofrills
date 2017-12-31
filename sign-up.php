@@ -150,9 +150,10 @@ $email_disclaimer = get_field('email_disclaimer');
 							<option value="n/a">Type of account requested *</option>
 							<option value="C.O.D">C.O.D</option>
 							<option value="Net 14 Day">Net 14 Day</option>
-							<option value="Budget">Budget</option>
-							<option value="Budget Locked">Budget (lock-in program)</option>
-							<option value="Prepaid">Prepaid (lock-in program)</option>
+							<option value="Downside Protection">Downside Protection</option>
+							<option value="Floating Budget">Floating Budget</option>
+							<option value="Fixed Price Budget">Fixed Price Budget (lock-in program)</option>
+							<option value="Pre-Paid Plan">Pre-Paid (lock-in program)</option>
 						</select>
 					</div>
 					<div class="col-lg-12">

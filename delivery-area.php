@@ -25,52 +25,53 @@ $banner_position = get_field_object('banner_position');
 		<p class="view-full">View Full Service Area<br/><i class="fa fa-angle-down fa-3x"></i></p>
 	</div>
 	<div class="yes-service Yes d-flex flex-column justify-content-center align-items-center">
-		<h5 class="return-to-search c-y">Return to search</h5>
-		<h5>Good news, we deliver to you! <a href="<?php echo get_site_url(); ?>/sign-up">Sign up for service!</a></h5>
+		<p class="return-to-search c-y">Return to search</p>
+		<h6>Good news, we deliver to you! <a href="<?php echo get_site_url(); ?>/sign-up">Sign up for service!</a></h6>
 	</div>
 	<div class="no-service No d-flex flex-column justify-content-center align-items-center">
-		<h5 class="return-to-search c-y">Return to search</h5>
-		<h5>Uh oh! Looks like we aren't delivering to your area yet. <a href="<?php echo get_site_url(); ?>/contact-us">Request service.</a></h5>
+		<p class="return-to-search c-y">Return to search</p>
+		<h6>Uh oh! Looks like we aren't delivering to your area yet. <a href="<?php echo get_site_url(); ?>/contact-us">Request service.</a></h6>
 	</div>
 	<div id="map">
 		<div class="return-to-search-icon">
 			<i class="fa fa-angle-down fa-2x"></i>
 		</div>
 		<script type="text/javascript">
-			// Initialize leaflet map	
-			mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleHBtY2theSIsImEiOiJjajd0MHgxZGg1MHN4MndxdTM5ODh6MnJzIn0.rf5yQmrxDvzkGR0XU30lpQ';
-			var map = new mapboxgl.Map({
-				container: 'map',
-				style: 'mapbox://styles/mapbox/light-v9',
-				center: [-68.27784, 44.535858],
-				zoom: 9
-			});
+			function init() {
+				// Initialize leaflet map	
+				mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleHBtY2theSIsImEiOiJjajd0MHgxZGg1MHN4MndxdTM5ODh6MnJzIn0.rf5yQmrxDvzkGR0XU30lpQ';
+				var map = new mapboxgl.Map({
+					container: 'map',
+					style: 'mapbox://styles/mapbox/light-v9',
+					center: [-68.27784, 44.535858],
+					zoom: 9
+				});
 
-			var geocoder = new MapboxGeocoder({
-				accessToken: mapboxgl.accessToken,
-				placeholder: "",
-				country: 'US'
-			});
+				var geocoder = new MapboxGeocoder({
+					accessToken: mapboxgl.accessToken,
+					placeholder: "",
+					country: 'US'
+				});
 
-			map.scrollZoom.disable();
-			map.addControl(new mapboxgl.NavigationControl());
-			map.addControl(geocoder);
+				map.scrollZoom.disable();
+				map.addControl(new mapboxgl.NavigationControl());
+				map.addControl(geocoder);
 
-			var search_coordinates;
+				var search_coordinates;
 
-			geocoder.on('result', function(e){
-				$('.banner').addClass('Small');
-				map_marker = document.createElement('div');
-				map_marker.id = 'marker';
-				$(window).scrollTop(0);
+				geocoder.on('result', function(e){
+					$('.banner').addClass('Small');
+					map_marker = document.createElement('div');
+					map_marker.id = 'marker';
+					$(window).scrollTop(0);
 
-				new mapboxgl.Marker(map_marker)
-				.setLngLat(e.result.center)
-				.addTo(map);
-				search_coordinates = e.result.center;
+					new mapboxgl.Marker(map_marker)
+					.setLngLat(e.result.center)
+					.addTo(map);
+					search_coordinates = e.result.center;
 
-				var search_within = turf.featureCollection([
-					turf.polygon([[
+					var search_within = turf.featureCollection([
+						turf.polygon([[
 						// coords
 						[
 						-68.79793167114258, 45.00753503123719
@@ -128,34 +129,34 @@ $banner_position = get_field_object('banner_position');
 						45.00753503123719
 						]
 						]])
-					]);
+						]);
 
-				var points = turf.featureCollection([
-					turf.point(search_coordinates)
-					]);
+					var points = turf.featureCollection([
+						turf.point(search_coordinates)
+						]);
 
-				var points_within = turf.pointsWithinPolygon(points, search_within);
-				console.log(points_within);
-				if (points_within.features.length > 0) {
-					$('.yes-service').addClass('Active');
-					$('.no-service').removeClass('Active');
-				} else {
-					$('.no-service').addClass('Active');
-					$('.yes-service').removeClass('Active');
-				}
+					var points_within = turf.pointsWithinPolygon(points, search_within);
+					console.log(points_within);
+					if (points_within.features.length > 0) {
+						$('.yes-service').addClass('Active');
+						$('.no-service').removeClass('Active');
+					} else {
+						$('.no-service').addClass('Active');
+						$('.yes-service').removeClass('Active');
+					}
 
-			});
+				});
 
-			var delivery_area = {
-				'id': 'delivery_area',
-				'type': 'fill',
-				'source': {
-					'type': 'geojson',
-					'data': {
-						'type': 'Feature',
-						'geometry': {
-							'type': 'Polygon',
-							'coordinates': [[
+				var delivery_area = {
+					'id': 'delivery_area',
+					'type': 'fill',
+					'source': {
+						'type': 'geojson',
+						'data': {
+							'type': 'Feature',
+							'geometry': {
+								'type': 'Polygon',
+								'coordinates': [[
 								// Map Coordinates
 								[
 								-68.79793167114258,
@@ -227,10 +228,12 @@ $banner_position = get_field_object('banner_position');
 					L.marker([-68.27784, 44.535858]).addTo(map);
 					map.addLayer(delivery_area);
 				});
+			}
 
-
-			</script>
-		</div>
+			init();
+			
+		</script>
 	</div>
+</div>
 
-	<?php get_footer(); ?>
+<?php get_footer(); ?>

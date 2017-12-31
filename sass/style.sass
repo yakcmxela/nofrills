@@ -18,7 +18,7 @@ h1
 	font-weight: 900
 h2
 	font-size: 56px
-	margin-bottom: 12px
+	margin-bottom: 18px
 	font-weight: 900
 h3
 	font-size: 48px
@@ -30,12 +30,13 @@ h4
 	margin-bottom: 16px
 h5
 	font-size: 28px
-	font-weight: 800
+	font-weight: 300
 	margin-bottom: 12px
 h6
 	font-size: 22px
 	line-height: 26px
 	margin-bottom: 0
+	font-weight: 300
 p
 	font-size: 16px
 	margin-bottom: 6px
@@ -178,6 +179,7 @@ nav
 		right: 0px
 		transform: translateY(-100%)
 		visibility: hidden
+		box-shadow: 0px 0px 20px rgba(0, 0, 0, .5)
 		+transition(all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1))
 		ul
 			margin-bottom: 0px
@@ -236,9 +238,9 @@ nav
 
 // Buttons
 .button
-	h6,
-	.title-link
-		margin: 12px 12px 0px 12px
+	a
+		padding: 12px
+		cursor: pointer
 		color: white
 		border-radius: 4px
 		font-style: initial
@@ -252,21 +254,24 @@ nav
 			padding: 18px
 // Footer
 .section-block
+	padding: 64px
 	&.footer-menus
 		display: flex
 		ul
+			margin-right: 64px
 			li
 				color: white
-				font-weight: 400
+				font-weight: 300
 				&:first-of-type
 					font-size: 22px
 					font-weight: 700
 				a
-					font-size: 16px
+					font-size: 14px
 					&:hover
 						color: $yellow
 		.contact
 			margin-left: auto
+			margin-right: 0px
 			text-align: right
 			li
 				&:first-of-type
@@ -274,15 +279,17 @@ nav
 					font-size: 16px
 				a
 					color: $yellow
+					font-weight: 900
 					&:hover
 						color: $green
 // Page Styles
 .page-content
 	.banner 
-		min-height: 40vh
+		min-height: 50vh
 		background-size: cover
 		background-repeat: no-repeat
-		background-position: 0% 40%
+		background-position: center center
+		box-shadow: inset 0px 0px 20px rgba(0, 0, 0, .25)
 	.section-block
 		position: relative
 		background-color: white
@@ -299,8 +306,12 @@ nav
 				max-width: 1000px
 				margin-left: auto
 				margin-right: auto
+			h2
+				font-style: italic
 			h5
 				color: $green
+				margin-bottom: 24px
+				margin-top: 24px
 				
 		.block
 			max-width: 600px
@@ -326,7 +337,9 @@ nav
 			.banner-contents
 				margin: auto
 				.button
+					background-color: initial
 					h6
+						background-color: initial
 						a
 							font-style: initial
 							border: 4px solid $yellow
@@ -334,6 +347,7 @@ nav
 							text-shadow: 0px 0px 10px rgba(0, 0, 0, .5)
 							background-color: $dark-grey
 							font-size: 24px
+							padding: 18px
 				.background-gradient
 					position: absolute
 					left: 0
@@ -399,6 +413,8 @@ nav
 					font-style: italic
 				p
 					padding: 12px
+					max-width: 600px
+					margin: auto
 				a
 					padding: 12px
 					box-shadow: initial
@@ -478,8 +494,7 @@ nav
 	&.Price-Plans
 		padding-top: 140px
 		.banner
-			height: 30vh
-			background-position: 20% center
+			background-position: center center
 		.section-block
 			&:last-of-type
 				background-color: $light-grey-one-quarter
@@ -512,13 +527,8 @@ nav
 							padding: 12px
 					.button
 						width: 100%
-						h6
-							background-color: $green
-							color: white
-							padding: 12px
-							margin-top: 32px
-							cursor: pointer
-							border: none
+						a 
+							width: 100%
 	&.Products-Services
 		padding-top: 140px
 		h1
@@ -545,6 +555,7 @@ nav
 					background-size: cover
 					opacity: 0
 					z-index: 0
+					box-shadow: inset 0px 0px 20px rgba(0, 0, 0, .5)
 					+transition(all .25s linear)
 					&.Hidden
 						opacity: 0
@@ -626,7 +637,7 @@ nav
 						left: 50%
 						border-radius: 32px
 						padding: 64px
-						background-color: rgba(255, 255, 255, .85)
+						background-color: white
 						+transition(all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94))
 						.Product,
 						.Service
@@ -638,9 +649,7 @@ nav
 							border-left: 5px solid $yellow
 						.button
 							h6
-								padding: 12px
 								color: white
-								background-color: $green
 								border: none
 								box-shadow: initial
 								text-shadow: initial
@@ -824,8 +833,14 @@ nav
 			+transition(all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1))
 			a
 				color: $yellow
+				font-weight: 700
+				margin-top: 12px
 			&.Active
 				transform: translateY(140px)
+			.return-to-search
+				cursor: pointer
+				font-style: italic
+				margin-bottom: 0px
 		#map
 			height: 100vh
 			width: 100%
@@ -835,8 +850,9 @@ nav
 				border-radius: 100%
 				background-color: $yellow
 			.return-to-search-icon
-				position: fixed
+				position: absolute
 				z-index: 1
+				font-weight: 900
 				bottom: 64px
 				left: 50%
 				transform: translateX(-50%) rotate(0deg)
@@ -1134,14 +1150,6 @@ nav
 				#map
 					width: 100%
 					max-width: initial
-	.section-block
-		&.footer-menus
-			padding: 24px
-			flex-direction: column
-			.contact
-				text-align: center
-				margin: auto
-				margin-top: 24px
 
 @media (max-width: 991px)
 	.page-content
@@ -1158,10 +1166,19 @@ nav
 				.community-logos
 					.logo
 						margin-bottom: 32px
-						img
-							width: 25%
+						max-width: 175px
 
 @media (max-width: 925px)
+	.section-block
+		&.footer-menus
+			padding: 64px
+			flex-direction: column
+			ul
+				margin-right: 0px
+			.contact
+				text-align: center
+				margin: auto
+				margin-top: 24px
 	.page-content
 		&.Price-Plans
 			.section-block
@@ -1283,8 +1300,13 @@ nav
 								font-size: 16px
 
 @media (max-width: 575px)
+	h2
+		font-size: 42px
+		font-weight: 900
+	h5
+		font-size: 20px
 	p
-		font-size: 14px
+		font-size: 13px
 	nav
 		.nav-full 
 			padding: 96px 24px 0px 24px
@@ -1313,9 +1335,12 @@ nav
 				padding: 0px 12px
 				.logo
 					display: none
+	.section-block
+		&.footer-menus
+			padding: 24px
 	.page-content
 		.section-block
-			padding: 32px
+			padding: 32px 18px
 		&.Landing
 			.banner
 				.background-gradient
@@ -1324,7 +1349,7 @@ nav
 				.banner-contents
 					h1,
 					a
-						font-size: 32px
+						font-size: 42px
 						text-align: center
 						margin-top: auto
 						a
@@ -1352,7 +1377,6 @@ nav
 								font-size: 18px
 			.section-block
 				h3
-					padding-top: 32px
 				.icons
 					padding: 0px
 					.col-lg-4
@@ -1414,15 +1438,12 @@ nav
 		&.Price-Plans
 			padding-top: 64px
 			.intro
-				padding: 64px 24px
 			.section-block
-				padding: 12px
 				.plans
 					.block
-						padding: 64px 24px
-						.button
-							h6
-								margin-top: 24px
+						padding: 42px 24px
+						.info
+							margin-bottom: 24px
 		&.Products-Services
 			padding-top: 64px
 			.section-block

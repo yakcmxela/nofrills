@@ -7,142 +7,6 @@ $(document).ready(function() {
 		viewportHeight = $(window).outerHeight();
 	};
 
-	// Header
-	function headerToDefaults() {
-
-	}
-
-	function headerTablet() {
-
-	}
-
-	function headerMobile() {
-
-	}
-	// Footer
-	function footerToDefaults() {
-
-	}
-
-	function footerTablet() {
-
-	}
-
-	function footerMobile() {
-
-	}
-	// Landing Page
-	function landingPageToDefaults() {
-		$('.Landing .banner-contents .buttons h6 a').eq(0).html('Become a Customer');
-		$('.Landing .banner-contents .buttons h6 a').eq(1).html('Online Bill Pay');
-	}
-
-	function landingPageTablet() {
-		$('.Landing .banner-contents .buttons h6 a').eq(0).html('Become a Customer');
-		$('.Landing .banner-contents .buttons h6 a').eq(1).html('Online Bill Pay');
-	}
-
-	function landingPageMobile() {
-		$('.Landing .banner-contents .buttons h6 a').eq(0).html('Sign Up');
-		$('.Landing .banner-contents .buttons h6 a').eq(1).html('Pay Bill');
-
-	}
-	// Our Company
-	function ourCompanyPageToDefaults() {
-
-	}
-
-	function ourCompanyPageTablet() {
-
-	}
-
-	function ourCompanyPageMobile() {
-
-	}
-	// Delivery Area
-	function deliveryAreaPageToDefaults() {
-
-	}
-
-	function deliveryAreaPageTablet() {
-
-	}
-
-	function deliveryAreaPageMobile() {
-
-	}
-	// Products and Services
-	function productsServicesPageToDefaults() {
-
-	}
-
-	function productsServicesPageTablet() {
-
-	}
-
-	function productsServicesPageMobile() {
-
-	}
-	// Price Plans
-	function pricePlansPageToDefaults() {
-
-	}
-
-	function pricePlansPageTablet() {
-
-	}
-
-	function pricePlansPageMobile() {
-
-	}
-	// Contact Page
-	function contactPageToDefaults() {
-	}
-
-	function contactPageTablet() {
-	}
-
-	function contactPageMobile() {
-	}
-
-	
-	function optimizePages() {
-		if (viewportWidth >= 1280) {
-			headerToDefaults();
-			footerToDefaults();
-			landingPageToDefaults();
-			contactPageToDefaults();
-		} else if (viewportWidth < 1280 && viewportWidth > 1150) {
-			headerToDefaults();
-			footerToDefaults();
-			landingPageTablet();
-			contactPageToDefaults();
-		} else if (viewportWidth <= 1150 && viewportWidth > 1023) {
-			headerToDefaults();
-			footerToDefaults();
-			landingPageTablet();
-		} else if (viewportWidth <= 1023 && viewportWidth > 861) {
-			headerToDefaults();
-			footerTablet();
-			landingPageTablet();
-		} else if (viewportWidth <= 861 && viewportWidth > 785) {
-			headerToDefaults();
-			footerTablet();
-			landingPageTablet();
-			contactPageTablet();
-		} else if (viewportWidth <= 785 && viewportWidth > 576) {
-			headerToDefaults();
-			footerMobile();
-			landingPageTablet();
-			contactPageTablet();
-		} else if (viewportWidth <= 576) {
-			headerMobile();
-			footerMobile()
-			landingPageMobile();
-			contactPageMobile();
-		};
-	};
-
 
 	$('.nav-button').on('click', function() {
 		$('.nav-full').toggleClass('Active');
@@ -167,7 +31,16 @@ $(document).ready(function() {
 			}
 		});
 	});
-
+// Price Plans
+	// Carry data from plan page to sign up form
+	$('.button').on('click', function(e) {
+		var planSelected = $(e.currentTarget).data('plan');
+		localStorage.setItem('planSelected', planSelected);
+	});
+	if ($('#sign-up-form').length) {
+		$('#accountType').val(localStorage.getItem('planSelected'))
+		console.log(localStorage.getItem('planSelected'));
+	}
 // Products Page
 	function productsPageInit() {
 		if ($('.Products-Services').length) {
@@ -760,14 +633,12 @@ $(document).ready(function() {
 
 // On Load
 defineViewport();
-optimizePages();
 setInputLength();
 
 
 // On window resize
 $(window).on('resize', function() {
 	defineViewport();
-	optimizePages();
 });
 
 // On window scroll

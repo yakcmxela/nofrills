@@ -21,7 +21,7 @@ $intro_text = get_field('intro_text');
 	<div class="section-block">
 		<div class="intro mx-auto">
 			<h2><?php echo $intro_title; ?></h2>
-			<h5><strong>Select a plan below to sign-up.</strong></h5>
+			<h5>Select a plan below to sign-up.</h5>
 			<p><?php echo $intro_text; ?></p>
 		</div>
 	</div>
@@ -35,8 +35,8 @@ $intro_text = get_field('intro_text');
 							<h5><?php the_sub_field('plan_name') ?></h5>
 							<p><?php the_sub_field('plan_description') ?></p>
 						</div>
-						<div class="button" data-plan="">
-							<h6>Select Plan</h6>
+						<div class="button" data-plan="<?php the_sub_field('plan_name'); ?>">
+							<a href="<?php echo get_site_url(); ?>/sign-up/"><h6>Select Plan</h6></a>
 						</div>	
 					</div>
 				<?php endwhile; ?>

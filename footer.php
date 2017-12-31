@@ -8,7 +8,7 @@
 <?php wp_footer(); ?>
 <footer>
 	<div class="section-block footer-menus p-l">
-		<ul class="mr-xl">
+		<ul>
 			<li>Company</li>
 			<hr>
 			<li><a href="<?php echo get_site_url(); ?>/">Home</a></li>
@@ -18,7 +18,7 @@
 			<li><a href="<?php echo get_site_url(); ?>/customer-resources">Price Plans</a></li>
 			<li><a href="<?php echo get_site_url(); ?>/contact">Contact Us</a></li>
 		</ul>
-		<ul class="mr-xl">
+		<ul>
 			<li>Customers</li>
 			<hr>
 			<li><a href="<?php echo get_site_url(); ?>/customer-resources">Become a Customer</a></li>

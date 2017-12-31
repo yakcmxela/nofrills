@@ -40,7 +40,7 @@ $sponsorship = get_field('sponsorship')
 	<div class="section-block">
 		<div class="container-fluid p-0">
 			<?php if ( have_rows('oc_blocks') ) : ?>
-				<div class="row justify-content-center center mb-xl mx-auto">
+				<div class="row justify-content-center center mb-l mx-auto">
 					<?php while ( have_rows('oc_blocks') ) : the_row(); ?>
 						<div class="col-xl-4 p-0 oc-block">
 							<h1 class="plus">+</h1>
@@ -63,10 +63,10 @@ $sponsorship = get_field('sponsorship')
 				</div>
 			<?php endif; ?>
 			<?php if (have_rows('sponsorship_logos') ) : ?>
-				<h6 class="center c-mg"><?php echo $sponsorship ?></h6>
+				<h5 class="center c-mg"><?php echo $sponsorship ?></h5>
 				<div class="row community-logos">
 					<?php while (have_rows('sponsorship_logos') ) : the_row(); ?>
-						<div class="col-lg-4 center">
+						<div class="col-md-4 center">
 							<img class="logo" src="<?php the_sub_field('oc_logo'); ?>">
 						</div>
 					<?php endwhile; ?>
