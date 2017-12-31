@@ -745,7 +745,8 @@ nav .blanket {
   .page-content.Our-Company h2 {
     font-weight: 900; }
   .page-content.Our-Company .section-block:last-of-type {
-    box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.05); }
+    box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.05);
+    background-color: #f7f7f735; }
   .page-content.Our-Company .section-block .row {
     max-width: 1650px;
     margin-left: auto;
