@@ -1,5 +1,5 @@
 <?php 
-header("Location: nofrills/form-success.php");
+header("Location: nofrills/application-submit");
 // Defuse
 	require_once('C:/xampp/apache/lib/defuse-crypto.phar');
 	use Defuse\Crypto\Crypto;
