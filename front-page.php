@@ -9,8 +9,7 @@ $banner_image = get_field('banner_image');
 $banner_header_text = get_field('banner_header_text');
 $banner_link = get_field('banner_link');
 $banner_position = get_field_object('banner_position');
-$path = get_home_path();
-	echo $path;
+
 ?>
 
 
