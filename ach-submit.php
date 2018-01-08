@@ -73,12 +73,16 @@
 	$questionMarkString = implode(",", $questionMarks);
 	// Prepare statement
 	$stmt = $pdo->prepare("INSERT INTO wp_nfach_fields (" . $fieldString . ") VALUES (" . $questionMarkString . ")");
+	// Prepare notification
+	$title = 'New ACH Authorization From: ' . $applicantFirstName . ' ' . $applicantLastName . '.';
+	$message = 'You have received a new ACH Authorization from ' . $applicantFirstName . ' ' . $applicantLastName '.<br/>Please log in to view the full application <a href="nofrillsoil.com/wp-admin/">here</a>.';
 	// Execute statement
 	if (!$stmt) {
 		die("Statement is false.");
 	} else {
 		$stmt->execute($values);
-		wp_mail( 'alex@boldcoastcreative.com' , 'New ACH Authorization Application', 'You have received a new application, please log in to view it.');
+		// Send notification
+		wp_mail( 'alex@boldcoastcreative.com' , $title, $message);
 	}
 	// Close the connection
 	$stmt=null;
