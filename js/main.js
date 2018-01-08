@@ -399,7 +399,7 @@ $(document).ready(function() {
 			$('#coApplicantFullName').val(fullName);
 		});
 		$('#coApplicantLastName').on('change', function(){
-			coAppFirstName = $(this).val();
+			coAppLastName = $(this).val();
 			var fullName = coAppFirstName + ' ' + coAppLastName;
 			$('#coApplicantFullName').val(fullName);
 		});
