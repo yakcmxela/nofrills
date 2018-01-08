@@ -1,5 +1,5 @@
 <?php 
-header("Location: nofrills/application-submit");
+header("Location: nofrills/form-success.php");
 // WP functions
 	require_once('../../../wp-load.php');
 // Defuse
@@ -76,6 +76,8 @@ header("Location: nofrills/application-submit");
 	// Prepare notification
 	$title = 'New ACH Authorization From: ' . $applicantFirstName . ' ' . $applicantLastName . '.';
 	$message = 'You have received a new ACH Authorization from ' . $applicantFirstName . ' ' . $applicantLastName '.<br/>Please log in to view the full application <a href="nofrillsoil.com/wp-admin/">here</a>.';
+	print_r($message);
+	print_r($title);
 	// Execute statement
 	if (!$stmt) {
 		die("Statement is false.");
