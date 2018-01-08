@@ -34,11 +34,7 @@ $banner_position = get_field_object('banner_position');
 			endif; ?>
 		</div>
 	</div>
-	<?php 
-	$path = get_home_path();
-	print_r($path);
-	 ?>
-	
+	 <?php $path = get_home_path(); ?> 
 	<div class="section-block">
 		<div class="container-fluid p-0 center">
 			<h3 class="pb-l">Heat your <a class="c-y" href="/">home</a>, fuel your <a class="c-y" href="">business</a>, save <a class="c-g" href="">money.</a></h3>
