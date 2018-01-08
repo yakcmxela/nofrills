@@ -111,8 +111,8 @@ $terms_conditions = get_field('terms_conditions');
 					<div class="col-lg-6">
 						<label class="sr-only" for="withdrawAmount">Select amount to withdraw:</label>
 						<select class="form-control" id="withdrawAmount" name="withdrawAmount">
-							<option value="Set: ">Set amount: </option>
-							<option value="Maxiumum: ">Maximum amount: </option>
+							<option value="Set">Set amount: </option>
+							<option value="Maxiumum">Maximum amount: </option>
 						</select>
 					</div>
 					<div class="col-lg-6">
@@ -203,7 +203,7 @@ $terms_conditions = get_field('terms_conditions');
 						<input type="text" class="form-control" name="nameSignature" id="nameSignature" placeholder="Enter Full Name">
 					</div>
 					<div class="col-12">
-						<input class="form-check-input" id="signatureAuthorization" name="signatureAuthorization" type="checkbox" value="'Applicant DOES AGREE to terms and conditions.'">
+						<input class="form-check-input" id="signatureAuthorization" name="signatureAuthorization" type="checkbox" value="Applicant DOES AGREE to terms and conditions.">
 						<label for="signatureAuthorization" class="mx-4">I acknowledge that I have read and understand the disclosures.</label>
 					</div>
 					<div class="ml-auto p-1">

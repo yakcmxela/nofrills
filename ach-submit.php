@@ -50,7 +50,7 @@ header("Location: nofrills/application-submit");
 		"state" => Crypto::encrypt(htmlspecialchars($_POST["state"]), $key, false),
 		"zip" => Crypto::encrypt(htmlspecialchars($_POST["zip"]), $key, false),
 		"nameSignature" => Crypto::encrypt(htmlspecialchars($_POST["nameSignature"]), $key, false),
-		"signatureAuthorization" => (isset($_POST["signatureAuthorization"])) ? $_POST["signatureAuthorization"] : "User DOES NOT AGREE to terms and conditions.",		
+		"signatureAuthorization" => (isset($_POST["signatureAuthorization"])) ? $_POST["signatureAuthorization"] : "Applicant DOES NOT AGREE to terms and conditions.",		
 	);
 
 // Create prepared statement
