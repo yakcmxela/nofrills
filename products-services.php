@@ -62,13 +62,13 @@ $intro_content = get_field('intro_content');
 						<?php if ( have_rows('product_description') ) :
 							while ( have_rows('product_description') ) : the_row(); ?>
 								<div class="my-s pl-s">
-								<h3><?php the_sub_field('product_description_title'); ?></h3>
+								<h5><?php the_sub_field('product_description_title'); ?></h5>
 								<?php the_sub_field('product_description_text'); ?>	
 								</div>	
 							<?php endwhile; ?>
 						<?php endif; ?>
 						<div class="button d-flex">
-							<a href="<?php echo get_site_url(); ?>/sign-up">
+							<a class="fuel-type-sign-up" href="<?php echo get_site_url(); ?>/sign-up" data-fueltype="<?php the_sub_field('product_title'); ?>">
 								<h6>Sign up for <?php the_sub_field('product_title'); ?></h6>
 							</a>
 						</div>

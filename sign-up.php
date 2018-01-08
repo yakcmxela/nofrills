@@ -20,7 +20,8 @@ $email_disclaimer = get_field('email_disclaimer');
 	<div class="form-container">
 		<div class="intro mb-s mx-auto">
 			<h1>New Account Sign-up</h1>
-			<p>In order to open an account with No Frills Oil, the following application must be completed. We use your social security number to perform a credit check. The security of your private information is important to us. Please visit our privacy policy page for more information.</p>
+			<p>In order to open an account with No Frills Oil, the following form must be completed. For all accounts other than 'C.O.D' we require a social security number. We use your this information to perform a credit check. The security of your personal information is important to us. All sensitive data is protected with encryption and stored temporarily.</p>
+			<p>For more information about privacy, please visit our <a class="c-g" href="<?php echo get_site_url(); ?>/privacy-policy"><strong>privacy policy</strong></a> page.</p>
 			<p>Fields marked with * are required</p>
 		</div>
 		<div class="form-nav">
@@ -43,6 +44,7 @@ $email_disclaimer = get_field('email_disclaimer');
 					<div class="col-lg-4">
 						<label class="sr-only" for="applicantLastName">Last Name *</label>
 						<input type="text" class="form-control" name="applicantLastName" id="applicantLastName" placeholder="Last name *">
+						<input type="text" id="applicantFullName" style="display: none;">
 					</div>
 					<div class="col-lg-4">
 						<label class="date" for="applicantDOB">Date of Birth *</label>
@@ -147,7 +149,7 @@ $email_disclaimer = get_field('email_disclaimer');
 					<div class="col-lg-12">
 						<label class="sr-only" for="accountType">Type of account requested</label>
 						<select class="form-control" name="accountType" id="accountType">
-							<option value="n/a">Type of account requested *</option>
+							<option value="">Type of account requested *</option>
 							<option value="C.O.D">C.O.D</option>
 							<option value="Net 14 Day">Net 14 Day</option>
 							<option value="Downside Protection">Downside Protection</option>
@@ -175,6 +177,7 @@ $email_disclaimer = get_field('email_disclaimer');
 					<div class="col-lg-4">
 						<label class="sr-only" for="coApplicantLastName">Co Applicant Last Name</label>
 						<input type="text" class="coApplicant form-control" name="coApplicantLastName" id="coApplicantLastName" placeholder="Last name">
+						<input type="text" id="coApplicantFullName" style="display: none;">
 					</div>
 					<div class="col-lg-4">
 						<label class="date" for="coApplicantDOB">Date of Birth</label>
@@ -394,7 +397,7 @@ $email_disclaimer = get_field('email_disclaimer');
 						<label class="sr-only" for="fuelType">Fuel Type to Deliver *</label>
 						<select class="form-control" name="fuelType" id="fuelType">
 							<option value="n/a">Fuel Type to Deliver *</option>
-							<option value="Oil #2">Oil #2</option>
+							<option value="#2 Oil">#2 Oil</option>
 							<option value="Kerosene">Kerosene</option>
 							<option value="Clear On-Road Diesel">Clear On-Road Diesel</option>
 							<option value="Dyed Off-Road Diesel">Dyed Off-Road Diesel</option>

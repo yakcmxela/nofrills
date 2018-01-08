@@ -35,7 +35,7 @@ $intro_text = get_field('intro_text');
 							<h5><?php the_sub_field('plan_name') ?></h5>
 							<p><?php the_sub_field('plan_description') ?></p>
 						</div>
-						<div class="button" data-plan="<?php the_sub_field('plan_name'); ?>">
+						<div class="plan-sign-up button" data-plan="<?php the_sub_field('plan_name'); ?>">
 							<a href="<?php echo get_site_url(); ?>/sign-up/"><h6>Select Plan</h6></a>
 						</div>	
 					</div>

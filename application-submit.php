@@ -1,5 +1,9 @@
 <?php 
-header("Location: nofrills/application-submit");
+// header("Location: nofrills/application-submit");
+// Defuse
+	require_once('C:/xampp/apache/lib/defuse-crypto.phar');
+	use Defuse\Crypto\Crypto;
+	use Defuse\Crypto\Key;
 // Connection to db
 	$host = "localhost";
 	$user = "alex";
@@ -18,29 +22,104 @@ header("Location: nofrills/application-submit");
 	$pdo = new PDO($dsn, $user, $pass, $opt);
 
 // Set form variables
+	
+	$applicantFirstName = htmlspecialchars($_POST["applicantFirstName"]);
+	$applicantLastName = htmlspecialchars($_POST["applicantLastName"]);
+	$applicantTelephone = htmlspecialchars($_POST["applicantTelephone"]);
+	$applicantTelephone2 = htmlspecialchars($_POST["applicantTelephone2"]);
+	$applicantEmail = htmlspecialchars($_POST["applicantEmail"]);
+	$applicantStreet = htmlspecialchars($_POST["applicantStreetAddress"]);
+	$applicantSSN = htmlspecialchars($_POST["applicantSocial"]);
+	$applicantLicense = htmlspecialchars($_POST["applicantLicense"]);
+
+	$coApplicantFirstName = htmlspecialchars($_POST["coApplicantFirstName"]);
+	$coApplicantLastName = htmlspecialchars($_POST["coApplicantLastName"]);
+	$coApplicantSSN = htmlspecialchars($_POST["coApplicantSocial"]);
+	$coApplicantLicense = htmlspecialchars($_POST["applicantLicense"]);
+
+	$employerName = htmlspecialchars($_POST["employerName"]);
+	$employerTelephone = htmlspecialchars($_POST["employerTelephone"]);
+	$employerStreet = htmlspecialchars($_POST["employerStreetAddress"]);
+
+	$propertyStreet = htmlspecialchars($_POST["propertyStreetAddress"]);
+
+	$caretakerFirstName = htmlspecialchars($_POST["caretakerFirstName"]);
+	$caretakerLastName = htmlspecialchars($_POST["caretakerLastName"]);
+	$caretakerTelephone = htmlspecialchars($_POST["caretakerTelephone"]);
+
+	$landlordFirstName = htmlspecialchars($_POST["landlordFirstName"]);
+	$landlordLastName = htmlspecialchars($_POST["landlordLastName"]);
+	$landlordTelephone = htmlspecialchars($_POST["landlordTelephone"]);
+	$landlordTelephone2 = htmlspecialchars($_POST["landlordTelephone2"]);
+	$landlordStreet = htmlspecialchars($_POST["landlordStreetAddress"]);
+
+	$applicantNameSignature = htmlspecialchars($_POST["applicantNameSignature"]);
+	$coApplicantNameSignature = htmlspecialchars($_POST["coApplicantNameSignature"]);
+
+	function loadEncryptionKey() {
+		$keyAscii = file_get_contents('/etc/llave.txt');
+		return Key::loadFromAsciiSafeString($keyAscii);
+	}
+
+	$key = loadEncryptionKey();
+
+	$encryptedAppFirstName = Crypto::encrypt($applicantFirstName, $key, false);	
+	$encryptedAppLastName = Crypto::encrypt($applicantLastName, $key, false);	
+	$encryptedAppTelephone = Crypto::encrypt($applicantTelephone, $key, false);	
+	$encryptedAppTelephone2 = Crypto::encrypt($applicantTelephone2, $key, false);	
+	$encryptedAppEmail = Crypto::encrypt($applicantEmail, $key, false);	
+	$encryptedAppStreet = Crypto::encrypt($applicantStreet, $key, false);	
+	$encryptedAppSSN = Crypto::encrypt($applicantSSN, $key, false);	
+	$encryptedAppLicense = Crypto::encrypt($applicantLicense, $key, false);
+
+	$encryptedCoAppFirstName = Crypto::encrypt($coApplicantFirstName, $key, false);
+	$encryptedCoAppLastName = Crypto::encrypt($coApplicantLastName, $key, false);
+	$encrypedCoAppSSN = Crypto::encrypt($coApplicantSSN, $key, false);
+	$encryptedCoAppLicense = Crypto::encrypt($coApplicantLicense, $key, false);
+
+	$encryptedEmployerName = Crypto::encrypt($employerName, $key, false);
+	$encryptedEmployerTelephone = Crypto::encrypt($employerTelephone, $key, false);
+	$encryptedEmployerStreet = Crypto::encrypt($employerStreet, $key, false);
+
+	$encryptedPropertyStreet = Crypto::encrypt($propertyStreet, $key, false);
+
+	$encryptedCaretakerFirstName = Crypto::encrypt($caretakerFirstName, $key, false);
+	$encryptedCaretakerLastName = Crypto::encrypt($caretakerLastName, $key, false);
+	$encryptedCaretakerTelephone = Crypto::encrypt($caretakerTelephone, $key, false);
+
+	$encryptedLandlordFirstName = Crypto::encrypt($landlordFirstName, $key, false);
+	$encryptedLandlordLastName = Crypto::encrypt($landlordLastName, $key, false);
+	$encryptedLandlordTelephone = Crypto::encrypt($landlordTelephone, $key, false);
+	$encryptedLandlordTelephone2 = Crypto::encrypt($landlordTelephone2, $key, false);
+	$encrypyedLandlordStreet = Crypto::encrypt($landlordStreet, $key, false);
+
+	$encryptedAppNameSignature = Crypto::encrypt($applicantNameSignature, $key, false);
+	$encryptedCoAppNameSignature = Crypto::encrypt($coApplicantNameSignature, $key, false);
+
+
 	$formVariables = array(
-	    "applicantFirstName" => htmlspecialchars($_POST["applicantFirstName"]),
-	    "applicantLastName" => htmlspecialchars($_POST["applicantLastName"]),
+	    "applicantFirstName" => $encryptedAppFirstName,
+	    "applicantLastName" => $encryptedAppLastName,
 		"applicantDOB" => htmlspecialchars($_POST["applicantDOB"]),
-		"applicantStreetAddress" => htmlspecialchars($_POST["applicantStreetAddress"]),
+		"applicantStreetAddress" => $encryptedAppStreet,
 		"applicantStreetAddress2" => htmlspecialchars($_POST["applicantStreetAddress2"]),
 		"applicantCity" => htmlspecialchars($_POST["applicantCity"]),
 		"applicantState" => htmlspecialchars($_POST["applicantState"]),
 		"applicantZip" => htmlspecialchars($_POST["applicantZip"]),
-		"applicantTelephone" => htmlspecialchars($_POST["applicantTelephone"]),
-		"applicantTelephone2" => htmlspecialchars($_POST["applicantTelephone2"]),
-		"applicantEmail" => htmlspecialchars($_POST["applicantEmail"]),
-		"applicantLicense" => htmlspecialchars($_POST["applicantLicense"]),
-		"applicantSocial" => htmlspecialchars($_POST["applicantSocial"]),
+		"applicantTelephone" => $encryptedAppTelephone,
+		"applicantTelephone2" => $encryptedAppTelephone2,
+		"applicantEmail" => $encryptedAppEmail,
+		"applicantLicense" => $encryptedAppLicense,
+		"applicantSocial" => $encryptedAppSSN,
 		"accountType" => htmlspecialchars($_POST["accountType"]),
-		"coApplicantFirstName" => htmlspecialchars($_POST["coApplicantFirstName"]),
-		"coApplicantLastName" => htmlspecialchars($_POST["coApplicantLastName"]),
+		"coApplicantFirstName" => $encryptedCoAppFirstName,
+		"coApplicantLastName" => $encryptedCoAppLastName,
 		"coApplicantDOB" => htmlspecialchars($_POST["coApplicantDOB"]),
-		"coApplicantLicense" => htmlspecialchars($_POST["coApplicantLicense"]),
-		"coApplicantSocial" => htmlspecialchars($_POST["coApplicantSocial"]),
-		"employerName" => htmlspecialchars($_POST["employerName"]),
-		"employerTelephone" => htmlspecialchars($_POST["employerTelephone"]),
-		"employerStreetAddress" => htmlspecialchars($_POST["employerStreetAddress"]),
+		"coApplicantLicense" => $encryptedCoAppLicense,
+		"coApplicantSocial" => $encrypedCoAppSSN,
+		"employerName" => $encryptedEmployerName,
+		"employerTelephone" => $encryptedEmployerTelephone,
+		"employerStreetAddress" => $encryptedEmployerStreet,
 		"employerStreetAddress2" => htmlspecialchars($_POST["employerStreetAddress2"]),
 		"employerCity" => htmlspecialchars($_POST["employerCity"]),
 		"employerState" => htmlspecialchars($_POST["employerState"]),
@@ -48,16 +127,16 @@ header("Location: nofrills/application-submit");
 		"employerStart" => htmlspecialchars($_POST["employerStart"]),
 		"annualIncome" => htmlspecialchars($_POST["annualIncome"]),
 		"otherIncome" => htmlspecialchars($_POST["otherIncome"]),
-		"landlordFirstName" => htmlspecialchars($_POST["landlordFirstName"]),
-		"landlordLastName" => htmlspecialchars($_POST["landlordLastName"]),
-		"landlordTelephone" => htmlspecialchars($_POST["landlordTelephone"]),
-		"landlordTelephone2" => htmlspecialchars($_POST["landlordTelephone2"]),
-		"landlordStreetAddress" => htmlspecialchars($_POST["landlordStreetAddress"]),
+		"landlordFirstName" => $encryptedLandlordFirstName,
+		"landlordLastName" => $encryptedLandlordLastName,
+		"landlordTelephone" => $encryptedLandlordTelephone,
+		"landlordTelephone2" => $encryptedLandlordTelephone2,
+		"landlordStreetAddress" => $encrypyedLandlordStreet,
 		"landlordStreetAddress2" => htmlspecialchars($_POST["landlordStreetAddress2"]),
 		"landlordCity" => htmlspecialchars($_POST["landlordCity"]),
 		"landlordState" => htmlspecialchars($_POST["landlordState"]),
 		"landlordZip" => htmlspecialchars($_POST["landlordZip"]),
-		"propertyStreetAddress" => htmlspecialchars($_POST["propertyStreetAddress"]),
+		"propertyStreetAddress" => $encryptedPropertyStreet,
 		"propertyStreetAddress2" => htmlspecialchars($_POST["propertyStreetAddress2"]),
 		"propertyCity" => htmlspecialchars($_POST["propertyCity"]),
 		"propertyState" => htmlspecialchars($_POST["propertyState"]),
@@ -71,9 +150,9 @@ header("Location: nofrills/application-submit");
 		"propertySeasonal" => htmlspecialchars($_POST["propertySeasonal"]),
 		"deliveryMethod" => htmlspecialchars($_POST["deliveryMethod"]),
 		"propertyCaretaker" => htmlspecialchars($_POST["propertyCaretaker"]),
-		"caretakerFirstName" => htmlspecialchars($_POST["caretakerFirstName"]),
-		"caretakerLastName" => htmlspecialchars($_POST["caretakerLastName"]),
-		"caretakerTelephone" => htmlspecialchars($_POST["caretakerTelephone"]),
+		"caretakerFirstName" => $encryptedCaretakerFirstName,
+		"caretakerLastName" => $encryptedCaretakerLastName,
+		"caretakerTelephone" => $encryptedCaretakerTelephone,
 		"oilNewTank" => htmlspecialchars($_POST["oilNewTank"]),
 		"oilPipeVented" => htmlspecialchars($_POST["oilPipeVented"]),
 		"oilMonitor" => htmlspecialchars($_POST["oilMonitor"]),
@@ -104,9 +183,9 @@ header("Location: nofrills/application-submit");
 		"tankChangeCurrentFillLevel" => htmlspecialchars($_POST["tankChangeCurrentFillLevel"]),
 		"tankChangeUse" => htmlspecialchars($_POST["tankChangeUse"]),
 		"additionalInfoGeneral" => htmlspecialchars($_POST["additionalInfoGeneral"]),
-		"applicantNameSignature" => htmlspecialchars($_POST["applicantNameSignature"]),
+		"applicantNameSignature" => $encryptedAppNameSignature,
 		"applicantSignatureAuthorization" => (isset($_POST["applicantSignatureAuthorization"])) ? $_POST["applicantSignatureAuthorization"] : "Applicant DOES NOT AGREE to terms and conditions.",
-		"coApplicantNameSignature" => htmlspecialchars($_POST["coApplicantNameSignature"]),
+		"coApplicantNameSignature" => $encryptedCoAppNameSignature,
 		"coApplicantSignatureAuthorization" => (isset($_POST["coApplicantSignatureAuthorization"])) ? $_POST["coApplicantSignatureAuthorization"] : "Co-applicant DOES NOT AGREE to the terms and conditions."
 		);
 
@@ -136,6 +215,7 @@ header("Location: nofrills/application-submit");
 	} else {
 		$stmt->execute($values);
 	}
+
 	// Close the connection
 	$stmt=null;
 	$pdo=null;

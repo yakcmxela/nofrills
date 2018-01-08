@@ -1,6 +1,13 @@
 <?php 
-header("Location: nofrills/application-submit");
+// header("Location: nofrills/application-submit");
+// WP functions
+	require_once('../../../wp-load.php');
+// Defuse
+	require_once('/var/www/lib/defuse-crypto.phar');
+	use Defuse\Crypto\Crypto;
+	use Defuse\Crypto\Key;
 // Connection to db
+
 	$host = "localhost";
 	$user = "alex";
 	$pass = "Spartan12#";
@@ -16,25 +23,32 @@ header("Location: nofrills/application-submit");
 	];
 
 	$pdo = new PDO($dsn, $user, $pass, $opt);
+// Fetch Key
+	function loadEncryptionKey() {
+		$keyAscii = file_get_contents('/etc/llave.txt');
+		return Key::loadFromAsciiSafeString($keyAscii);
+	}
+
+	$key = loadEncryptionKey();
 
 // Set form variables
 	$formVariables = array(
-	    "nameInstitution" => htmlspecialchars($_POST["nameInstitution"]),
-	    "streetInstitution" => htmlspecialchars($_POST["streetInstitution"]),
-	    "streetInstitution2" => htmlspecialchars($_POST["streetInstitution2"]),
-	    "cityInstitution" => htmlspecialchars($_POST["cityInstitution"]),
-	    "stateInstitution" => htmlspecialchars($_POST["stateInstitution"]),
-	    "zipInstitution" => htmlspecialchars($_POST["zipInstitution"]),
-		"accountNumber" => htmlspecialchars($_POST["accountNumber"]),
-		"routingNumber" => htmlspecialchars($_POST["routingNumber"]),
-		"withdrawAmount" => htmlspecialchars($_POST["withdrawAmount"]),
-		"amount" => htmlspecialchars($_POST["amount"]),
-		"streetAddress" => htmlspecialchars($_POST["streetAddress"]),
-		"streetAddress2" => htmlspecialchars($_POST["streetAddress2"]),
-		"city" => htmlspecialchars($_POST["city"]),
-		"state" => htmlspecialchars($_POST["state"]),
-		"zip" => htmlspecialchars($_POST["zip"]),
-		"nameSignature" => htmlspecialchars($_POST["nameSignature"]),
+	    "nameInstitution" => Crypto::encrypt(htmlspecialchars($_POST["nameInstitution"]), $key, false),
+	    "streetInstitution" => Crypto::encrypt(htmlspecialchars($_POST["streetInstitution"]), $key, false),
+	    "streetInstitution2" => Crypto::encrypt(htmlspecialchars($_POST["streetInstitution2"]), $key, false),
+	    "cityInstitution" => Crypto::encrypt(htmlspecialchars($_POST["cityInstitution"]), $key, false),
+	    "stateInstitution" => Crypto::encrypt(htmlspecialchars($_POST["stateInstitution"]), $key, false),
+	    "zipInstitution" => Crypto::encrypt(htmlspecialchars($_POST["zipInstitution"]), $key, false),
+		"accountNumber" => Crypto::encrypt(htmlspecialchars($_POST["accountNumber"]), $key, false),
+		"routingNumber" => Crypto::encrypt(htmlspecialchars($_POST["routingNumber"]), $key, false),
+		"withdrawAmount" => Crypto::encrypt(htmlspecialchars($_POST["withdrawAmount"]), $key, false),
+		"amount" => Crypto::encrypt(htmlspecialchars($_POST["amount"]), $key, false),
+		"streetAddress" => Crypto::encrypt(htmlspecialchars($_POST["streetAddress"]), $key, false),
+		"streetAddress2" => Crypto::encrypt(htmlspecialchars($_POST["streetAddress2"]), $key, false),
+		"city" => Crypto::encrypt(htmlspecialchars($_POST["city"]), $key, false),
+		"state" => Crypto::encrypt(htmlspecialchars($_POST["state"]), $key, false),
+		"zip" => Crypto::encrypt(htmlspecialchars($_POST["zip"]), $key, false),
+		"nameSignature" => Crypto::encrypt(htmlspecialchars($_POST["nameSignature"]), $key, false),
 		"signatureAuthorization" => (isset($_POST["signatureAuthorization"])) ? $_POST["signatureAuthorization"] : "User DOES NOT AGREE to terms and conditions.",		
 	);
 
@@ -63,6 +77,8 @@ header("Location: nofrills/application-submit");
 		die("Statement is false.");
 	} else {
 		$stmt->execute($values);
+		wp_mail( 'alex@boldcoastcreative.com' , 'New Application Received!', 'You have received a new application, please log in to view it.');
+		print_r(wp_mail( 'alex@boldcoastcreative.com' , 'New Application Received!', 'You have received a new application, please log in to view it.'));
 	}
 	// Close the connection
 	$stmt=null;

@@ -30,8 +30,11 @@
 			<li style="font-size: 32px; font-weight: 700; font-style: italic;">No Frills Oil, Inc.</li>
 			<li><a href="https://www.google.com/maps/place/No+Frills+Oil/@44.535858,-68.27784,15z/data=!4m2!3m1!1s0x0:0xf7243aabbfa6fcd1?sa=X&ved=0ahUKEwja4bW7vKDYAhXikOAKHeSgAKwQ_BIIdzAN" target="_blank">1166 Us Hwy Ste. A, Hancock, ME 04640</a></li>
 			<li><a href="mailto:info@nofrillsoil.com">info@nofrillsoil.com</a></li>
-			<li><a href="tel:2074223581">(207) 422-3581</a></li>
-			<li class="mt-auto" style="font-size: 12px">Copyright 2017</li>
+			<li><a href="tel:18005376645">Tel | 1.800.537.6645</li>
+			<li><a href="tel:2074223581">Tel | 207.422.3581</a></li>
+			<li><a href="tel:2074226553">Fax | 207.422.6553</a></li>
+			
+			<li class="mt-auto" style="font-size: 12px">Copyright <?php echo date("Y"); ?></li>
 		</ul>
 	</div>
 </footer>

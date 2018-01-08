@@ -18,23 +18,23 @@ $sponsorship = get_field('sponsorship')
 	<div class="banner" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/history.jpg');"></div>
 	<div class="section-block">
 		<div class="intro">
-			<div class="container-fluid p-0">
-				<h2><?php echo $intro_heading ?></h2>
-				<h5><?php echo $intro_subheading ?></h5>
-				<?php echo $intro_text ?>
-				<?php if ( have_rows('employees') ) : ?>
-					<div class="images row justify-content-center">
-						<?php while ( have_rows('employees') ) : the_row(); ?>
-							<div class="col-sm-3">
-								<div class="image">
-									<img src="<?php the_sub_field('employee_image'); ?>">
-								</div>
-								<p><strong><?php the_sub_field('employee_name'); ?></strong><br/><?php the_sub_field('employee_title'); ?></p>
-							</div>
-						<?php endwhile; ?>
-					<?php endif; ?>
-				</div>
-			</div>
+			<h2><?php echo $intro_heading ?></h2>
+			<h5><?php echo $intro_subheading ?></h5>
+			<?php echo $intro_text ?>
+		</div>
+	</div>
+	<div class="container-fluid p-0">
+		<?php if ( have_rows('employees') ) : ?>
+			<div class="images row justify-content-center">
+				<?php while ( have_rows('employees') ) : the_row(); ?>
+					<div class="col-md-3">
+						<div class="image">
+							<img src="<?php the_sub_field('employee_image'); ?>">
+						</div>
+						<p><strong><?php the_sub_field('employee_name'); ?></strong><br/><?php the_sub_field('employee_title'); ?></p>
+					</div>
+				<?php endwhile; ?>
+			<?php endif; ?>
 		</div>
 	</div>
 	<div class="section-block">

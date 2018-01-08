@@ -27,7 +27,9 @@ $sun_hours = get_field('sun_hours');
 			</div>
 			<div class="d-flex align-items-center my-s">
 				<i class="fa fa-phone-square fa-2x"></i>
-				<?php echo $phone_number ?>
+				<div>
+					<?php echo $phone_number ?>
+				</div>
 			</div>
 			<div class="d-flex align-items-center my-s">
 				<i class="fa fa-envelope-square fa-2x"></i>
@@ -48,7 +50,7 @@ $sun_hours = get_field('sun_hours');
 					container: 'map',
 					style: 'mapbox://styles/mapbox/light-v9',
 					center: [-68.27784, 44.535858],
-					zoom: 9
+					zoom: 12
 				});
 
 				var popup = new mapboxgl.Popup()
