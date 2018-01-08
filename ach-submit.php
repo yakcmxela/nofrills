@@ -1,7 +1,7 @@
 <?php 
+header("Location: nofrills/application-submit");
 // WP functions
 	require_once('../../../wp-load.php');
-	header("Location: " . echo get_site_url() . "/application-submit");
 // Defuse
 	require_once('/var/www/lib/defuse-crypto.phar');
 	use Defuse\Crypto\Crypto;
