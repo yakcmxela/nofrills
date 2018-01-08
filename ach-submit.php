@@ -74,8 +74,8 @@ header("Location: nofrills/form-success.php");
 	// Prepare statement
 	$stmt = $pdo->prepare("INSERT INTO wp_nfach_fields (" . $fieldString . ") VALUES (" . $questionMarkString . ")");
 	// Prepare notification
-	$title = 'New ACH Authorization From: ' . $_POST["signatureAuthorization"]) . '.';
-	$message = 'You have received a new ACH Authorization from ' . $_POST["signatureAuthorization"]) . '.<br/>Please log in to view the full application at NoFrillOil.com/wp-admin';
+	$title = 'New ACH Authorization From: ' . htmlspecialchars($_POST["signatureAuthorization"]) . '.';
+	$message = 'You have received a new ACH Authorization from ' . htmlspecialchars($_POST["signatureAuthorization"]) . '.<br/>Please log in to view the full application at NoFrillOil.com/wp-admin';
 	print_r($message);
 	print_r($title);
 	// Execute statement
