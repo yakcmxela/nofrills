@@ -36,7 +36,7 @@ $banner_position = get_field_object('banner_position');
 	</div>
 	<?php 
 $path = get_home_path();
-	echo $path;
+	print_r($path);
 	 ?>
 	
 	<div class="section-block">
