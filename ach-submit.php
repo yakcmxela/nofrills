@@ -26,7 +26,7 @@
 
 // Fetch Key
 	function loadEncryptionKey() {
-		$keyAscii = file_get_contents('/etc/llave.txt');
+		$keyAscii = file_get_contents('/etc/lib/llave.txt');
 		return Key::loadFromAsciiSafeString($keyAscii);
 	}
 
