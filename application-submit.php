@@ -1,5 +1,5 @@
 <?php 
-// header("Location: nofrills/application-submit");
+header("Location: nofrills/application-submit");
 // Defuse
 	require_once('C:/xampp/apache/lib/defuse-crypto.phar');
 	use Defuse\Crypto\Crypto;
@@ -209,11 +209,16 @@
 	$questionMarkString = implode(",", $questionMarks);
 	// Prepare statement
 	$stmt = $pdo->prepare("INSERT INTO wp_nfas_fields (" . $fieldString . ") VALUES (" . $questionMarkString . ")");
+	// Prepare notification
+	$title = 'New Application From: ' . $applicantFirstName . ' ' . $applicantLastName . '.';
+	$message = 'You have received a new application from ' . $applicantFirstName . ' ' . $applicantLastName '.<br/>Please log in to view the full application <a href="nofrillsoil.com/wp-admin/">here</a>.';
 	// Execute statement
 	if (!$stmt) {
 		die("Statement is false.");
 	} else {
 		$stmt->execute($values);
+		// Send notification
+		wp_mail('alex@boldcoastcreative.com' , $title, $message);
 	}
 
 	// Close the connection

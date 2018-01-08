@@ -78,8 +78,7 @@
 		die("Statement is false.");
 	} else {
 		$stmt->execute($values);
-		wp_mail( 'alex@boldcoastcreative.com' , 'New Application Received!', 'You have received a new application, please log in to view it.');
-		print_r(wp_mail( 'alex@boldcoastcreative.com' , 'New Application Received!', 'You have received a new application, please log in to view it.'));
+		wp_mail( 'alex@boldcoastcreative.com' , 'New ACH Authorization Application', 'You have received a new application, please log in to view it.');
 	}
 	// Close the connection
 	$stmt=null;
