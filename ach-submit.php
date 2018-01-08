@@ -1,11 +1,11 @@
 <?php 
 // header("Location: nofrills/application-submit");
 // WP functions
-	require_once('../../../wp-load.php');
+	//require_once('../../../wp-load.php');
 // Defuse
-	require_once('/var/www/lib/defuse-crypto.phar');
-	use Defuse\Crypto\Crypto;
-	use Defuse\Crypto\Key;
+	//require_once('/var/www/lib/defuse-crypto.phar');
+	//use Defuse\Crypto\Crypto;
+	//use Defuse\Crypto\Key;
 // Connection to db
 
 	$host = "localhost";
@@ -23,6 +23,7 @@
 	];
 
 	$pdo = new PDO($dsn, $user, $pass, $opt);
+
 // Fetch Key
 	function loadEncryptionKey() {
 		$keyAscii = file_get_contents('/etc/llave.txt');

@@ -680,9 +680,6 @@ $(document).ready(function() {
 			  	streetAddress: {
 			  		required: true
 			  	},
-			  	streetAddress2: {
-			  		required: true
-			  	},
 			  	city: {
 			  		required: true
 			  	},
