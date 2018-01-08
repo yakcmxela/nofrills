@@ -1,5 +1,5 @@
 <?php 
-// header("Location: nofrills/application-submit");
+header("Location: nofrills/application-submit");
 // WP functions
 	require_once('../../../wp-load.php');
 // Defuse
