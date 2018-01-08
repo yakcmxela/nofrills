@@ -35,7 +35,7 @@ $banner_position = get_field_object('banner_position');
 		</div>
 	</div>
 	<?php 
-$path = get_home_path();
+	$path = get_home_path();
 	print_r($path);
 	 ?>
 	
