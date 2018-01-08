@@ -60,10 +60,10 @@ $(document).ready(function() {
 	if ($('#sign-up-form').length) {
 		var planSelected = localStorage.getItem('planSelected');
 		var fuelSelected = localStorage.getItem('fuelSelected');
-		if (planSelected.length) {
+		if (planSelected.length != null) {
 			$('#accountType').val(planSelected);
 		}
-		if (fuelSelected.length) {
+		if (fuelSelected.length != null) {
 			$('#fuelType').val(fuelSelected);
 		}
 	};

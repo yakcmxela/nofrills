@@ -1,7 +1,7 @@
 <?php 
 header("Location: nofrills/application-submit");
 // Defuse
-	require_once('C:/xampp/apache/lib/defuse-crypto.phar');
+	require_once('/var/www/lib/defuse-crypto.phar');
 	use Defuse\Crypto\Crypto;
 	use Defuse\Crypto\Key;
 // Connection to db
