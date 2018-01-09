@@ -16,7 +16,7 @@ $intro_text = get_field('intro_text');
 
 
 <div class="page-content Price-Plans">
-	<div class="banner" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/bills-people.jpg');">
+	<div class="banner" style="background-image: url('<?php echo $banner_image['url']; ?>');">
 	</div>
 	<div class="section-block">
 		<div class="intro mx-auto">
