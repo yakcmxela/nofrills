@@ -1,5 +1,6 @@
 <?php 
-header("Location: application-submit");
+header("Location: http://nofrillsoil.com/application-submit");
+die();
 // Defuse
 	require_once('/var/www/lib/defuse-crypto.phar');
 	use Defuse\Crypto\Crypto;
@@ -220,4 +221,5 @@ header("Location: application-submit");
 	// Close the connection
 	$stmt=null;
 	$pdo=null;
+	die();
 ?>
