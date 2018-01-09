@@ -15,13 +15,13 @@
 			<li><a href="<?php echo get_site_url(); ?>/our-company">Our Company</a></li>
 			<li><a href="<?php echo get_site_url(); ?>/products-services">Products &amp; Services</a></li>
 			<li><a href="<?php echo get_site_url(); ?>/delivery-area">Delivery Area</a></li>
-			<li><a href="<?php echo get_site_url(); ?>/customer-resources">Price Plans</a></li>
+			<li><a href="<?php echo get_site_url(); ?>/price-plans">Price Plans</a></li>
 			<li><a href="<?php echo get_site_url(); ?>/contact">Contact Us</a></li>
 		</ul>
 		<ul>
 			<li>Customers</li>
 			<hr>
-			<li><a href="<?php echo get_site_url(); ?>/customer-resources">Become a Customer</a></li>
+			<li><a href="<?php echo get_site_url(); ?>/sign-up">Become a Customer</a></li>
 			<li><a href="<?php echo get_site_url(); ?>/ach-authorization">ACH Authorization Form</a></li>
 			<li><a href="<?php echo get_site_url(); ?>/terms-conditions">Terms and Conditions</a></li>
 			<li><a href="<?php echo get_site_url(); ?>/privacy-policy">Privacy Policy</a></li>
