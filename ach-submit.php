@@ -1,5 +1,5 @@
 <?php 
-header("Location: nofrillsoil.com/application-submit");
+header("Location: wp-content/themes/nofrills/application-submit.php");
 // WP functions
 	require_once('../../../wp-load.php');
 // Defuse
