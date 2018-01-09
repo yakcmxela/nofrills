@@ -14,7 +14,6 @@ $terms_conditions = get_field('terms_conditions');
 	<div class="form-container">
 		<div class="intro mb-s mx-auto p-2">
 			<h1>ACH Authorization Form</h1>
-			<p>Please fill out the following form to apply for automatic payments.</p>
 			<?php echo $intro_text; ?>
 		</div>
 		<form id="ach-form" action="<?php echo get_template_directory_uri(); ?>/ach-submit.php" method="POST">
