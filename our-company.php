@@ -6,7 +6,7 @@
 <?php
 // Custom Fields
 $banner_image = get_field('banner_image');
-$banner_position = get_field_object('banner_position');
+$banner_position = get_field('banner_position');
 $intro_heading = get_field('intro_heading');
 $intro_subheading = get_field('intro_subheading');
 $intro_text = get_field('intro_text');
