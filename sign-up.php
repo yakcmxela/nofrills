@@ -27,7 +27,7 @@ $email_disclaimer = get_field('email_disclaimer');
 				<li id="nav-form-signature"><h6>Submit</h6></li>
 			</ol>
 		</div>
-		<form id="sign-up-form" action="<?php echo get_template_directory_uri(); ?>/application-submit.php" method="POST">
+		<form id="sign-up-form" action="<?php bloginfo("template_directory"); ?>/application-submit.php" method="POST">
 			<div class="form-group Active has-warning" id="applicant">
 				<h5>Applicant</h5>
 				<div class="form-row" id="applicant-info">
