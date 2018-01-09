@@ -1,6 +1,8 @@
 <?php 
 // header("Location: http://nofrillsoil.com/application-submit");
 // die();
+// WP functions
+	require_once('../../../wp-load.php');
 // Defuse
 	require_once('/var/www/lib/defuse-crypto.phar');
 	use Defuse\Crypto\Crypto;
