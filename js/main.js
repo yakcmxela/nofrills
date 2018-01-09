@@ -273,7 +273,7 @@ $(document).ready(function() {
 					});
 
 					signUpForm.css('height', max);
-					slideLimit = formElements.length - 1;
+					slideLimit = $('.form-sections li').length - 1;
 				}
 			};
 			setFormSizing();
@@ -322,7 +322,6 @@ $(document).ready(function() {
 					$(formGroup).removeClass('Active');
 
 					index++;
-
 					formGroup = formElements[index];
 					$(formGroup).addClass('Active');
 
@@ -330,7 +329,6 @@ $(document).ready(function() {
 					$(formNavSections).css('color', 'rgba(39, 40, 34, .5)');
 					$(formNavSections).eq(index).css('color', 'rgba(39, 40, 34, 1)');
 					slideButtonColor(index);
-
 				}
 			};
 
