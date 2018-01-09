@@ -6,11 +6,7 @@
 
 <?php
 // Custom Fields
-$banner_image = get_field('banner_image');
-$banner_header_text = get_field('banner_header_text');
-$banner_link_text = get_field('banner_link_text');
-$banner_link = get_field('banner_link');
-$banner_position = get_field_object('banner_position');
+$intro_text = get_field('intro_text');
 $terms_conditions = get_field('terms_conditions');
 ?>
 
@@ -18,7 +14,8 @@ $terms_conditions = get_field('terms_conditions');
 	<div class="form-container">
 		<div class="intro mb-s mx-auto p-2">
 			<h1>ACH Authorization Form</h1>
-			<p>Please fill out the following form to enable automatic payments. All fields are required.</p>
+			<p>Please fill out the following form to apply for automatic payments.</p>
+			<?php echo $intro_text; ?>
 		</div>
 		<form id="ach-form" action="<?php echo get_template_directory_uri(); ?>/ach-submit.php" method="POST">
 			<div class="form-group">

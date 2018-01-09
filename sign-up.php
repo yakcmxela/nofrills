@@ -6,11 +6,7 @@
 
 <?php
 // Custom Fields
-$banner_image = get_field('banner_image');
-$banner_header_text = get_field('banner_header_text');
-$banner_link_text = get_field('banner_link_text');
-$banner_link = get_field('banner_link');
-$banner_position = get_field_object('banner_position');
+$intro_text = get_field('intro_text');
 $terms_conditions = get_field('terms_conditions');
 $email_disclaimer = get_field('email_disclaimer');
 ?>
@@ -20,9 +16,7 @@ $email_disclaimer = get_field('email_disclaimer');
 	<div class="form-container">
 		<div class="intro mb-s mx-auto">
 			<h1>New Account Sign-up</h1>
-			<p>In order to open an account with No Frills Oil, the following form must be completed. For all accounts other than 'C.O.D' we require a social security number. We use your this information to perform a credit check. The security of your personal information is important to us. All sensitive data is protected with encryption and stored temporarily.</p>
-			<p>For more information about privacy, please visit our <a class="c-g" href="<?php echo get_site_url(); ?>/privacy-policy"><strong>privacy policy</strong></a> page.</p>
-			<p>Fields marked with * are required</p>
+			<?php echo $intro_text ?>
 		</div>
 		<div class="form-nav">
 			<div class="dotted-line"></div>
