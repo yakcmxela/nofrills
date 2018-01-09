@@ -9,7 +9,7 @@
 	<p class="c-y"><a href="<?php echo get_site_url(); ?>/">Click here to return home now.</a></p>
 	<script type="text/javascript">
 		setTimeout(function() {
-			window.location = "https://boldcoastdev.com/nofrills/";
+			window.location = "http://nofrillsoil.com";
 		}, 8000);
 	</script>
 </div>
