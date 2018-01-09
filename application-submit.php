@@ -1,6 +1,6 @@
 <?php 
-header("Location: http://nofrillsoil.com/application-submit");
-die();
+// header("Location: http://nofrillsoil.com/application-submit");
+// die();
 // Defuse
 	require_once('/var/www/lib/defuse-crypto.phar');
 	use Defuse\Crypto\Crypto;
@@ -217,6 +217,8 @@ die();
 		// Send notification
 		wp_mail('alex@boldcoastcreative.com' , $title, $message);
 	}
+	print_r($stmt);
+	print_r($values);
 
 	// Close the connection
 	$stmt=null;
