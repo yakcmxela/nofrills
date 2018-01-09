@@ -8,11 +8,6 @@ header("Location: nofrills/application-submit");
 	use Defuse\Crypto\Key;
 // Connection to db
 	require('/etc/lib/db.php');
-	// $host = "localhost";
-	// $user = "alex";
-	// $pass = "Spartan12#";
-	// $db = "nofrills";
-	// $charset = "utf8";
 
 	$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 

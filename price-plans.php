@@ -6,9 +6,6 @@
 <?php
 // Custom Fields
 $banner_image = get_field('banner_image');
-$banner_header_text = get_field('banner_header_text');
-$banner_link_text = get_field('banner_link_text');
-$banner_link = get_field('banner_link');
 $banner_position = get_field_object('banner_position');
 $intro_title = get_field('intro_title');
 $intro_text = get_field('intro_text');
@@ -16,7 +13,7 @@ $intro_text = get_field('intro_text');
 
 
 <div class="page-content Price-Plans">
-	<div class="banner" style="background-image: url('<?php echo $banner_image['url']; ?>');">
+	<div class="banner" style="background-image: url('<?php echo $banner_image['url']; ?>'); background-position: <?php echo $banner_position; ?>">
 	</div>
 	<div class="section-block">
 		<div class="intro mx-auto">

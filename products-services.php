@@ -14,7 +14,7 @@ $intro_content = get_field('intro_content');
 
 
 <div class="page-content Products-Services">
-	<div class="banner" style="background-image: url('<?php echo $banner_image['url']; ?>');">
+	<div class="banner" style="background-image: url('<?php echo $banner_image['url']; ?>'); background-position: <?php echo $banner_position; ?>">
 	</div>
 	<div class="section-block">
 		<div class="intro">

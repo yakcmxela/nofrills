@@ -15,7 +15,7 @@ $sponsorship = get_field('sponsorship')
 
 
 <div class="page-content Our-Company">
-	<div class="banner" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/history.jpg');"></div>
+	<div class="banner" style="background-image: url('<?php echo $banner_image['url']; ?>'); background-position: <?php echo $banner_position; ?>"></div>
 	<div class="section-block">
 		<div class="intro">
 			<h2><?php echo $intro_heading ?></h2>

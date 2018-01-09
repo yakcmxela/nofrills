@@ -8,14 +8,14 @@
 $banner_image = get_field('banner_image');
 $banner_header_text = get_field('banner_header_text');
 $banner_link = get_field('banner_link');
-$banner_position = get_field_object('banner_position');
+$banner_position = get_field('banner_position');
 
 ?>
 
 
 <div class="page-content Landing">
 	<div class="banner d-flex flex-column justify-content-center align-items-start">
-		<div class="landing-page-banner" style="background-image: url('<?php echo $banner_image['url']; ?>');"></div>
+		<div class="landing-page-banner" style="background-image: url('<?php echo $banner_image['url']; ?>'); background-position: <?php echo $banner_position; ?>"></div>
 		<div class="banner-contents">
 			<?php echo $banner_header_text ?>
 			<div class="button mt-m d-flex justify-content-center">

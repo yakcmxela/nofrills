@@ -14,7 +14,7 @@ $banner_position = get_field_object('banner_position');
 
 
 <div class="page-content Delivery-Area">
-	<div class="banner" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/roadway-river.jpg');">
+	<div class="banner" style="background-image: url('<?php echo $banner_image['url']; ?>'); background-position: <?php echo $banner_position; ?>">
 		<div class="search-box-container justify-content-center align-items-center">
 			<div class="d-flex align-items-center">
 				<h3 class="title c-w">On-time delivery to</h3><i class="fa fa-search"></i>

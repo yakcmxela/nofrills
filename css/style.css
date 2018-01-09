@@ -1064,7 +1064,8 @@ nav .blanket {
 .page-content.Contact {
   padding-top: 140px; }
   .page-content.Contact .banner {
-    min-height: 30vh; }
+    min-height: 30vh;
+    background-position: 0% 75%; }
   .page-content.Contact h3 {
     border-bottom: 1px solid rgba(196, 196, 195, 0.25);
     font-size: 24px;
@@ -1512,13 +1513,14 @@ nav .blanket {
               transform: translateY(-4px); }
         .page-content.Sign-Up .form-container form .form-group .back {
           background-color: #e9ecef; }
-.page-content.Policy {
+.page-content.Policy, .page-content.FourOFour {
   padding-top: 140px; }
   .page-content.Policy .section-block p,
-  .page-content.Policy .section-block h3 {
+  .page-content.Policy .section-block h3, .page-content.FourOFour .section-block p,
+  .page-content.FourOFour .section-block h3 {
     margin: auto;
     max-width: 1000px; }
-  .page-content.Policy .section-block h3 {
+  .page-content.Policy .section-block h3, .page-content.FourOFour .section-block h3 {
     margin-bottom: 12px; }
 
 @media (max-width: 1375px) {
@@ -1615,7 +1617,7 @@ nav .blanket {
     nav .nav-container .nav-bar .logo {
       width: 200px; }
 
-  .page-content.Our-Company, .page-content.Price-Plans, .page-content.Products-Services, .page-content.Sign-Up, .page-content.ACH-Auth, .page-content.Contact, .page-content.Policy {
+  .page-content.Our-Company, .page-content.Price-Plans, .page-content.Products-Services, .page-content.Sign-Up, .page-content.ACH-Auth, .page-content.Contact, .page-content.Policy, .page-content.FourOFour {
     padding-top: 96px; }
   .page-content.Landing .banner .banner-contents h1 {
     font-size: 36px; }
@@ -1785,7 +1787,7 @@ nav .blanket {
           width: 75px; }
       .page-content.Landing.Products-Services .section-block .block .description-container .info {
         padding: 24px; }
-    .page-content.Our-Company, .page-content.Price-Plans, .page-content.Products-Services, .page-content.Sign-Up, .page-content.ACH-Auth, .page-content.Contact, .page-content.Policy {
+    .page-content.Our-Company, .page-content.Price-Plans, .page-content.Products-Services, .page-content.Sign-Up, .page-content.ACH-Auth, .page-content.Contact, .page-content.Policy, .page-content.FourOFour {
       padding-top: 64px; }
     .page-content.Our-Company .section-block .intro .images {
       margin-top: 32px; }

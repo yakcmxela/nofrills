@@ -17,7 +17,7 @@ $sun_hours = get_field('sun_hours');
 
 
 <div class="page-content Contact">
-	<div class="banner" style="background-image: url('<?php echo $banner_image['url']; ?>');">
+	<div class="banner" style="background-image: url('<?php echo $banner_image['url']; ?>'); background-position: <?php echo $banner_position; ?>">
 	</div>
 	<div class="section-block hard-shadow">
 		<div class="block contact-form">

@@ -1,30 +1,14 @@
 <?php
-/**
- * The template for displaying 404 pages (not found)
- *
- * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
- */
+// Template Name: 404
+?>
+<?php get_header(); ?>
 
-get_header(); ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'twentyfifteen' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentyfifteen' ); ?></p>
-
-					<?php get_search_form(); ?>
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- .site-main -->
-	</div><!-- .content-area -->
+	<div class="page-content FourOFour" >
+		<div class="section-block d-flex flex-column justify-content-center align-items-center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/roadway-river.jpg'); min-height: 85vh">
+			<h2 class="c-w">Oops!</h2>
+			<h3 class="c-w m-4">It looks like that can't be found.</h3>
+			<h2 class="c-y"><strong><a href="<?php get_site_url(); ?>/">Return home.</a></strong></h2>
+		</div>
+	</div>
 
 <?php get_footer(); ?>
