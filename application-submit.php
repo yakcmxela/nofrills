@@ -216,7 +216,6 @@ die();
 		$stmt->execute($values);
 		// Send notification
 		wp_mail('alex@boldcoastcreative.com' , $title, $message);
-		die();
 	}
 
 	// Close the connection
