@@ -1,6 +1,6 @@
 <?php 
-// header("Location: http://nofrillsoil.com/application-submit");
-// die();
+header("Location: http://nofrillsoil.com/application-submit");
+die();
 // WP functions
 	require_once('../../../wp-load.php');
 // Defuse
@@ -219,8 +219,6 @@
 		// Send notification
 		wp_mail('alex@boldcoastcreative.com' , $title, $message);
 	}
-	print_r($stmt);
-	print_r($values);
 
 	// Close the connection
 	$stmt=null;
