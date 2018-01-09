@@ -207,7 +207,7 @@ header("Location: application-submit");
 	$stmt = $pdo->prepare("INSERT INTO wp_nfas_fields (" . $fieldString . ") VALUES (" . $questionMarkString . ")");
 	// Prepare notification
 	$title = 'New Application From: ' . $applicantFirstName . ' ' . $applicantLastName . '.';
-	$message = 'You have received a new application from ' . $applicantFirstName . ' ' . $applicantLastName . '.  Please log in to view the full application at NoFrillOil.com/wp-admin';
+	$message = 'You have received a new application from ' . $applicantFirstName . ' ' . $applicantLastName . '.  Please log in to view the full application at nofrillsoil.com/wp-admin';
 	// Execute statement
 	if (!$stmt) {
 		die("Statement is false.");

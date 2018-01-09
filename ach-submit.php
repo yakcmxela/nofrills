@@ -1,5 +1,5 @@
 <?php 
-header("Location: application-submit");
+header("Location: nofrillsoil.com/application-submit");
 // WP functions
 	require_once('../../../wp-load.php');
 // Defuse
@@ -70,7 +70,7 @@ header("Location: application-submit");
 	$stmt = $pdo->prepare("INSERT INTO wp_nfach_fields (" . $fieldString . ") VALUES (" . $questionMarkString . ")");
 	// Prepare notification
 	$title = 'New ACH Authorization From: ' . htmlspecialchars($_POST["nameSignature"]) . '.';
-	$message = 'You have received a new ACH Authorization from ' . htmlspecialchars($_POST["nameSignature"]) . '.  Please log in to view the full application at NoFrillOil.com/wp-admin';
+	$message = 'You have received a new ACH Authorization from ' . htmlspecialchars($_POST["nameSignature"]) . '.  Please log in to view the full application at nofrillsoil.com/wp-admin';
 	print_r($message);
 	print_r($title);
 	// Execute statement
