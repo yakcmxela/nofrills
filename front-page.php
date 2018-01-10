@@ -6,6 +6,7 @@
 <?php
 // Custom Fields
 $banner_image = get_field('banner_image');
+$price_disclaimer = get_field('price_disclaimer');
 $banner_header_text = get_field('banner_header_text');
 $banner_link = get_field('banner_link');
 $banner_position = get_field('banner_position');
