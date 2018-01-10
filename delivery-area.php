@@ -870,10 +870,9 @@ $banner_position = get_field_object('banner_position');
 					map.addLayer(delivery_area);
 				});
 			}
-			init();
-			// $(document).on('load', function() {
-			// 	init();
-			// }
+			$(window).load(function() {
+				init();
+			})
 		</script>
 	</div>
 </div>
