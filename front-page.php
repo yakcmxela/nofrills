@@ -22,16 +22,19 @@ $banner_position = get_field('banner_position');
 				<?php echo $banner_link ?>
 			</div>
 		</div>
-		<div class="prices d-flex align-items-center justify-content-center">
-			<h6>Today's Fuel Prices</h6>
-			<?php if( have_rows('todays_prices') ):
-				while ( have_rows('todays_prices') ) : the_row(); ?>
-					<div class="product">
-						<h6><?php echo the_sub_field('fuel_type') ?></h6>
-						<h6>$<?php echo the_sub_field('fuel_price') ?></h6>
-					</div>
-				<?php endwhile;
-			endif; ?>
+		<div class="prices d-flex align-items-center justify-content-center flex-column">
+			<div class="products d-flex">
+				<h6>Today's Fuel Prices</h6>
+				<?php if( have_rows('todays_prices') ):
+					while ( have_rows('todays_prices') ) : the_row(); ?>
+						<div class="product">
+							<h6><?php echo the_sub_field('fuel_type') ?></h6>
+							<h6>$<?php echo the_sub_field('fuel_price') ?></h6>
+						</div>
+					<?php endwhile;
+				endif; ?>
+			</div>
+			<p>Price is subject to change without notice.</p>
 		</div>
 	</div>
 	<div class="section-block">

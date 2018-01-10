@@ -699,22 +699,26 @@ nav .blanket {
     position: absolute;
     bottom: 0;
     left: 0; }
-    .page-content.Landing .banner .prices h6 {
+    .page-content.Landing .banner .prices p {
+      font-size: 12px;
+      color: white;
+      text-align: center; }
+    .page-content.Landing .banner .prices .products h6 {
       font-weight: 800;
       color: white;
-      margin: 12px;
+      margin: 24px 12px;
       text-shadow: 1px 1px 2px black; }
-    .page-content.Landing .banner .prices .product {
-      margin: 0px 6px;
+    .page-content.Landing .banner .prices .products .product {
+      margin: 12px 6px;
       display: flex; }
-      .page-content.Landing .banner .prices .product h6 {
+      .page-content.Landing .banner .prices .products .product h6 {
         font-weight: 400;
         color: #7d7d7d;
         text-align: right;
-        margin: 6px;
+        margin: 12px;
         font-size: 22px;
         text-shadow: 1px 1px 2px black; }
-        .page-content.Landing .banner .prices .product h6:last-of-type {
+        .page-content.Landing .banner .prices .products .product h6:last-of-type {
           color: #00853c;
           font-weight: 900;
           font-size: 32px; }
@@ -1739,7 +1743,7 @@ nav .blanket {
     .page-content.Landing .banner .banner-contents a {
       font-size: 42px;
       text-align: center;
-      margin-top: auto; }
+      margin-top: -20%; }
     .page-content.Landing .banner .banner-contents .button h6 {
       text-align: center;
       background-color: initial;
@@ -1748,16 +1752,21 @@ nav .blanket {
         font-size: 18px;
         padding: 12px; }
     .page-content.Landing .banner .prices {
-      flex-direction: column;
       height: auto;
       padding: 12px 0px; }
-      .page-content.Landing .banner .prices h6 {
-        font-size: 18px;
-        margin-bottom: 6px; }
-      .page-content.Landing .banner .prices .product h6 {
-        font-size: 18px; }
-        .page-content.Landing .banner .prices .product h6:last-of-type {
-          font-size: 18px; }
+      .page-content.Landing .banner .prices .products {
+        flex-direction: column; }
+        .page-content.Landing .banner .prices .products h6 {
+          font-size: 18px;
+          margin: 6px; }
+        .page-content.Landing .banner .prices .products .product {
+          margin: 0px; }
+          .page-content.Landing .banner .prices .products .product h6 {
+            font-size: 18px;
+            margin: auto;
+            padding: 6px; }
+            .page-content.Landing .banner .prices .products .product h6:last-of-type {
+              font-size: 18px; }
     .page-content.Landing .section-block .icons {
       padding: 0px; }
       .page-content.Landing .section-block .icons .col-lg-4 {
