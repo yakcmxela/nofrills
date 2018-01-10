@@ -22,12 +22,12 @@
 		wp_enqueue_script('jquery-validate-js');
 	}
 	function get_nofrills_styles() {
+		wp_enqueue_style('Roboto', 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,900,900i');
 		wp_enqueue_style('mapbox', 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css');
 		wp_enqueue_style('mapbox-geocoder', 'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.1/mapbox-gl-geocoder.css');
 		wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap/bootstrap.min.css');
 		wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css');
 		wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css');
-		wp_enqueue_style('Roboto', 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,900,900i');
 	}
 	add_action('wp_enqueue_scripts', 'get_nofrills_jquery');
 	add_action('wp_enqueue_scripts', 'get_nofrills_scripts');
