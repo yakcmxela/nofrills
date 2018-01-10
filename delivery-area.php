@@ -61,6 +61,7 @@ $banner_position = get_field_object('banner_position');
 
 				geocoder.on('result', function(e){
 					$('.banner').addClass('Small');
+					$('#map').css('opacity', '1');
 					map_marker = document.createElement('div');
 					map_marker.id = 'marker';
 					$(window).scrollTop(0);

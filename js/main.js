@@ -231,16 +231,19 @@ $(document).ready(function() {
 			$('.no-service').removeClass('Active');
 			var input_box = $('.mapboxgl-ctrl-geocoder input');
 			input_box.val('');
+			$('#map').css('opacity', '0');
 		});
 		$('.view-full').on('click', function() {
 			$('.banner').addClass('Small');
 			$('.return-to-search-icon').addClass('Active');
+			$('#map').css('opacity', '1');
 		});
 		$('.return-to-search-icon').on('click', function() {
 			$(this).removeClass('Active');
 			$('.banner').removeClass('Small');
 			$('.yes-service').removeClass('Active');
 			$('.no-service').removeClass('Active');
+			$('#map').css('opacity', '0');
 		});
 
 // Sign Up Form
