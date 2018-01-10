@@ -34,7 +34,7 @@ $banner_position = get_field('banner_position');
 					<?php endwhile;
 				endif; ?>
 			</div>
-			<p>Price is subject to change without notice.</p>
+			<p><?php echo $price_disclaimer ?></p>
 		</div>
 	</div>
 	<div class="section-block">

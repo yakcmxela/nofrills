@@ -694,7 +694,6 @@ nav .blanket {
       color: white; }
   .page-content.Landing .banner .prices {
     width: 100%;
-    height: 96px;
     background-color: #101e28;
     position: absolute;
     bottom: 0;
@@ -1625,11 +1624,19 @@ nav .blanket {
     padding-top: 96px; }
   .page-content.Landing .banner .banner-contents h1 {
     font-size: 36px; }
-  .page-content.Landing .banner .prices .product h6 {
-    margin: 4px;
-    font-size: 18px; }
-    .page-content.Landing .banner .prices .product h6:last-of-type {
-      font-size: 18px; }
+  .page-content.Landing .banner .prices {
+    padding: 12px 0px; }
+    .page-content.Landing .banner .prices .products h6 {
+      font-size: 18px;
+      margin: 6px; }
+    .page-content.Landing .banner .prices .products .product {
+      margin: 0px; }
+      .page-content.Landing .banner .prices .products .product h6 {
+        font-size: 18px;
+        margin: auto;
+        padding: 6px; }
+        .page-content.Landing .banner .prices .products .product h6:last-of-type {
+          font-size: 18px; }
   .page-content.Landing .section-block h3 {
     margin-top: 24px;
     padding-bottom: 0px; }
@@ -1752,21 +1759,9 @@ nav .blanket {
         font-size: 18px;
         padding: 12px; }
     .page-content.Landing .banner .prices {
-      height: auto;
       padding: 12px 0px; }
       .page-content.Landing .banner .prices .products {
         flex-direction: column; }
-        .page-content.Landing .banner .prices .products h6 {
-          font-size: 18px;
-          margin: 6px; }
-        .page-content.Landing .banner .prices .products .product {
-          margin: 0px; }
-          .page-content.Landing .banner .prices .products .product h6 {
-            font-size: 18px;
-            margin: auto;
-            padding: 6px; }
-            .page-content.Landing .banner .prices .products .product h6:last-of-type {
-              font-size: 18px; }
     .page-content.Landing .section-block .icons {
       padding: 0px; }
       .page-content.Landing .section-block .icons .col-lg-4 {
