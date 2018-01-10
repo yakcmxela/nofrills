@@ -8,6 +8,7 @@
 // Custom Fields
 $intro_text = get_field('intro_text');
 $terms_conditions = get_field('terms_conditions');
+$ach_fee = get_field('ach_fee');
 ?>
 
 <div class="page-content ACH-Auth">
@@ -192,7 +193,7 @@ $terms_conditions = get_field('terms_conditions');
 						<div class="terms-conditions">
 							<?php echo $terms_conditions; ?>
 						</div>
-						<p class="center">* A FEE OF $25.00 WILL BE CHARGED TO YOUR ACCOUNT IF FUNDS ARE UNAVAILABLE AT TIME OF TRANSFER *</p>
+						<p class="center"><?php echo $ach_fee ?></p>
 					</div>
 					<div class="col-lg-12">
 						<label class="sr-only" for="nameSignature">Enter Full Name</label>
