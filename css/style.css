@@ -285,7 +285,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: Roboto, Open Sans sans-serif;
+  font-family: Roboto, sans-serif;
   box-sizing: border-box;
   letter-spacing: 1px;
   color: #101e28; }
@@ -1191,7 +1191,7 @@ nav .blanket {
           margin-left: 12px;
           z-index: 10; }
           .page-content.Delivery-Area .banner .search-box-container .search-box .mapboxgl-ctrl-geocoder input {
-            font-family: Roboto, Open Sans sans-serif;
+            font-family: Roboto, sans-serif;
             height: 96px;
             color: #101e28;
             border-bottom: 5px solid #ffc600;
