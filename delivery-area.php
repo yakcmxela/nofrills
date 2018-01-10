@@ -871,8 +871,9 @@ $banner_position = get_field_object('banner_position');
 				});
 			}
 
-			init();
-			
+			$(document).on('load', function() {
+				init();
+			}
 		</script>
 	</div>
 </div>
