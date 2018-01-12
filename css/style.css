@@ -1766,10 +1766,11 @@ nav .blanket {
         padding: 12px; }
     .page-content.Landing .banner .prices {
       padding: 0px;
-      margin-top: 12px;
-      margin-bottom: 12px; }
+      margin-top: 12px; }
       .page-content.Landing .banner .prices .products {
         flex-direction: column; }
+        .page-content.Landing .banner .prices .products p {
+          max-width: 75%; }
     .page-content.Landing .section-block .icons {
       padding: 0px; }
       .page-content.Landing .section-block .icons .col-lg-4 {
