@@ -702,10 +702,10 @@ nav .blanket {
       font-size: 12px;
       color: white;
       text-align: center; }
-    .page-content.Landing .banner .prices .products h6 {
+    .page-content.Landing .banner .prices h6 {
       font-weight: 800;
       color: white;
-      margin: 24px 12px;
+      margin-top: 24px;
       text-shadow: 1px 1px 2px black; }
     .page-content.Landing .banner .prices .products .product {
       margin: 12px 6px;
@@ -1756,7 +1756,7 @@ nav .blanket {
     .page-content.Landing .banner .banner-contents a {
       font-size: 42px;
       text-align: center;
-      margin-top: -20%; }
+      margin-top: -10%; }
     .page-content.Landing .banner .banner-contents .button h6 {
       text-align: center;
       background-color: initial;
@@ -1765,7 +1765,9 @@ nav .blanket {
         font-size: 18px;
         padding: 12px; }
     .page-content.Landing .banner .prices {
-      padding: 12px 0px; }
+      padding: 0px;
+      margin-top: 12px;
+      margin-bottom: 12px; }
       .page-content.Landing .banner .prices .products {
         flex-direction: column; }
     .page-content.Landing .section-block .icons {

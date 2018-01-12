@@ -24,8 +24,8 @@ $banner_position = get_field('banner_position');
 			</div>
 		</div>
 		<div class="prices d-flex align-items-center justify-content-center flex-column">
+			<h6>Today's Fuel Prices</h6>
 			<div class="products d-flex">
-				<h6>Today's Fuel Prices</h6>
 				<?php if( have_rows('todays_prices') ):
 					while ( have_rows('todays_prices') ) : the_row(); ?>
 						<div class="product">
