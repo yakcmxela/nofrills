@@ -28,6 +28,7 @@ header("Location: http://nofrillsoil.com/application-submit");
 	$key = loadEncryptionKey();
 
 // Set form variables
+	$customerEmail = htmlspecialchars($_POST["email"]);
 	$formVariables = array(
 	    "nameInstitution" => Crypto::encrypt(htmlspecialchars($_POST["nameInstitution"]), $key, false),
 	    "streetInstitution" => Crypto::encrypt(htmlspecialchars($_POST["streetInstitution"]), $key, false),
@@ -39,6 +40,7 @@ header("Location: http://nofrillsoil.com/application-submit");
 		"routingNumber" => Crypto::encrypt(htmlspecialchars($_POST["routingNumber"]), $key, false),
 		"withdrawAmount" => Crypto::encrypt(htmlspecialchars($_POST["withdrawAmount"]), $key, false),
 		"amount" => Crypto::encrypt(htmlspecialchars($_POST["amount"]), $key, false),
+		"email" => Crypto::encrypt($customerEmail, $key, false),
 		"streetAddress" => Crypto::encrypt(htmlspecialchars($_POST["streetAddress"]), $key, false),
 		"streetAddress2" => Crypto::encrypt(htmlspecialchars($_POST["streetAddress2"]), $key, false),
 		"city" => Crypto::encrypt(htmlspecialchars($_POST["city"]), $key, false),
@@ -71,15 +73,16 @@ header("Location: http://nofrillsoil.com/application-submit");
 	// Prepare notification
 	$title = 'New ACH Authorization From: ' . htmlspecialchars($_POST["nameSignature"]) . '.';
 	$message = 'You have received a new ACH Authorization from ' . htmlspecialchars($_POST["nameSignature"]) . '.  Please log in to view the full application at nofrillsoil.com/wp-admin';
-	print_r($message);
-	print_r($title);
+	$customerTitle = 'We Received Your Application';
+	$customerMessage = 'This message has been sent to notify you that your ACH Authorization form has been received. This is an automatic email message. Do not reply to this email. If you have questions or concerns, contact chart@nofrillsoil.com.';
 	// Execute statement
 	if (!$stmt) {
 		die("Statement is false.");
 	} else {
 		$stmt->execute($values);
 		// Send notification
-		wp_mail( 'chart@nofrillsoil.com' , $title, $message);
+		wp_mail( 'alex@boldcoastcreative.com' , $title, $message);
+		wp_mail( $customerEmail, $customerTitle, $customerMessage);
 	}
 	// Close the connection
 	$stmt=null;

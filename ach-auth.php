@@ -196,6 +196,10 @@ $ach_fee = get_field('ach_fee');
 						<p class="center"><?php echo $ach_fee ?></p>
 					</div>
 					<div class="col-lg-12">
+						<label class="sr-only" for="email">Email Address</label>
+						<input type="text" class="form-control" name="email" id="email" placeholder="Email Address">
+					</div>
+					<div class="col-lg-12">
 						<label class="sr-only" for="nameSignature">Enter Full Name</label>
 						<input type="text" class="form-control" name="nameSignature" id="nameSignature" placeholder="Enter Full Name">
 					</div>

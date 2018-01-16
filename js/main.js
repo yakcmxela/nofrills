@@ -700,6 +700,9 @@ $(document).ready(function() {
 			  	zip: {
 			  		required: true
 			  	},
+			  	email: {
+			  		required: true
+			  	},
 			  	nameSignature: {
 			  		required: true
 			  	},
