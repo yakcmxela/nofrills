@@ -210,6 +210,8 @@ header("Location: http://nofrillsoil.com/application-submit");
 	// Prepare notification
 	$title = 'New Application From: ' . $applicantFirstName . ' ' . $applicantLastName . '.';
 	$message = 'You have received a new application from ' . $applicantFirstName . ' ' . $applicantLastName . '.  Please log in to view the full application at nofrillsoil.com/wp-admin';
+	$customerTitle = 'We Received Your Application';
+	$customerMessage = 'This message has been sent to notify you that your sign up form has been received. This is an automatic email message. Do not reply to this email. If you have questions or concerns, contact chart@nofrillsoil.com.';
 	// Execute statement
 	if (!$stmt) {
 		die("Statement is false.");
@@ -217,6 +219,7 @@ header("Location: http://nofrillsoil.com/application-submit");
 		$stmt->execute($values);
 		// Send notification
 		wp_mail('alex@boldcoastcreative.com' , $title, $message);
+		wp_mail($applicantEmail, $customerTitle, $customerMessage);
 	}
 
 	// Close the connection
