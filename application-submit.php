@@ -216,7 +216,7 @@ header("Location: http://nofrillsoil.com/application-submit");
 	} else {
 		$stmt->execute($values);
 		// Send notification
-		wp_mail('chart@nofrillsoil.com' , $title, $message);
+		wp_mail('alex@boldcoastcreative.com' , $title, $message);
 	}
 
 	// Close the connection

@@ -390,7 +390,7 @@ $email_disclaimer = get_field('email_disclaimer');
 					<div class="col-lg-6">
 						<label class="sr-only" for="fuelType">Fuel Type to Deliver *</label>
 						<select class="form-control" name="fuelType" id="fuelType">
-							<option value="n/a">Fuel Type to Deliver *</option>
+							<option value="">Fuel Type to Deliver *</option>
 							<option value="#2 Oil">#2 Oil</option>
 							<option value="Kerosene">Kerosene</option>
 							<option value="Clear On-Road Diesel">Clear On-Road Diesel</option>

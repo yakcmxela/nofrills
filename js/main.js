@@ -36,7 +36,6 @@ $(document).ready(function() {
 
 	$('.product-button').on('click', function(e) {
 		$('.block').addClass('Hidden');
-		console.log('hi');
 		$(e.currentTarget).removeClass('Hidden').addClass('Active');
 		var type = $(e.currentTarget).data('fueltype');
 		var description = $('.product-description');
@@ -581,6 +580,9 @@ $(document).ready(function() {
 				    },
 				    deliveryMethod: {
 				      required: true
+				    },
+				    fuelType: {
+				    	required: true
 				    },
 				    propertyCaretaker: {
 				      required: true
