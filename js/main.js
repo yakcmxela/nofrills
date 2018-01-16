@@ -487,6 +487,11 @@ $(document).ready(function() {
 			    return this.optional(element) || phone_number.length > 9 &&
 			        phone_number.match(/^(1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
 			}, 'Please enter a valid phone number.');
+
+			jQuery.validator.addMethod('valueNotEquals', function(value, element, arg) {
+				return arg !== value;
+			});
+
 			signUpForm.validate({
 			  success: "valid",
 			  rules: {
@@ -581,8 +586,8 @@ $(document).ready(function() {
 				    deliveryMethod: {
 				      required: true
 				    },
-				    fuelType: {
-				    	required: true
+				    fuelType: { 
+				    	valueNotEquals: 'n/a' 
 				    },
 				    propertyCaretaker: {
 				      required: true
@@ -632,6 +637,9 @@ $(document).ready(function() {
 			  	},
 			  	coApplicantNameSignature: {
 			  		equalTo: "Co-signature name must be identical to co-applicant name."
+			  	},
+			  	fuelType: {
+			  		valueNotEquals: "Please select a fuel type to deliver."
 			  	}
 			  },
 			  errorPlacement: function(error, element) {
