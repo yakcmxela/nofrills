@@ -21,38 +21,38 @@ header("Location: http://nofrillsoil.com/application-submit");
 
 // Set form variables
 	
-	$applicantFirstName = htmlspecialchars($_POST["applicantFirstName"]);
-	$applicantLastName = htmlspecialchars($_POST["applicantLastName"]);
-	$applicantTelephone = htmlspecialchars($_POST["applicantTelephone"]);
-	$applicantTelephone2 = htmlspecialchars($_POST["applicantTelephone2"]);
-	$applicantEmail = htmlspecialchars($_POST["applicantEmail"]);
-	$applicantStreet = htmlspecialchars($_POST["applicantStreetAddress"]);
-	$applicantSSN = htmlspecialchars($_POST["applicantSocial"]);
-	$applicantLicense = htmlspecialchars($_POST["applicantLicense"]);
+	$applicantFirstName = $_POST["applicantFirstName"];
+	$applicantLastName = $_POST["applicantLastName"];
+	$applicantTelephone = $_POST["applicantTelephone"];
+	$applicantTelephone2 = $_POST["applicantTelephone2"];
+	$applicantEmail = $_POST["applicantEmail"];
+	$applicantStreet = $_POST["applicantStreetAddress"];
+	$applicantSSN = $_POST["applicantSocial"];
+	$applicantLicense = $_POST["applicantLicense"];
 
-	$coApplicantFirstName = htmlspecialchars($_POST["coApplicantFirstName"]);
-	$coApplicantLastName = htmlspecialchars($_POST["coApplicantLastName"]);
-	$coApplicantSSN = htmlspecialchars($_POST["coApplicantSocial"]);
-	$coApplicantLicense = htmlspecialchars($_POST["applicantLicense"]);
+	$coApplicantFirstName = $_POST["coApplicantFirstName"];
+	$coApplicantLastName = $_POST["coApplicantLastName"];
+	$coApplicantSSN = $_POST["coApplicantSocial"];
+	$coApplicantLicense = $_POST["applicantLicense"];
 
-	$employerName = htmlspecialchars($_POST["employerName"]);
-	$employerTelephone = htmlspecialchars($_POST["employerTelephone"]);
-	$employerStreet = htmlspecialchars($_POST["employerStreetAddress"]);
+	$employerName = $_POST["employerName"];
+	$employerTelephone = $_POST["employerTelephone"];
+	$employerStreet = $_POST["employerStreetAddress"];
 
-	$propertyStreet = htmlspecialchars($_POST["propertyStreetAddress"]);
+	$propertyStreet = $_POST["propertyStreetAddress"];
 
-	$caretakerFirstName = htmlspecialchars($_POST["caretakerFirstName"]);
-	$caretakerLastName = htmlspecialchars($_POST["caretakerLastName"]);
-	$caretakerTelephone = htmlspecialchars($_POST["caretakerTelephone"]);
+	$caretakerFirstName = $_POST["caretakerFirstName"];
+	$caretakerLastName = $_POST["caretakerLastName"];
+	$caretakerTelephone = $_POST["caretakerTelephone"];
 
-	$landlordFirstName = htmlspecialchars($_POST["landlordFirstName"]);
-	$landlordLastName = htmlspecialchars($_POST["landlordLastName"]);
-	$landlordTelephone = htmlspecialchars($_POST["landlordTelephone"]);
-	$landlordTelephone2 = htmlspecialchars($_POST["landlordTelephone2"]);
-	$landlordStreet = htmlspecialchars($_POST["landlordStreetAddress"]);
+	$landlordFirstName = $_POST["landlordFirstName"];
+	$landlordLastName = $_POST["landlordLastName"];
+	$landlordTelephone = $_POST["landlordTelephone"];
+	$landlordTelephone2 = $_POST["landlordTelephone2"];
+	$landlordStreet = $_POST["landlordStreetAddress"];
 
-	$applicantNameSignature = htmlspecialchars($_POST["applicantNameSignature"]);
-	$coApplicantNameSignature = htmlspecialchars($_POST["coApplicantNameSignature"]);
+	$applicantNameSignature = $_POST["applicantNameSignature"];
+	$coApplicantNameSignature = $_POST["coApplicantNameSignature"];
 
 	function loadEncryptionKey() {
 		$keyAscii = file_get_contents('/etc/lib/llave.txt');
