@@ -194,7 +194,7 @@ $email_disclaimer = get_field('email_disclaimer');
 					</div>
 					<div class="col-lg-6">
 						<label class="sr-only" for="employerTelephone">Telephone</label>
-						<input type="telephone" class="form-control" name="employerTelephone" placeholder="Telephone">
+						<input type="tel" class="form-control" name="employerTelephone" id="employerTelephone" placeholder="Telephone">
 					</div>
 					<div class="col-12">
 						<label class="sr-only" for="employerStreetAddress">Address</label>
