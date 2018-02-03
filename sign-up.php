@@ -12,7 +12,7 @@ $email_disclaimer = get_field('email_disclaimer');
 ?>
 
 
-<div class="page-content Sign-Up">
+<div class="page-content Sign-Up" style="overflow-x: hidden;">
 	<div class="form-container">
 		<div class="intro mb-s mx-auto">
 			<h1>New Account Sign-up</h1>
