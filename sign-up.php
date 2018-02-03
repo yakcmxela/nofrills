@@ -661,7 +661,7 @@ $email_disclaimer = get_field('email_disclaimer');
 							<p>Not applicable.</p>
 						</div>
 					</div>
-					<div class="col-12">
+					<div class="col-12" style="max-width: 100%;">
 						<p>Please select all the appliances in your home that use propane:</p>
 						<input class="form-check-input" id="propaneAppliancesRange" name="propaneAppliancesRange" type="checkbox" value="Yes">
 							
