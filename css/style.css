@@ -659,7 +659,7 @@ nav .blanket {
         background-color: initial; }
         .page-content.Landing .banner .banner-contents .button h6 a {
           font-style: initial;
-          border: 4px solid #ffc600;
+          border: 4px solid white;
           box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
           text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
           background-color: #101e28;
@@ -816,9 +816,11 @@ nav .blanket {
   .page-content.Price-Plans .section-block .plans {
     display: flex;
     flex-wrap: wrap;
-    text-align: center; }
+    text-align: center;
+    max-width: 1450px;
+    margin: auto; }
     .page-content.Price-Plans .section-block .plans .block {
-      max-width: 31%;
+      max-width: 46%;
       margin: 32px 0px;
       padding: 32px;
       border: 1px solid rgba(196, 196, 195, 0.25);
@@ -1143,7 +1145,8 @@ nav .blanket {
         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.65); }
 .page-content.Delivery-Area {
   position: relative;
-  padding-top: 140px; }
+  padding-top: 140px;
+  min-height: 100vh; }
   .page-content.Delivery-Area .banner {
     height: 100vh;
     position: relative;
@@ -1249,7 +1252,10 @@ nav .blanket {
       font-style: italic;
       margin-bottom: 0px; }
   .page-content.Delivery-Area #map {
-    height: 85vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
     width: 100%;
     opacity: 0;
     -webkit-transition: all 0.25s linear;

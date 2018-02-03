@@ -769,13 +769,13 @@ $email_disclaimer = get_field('email_disclaimer');
 					<div class="col-lg-12">
 						<label class="sr-only" for="applicantNameSignature">Applicant Full Name</label>
 						<input type="text" class="form-control" name="applicantNameSignature" id="applicantNameSignature" placeholder="Applicant Full Name">
-						<input class="form-check-input" id="applicantSignatureAuthorization" name="applicantSignatureAuthorization" type="checkbox" value="'Applicant DOES AGREE to terms and conditions.'">
+						<input class="form-check-input" id="applicantSignatureAuthorization" name="applicantSignatureAuthorization" type="checkbox" value="Applicant DOES AGREE to terms and conditions.">
 						<label for="applicantSignatureAuthorization" class="mx-4">I acknowledge that I have read and understand the disclosures.</label>
 					</div>
 					<div class="col-lg-12">
 						<label class="sr-only" for="coApplicantNameSignature">Co-applicant Full Name</label>
 						<input type="text" class="form-control" name="coApplicantNameSignature" id="coApplicantNameSignature" placeholder="Co-applicant Full Name">
-						<input class="form-check-input" id="coApplicantSignatureAuthorization" name="coApplicantSignatureAuthorization" type="checkbox" value="'Co-applicant DOES AGREE to terms and conditions.'">
+						<input class="form-check-input" id="coApplicantSignatureAuthorization" name="coApplicantSignatureAuthorization" type="checkbox" value="Co-applicant DOES AGREE to terms and conditions.">
 						<label for="coApplicantSignatureAuthorization" class="mx-4">I acknowledge that I have read and understand the disclosures.</label>
 					</div>
 				</div>

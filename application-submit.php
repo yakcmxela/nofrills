@@ -33,7 +33,7 @@ header("Location: http://nofrillsoil.com/application-submit");
 	$coApplicantFirstName = $_POST["coApplicantFirstName"];
 	$coApplicantLastName = $_POST["coApplicantLastName"];
 	$coApplicantSSN = $_POST["coApplicantSocial"];
-	$coApplicantLicense = $_POST["applicantLicense"];
+	$coApplicantLicense = $_POST["coApplicantLicense"];
 
 	$employerName = $_POST["employerName"];
 	$employerTelephone = $_POST["employerTelephone"];

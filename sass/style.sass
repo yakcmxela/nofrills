@@ -339,7 +339,7 @@ nav
 						background-color: initial
 						a
 							font-style: initial
-							border: 4px solid $yellow
+							border: 4px solid white
 							box-shadow: inset 0px 0px 20px rgba(0, 0, 0, .5)
 							text-shadow: 0px 0px 10px rgba(0, 0, 0, .5)
 							background-color: $dark-grey
@@ -506,8 +506,10 @@ nav
 				display: flex
 				flex-wrap: wrap
 				text-align: center
+				max-width: 1450px
+				margin: auto
 				.block
-					max-width: 31%
+					max-width: 46%
 					margin: 32px 0px
 					padding: 32px
 					border: 1px solid $light-grey-one-quarter
@@ -758,6 +760,7 @@ nav
 	&.Delivery-Area
 		position: relative
 		padding-top: 140px
+		min-height: 100vh
 		.banner
 			height: 100vh
 			position: relative
@@ -848,7 +851,10 @@ nav
 				font-style: italic
 				margin-bottom: 0px
 		#map
-			height: 85vh
+			position: absolute
+			left: 0
+			top: 0
+			height: 100vh
 			width: 100%
 			opacity: 0
 			+transition(all .25s linear)

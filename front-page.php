@@ -40,7 +40,7 @@ $banner_position = get_field('banner_position');
 	</div>
 	<div class="section-block">
 		<div class="container-fluid p-0 center">
-			<h3 class="pb-l">Heat your <a class="c-y" href="/">home</a>, fuel your <a class="c-y" href="">business</a>, save <a class="c-g" href="">money.</a></h3>
+			<h3>Heat your <a class="c-y" href="/">home</a>, fuel your <a class="c-y" href="">business</a>, save <a class="c-g" href="">money.</a></h3>
 			<div class="row icons">
 				<?php if( have_rows('link_blocks') ):
 					while (have_rows('link_blocks') ) : the_row(); ?>
