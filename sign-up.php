@@ -663,27 +663,36 @@ $email_disclaimer = get_field('email_disclaimer');
 					</div>
 					<div class="col-12" style="max-width: 100%;">
 						<p>Please select all the appliances in your home that use propane:</p>
-						<input class="form-check-input" id="propaneAppliancesRange" name="propaneAppliancesRange" type="checkbox" value="Yes">
-							
-						<label class="mx-4" for="propaneAppliancesRange">Range</label>
-						<input class="form-check-input" id="propaneAppliancesFurnace" name="propaneAppliancesFurnace" type="checkbox" value="Yes">
-							
-						<label class="mx-4" for="propaneAppliancesFurnace">Furnace</label>
-						<input class="form-check-input" id="propaneAppliancesBoiler" name="propaneAppliancesBoiler" type="checkbox" value="Yes">
-							
-						<label class="mx-4" for="propaneAppliancesBoiler">Boiler</label>
-						<input class="form-check-input" id="propaneAppliancesWaterheater" name="propaneAppliancesWaterheater" type="checkbox" value="Yes">
-							
-						<label class="mx-4" for="propaneAppliancesWaterheater">Water Heater</label>
-						<input class="form-check-input" id="propaneAppliancesSpaceheater" name="propaneAppliancesSpaceheater" type="checkbox" value="Yes">
-							
-						<label class="mx-4" for="propaneAppliancesSpaceheater">Space Heater</label>
-						<input class="form-check-input" id="propaneAppliancesDryer" name="propaneAppliancesDryer" type="checkbox" value="Yes">
-							
-						<label class="mx-4" for="propaneAppliancesDryer">Dryer</label>
-						<input class="form-check-input" id="propaneAppliancesFireplace" name="propaneAppliancesFireplace" type="checkbox" value="Yes">
-							
-						<label class="mx-4" for="propaneAppliancesFireplace">Fire Place</label>
+						<div class="row">
+							<div class="col-sm-4">
+								<input class="form-check-input" id="propaneAppliancesRange" name="propaneAppliancesRange" type="checkbox" value="Yes">	
+								<label class="mx-4" for="propaneAppliancesRange">Range</label>
+							</div>
+							<div class="col-sm-4">
+								<input class="form-check-input" id="propaneAppliancesFurnace" name="propaneAppliancesFurnace" type="checkbox" value="Yes">	
+								<label class="mx-4" for="propaneAppliancesFurnace">Furnace</label>
+							</div>
+							<div class="col-sm-4">
+								<input class="form-check-input" id="propaneAppliancesBoiler" name="propaneAppliancesBoiler" type="checkbox" value="Yes">	
+								<label class="mx-4" for="propaneAppliancesBoiler">Boiler</label>
+							</div>
+							<div class="col-sm-4">
+								<input class="form-check-input" id="propaneAppliancesWaterheater" name="propaneAppliancesWaterheater" type="checkbox" value="Yes">	
+								<label class="mx-4" for="propaneAppliancesWaterheater">Water Heater</label>
+							</div>
+							<div class="col-sm-4">
+								<input class="form-check-input" id="propaneAppliancesSpaceheater" name="propaneAppliancesSpaceheater" type="checkbox" value="Yes">	
+								<label class="mx-4" for="propaneAppliancesSpaceheater">Space Heater</label>
+							</div>
+							<div class="col-sm-4">
+								<input class="form-check-input" id="propaneAppliancesDryer" name="propaneAppliancesDryer" type="checkbox" value="Yes">	
+								<label class="mx-4" for="propaneAppliancesDryer">Dryer</label>
+							</div>
+							<div class="col-sm-4">
+								<input class="form-check-input" id="propaneAppliancesFireplace" name="propaneAppliancesFireplace" type="checkbox" value="Yes">	
+								<label class="mx-4" for="propaneAppliancesFireplace">Fire Place</label>
+							</div>
+						</div>
 					</div>
 					<div class="col-lg-12">
 						<label class="sr-only" for="propaneAppliancesAdditional">Additional appliances</label>
