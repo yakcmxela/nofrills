@@ -642,7 +642,6 @@ $(document).ready(function() {
 				    propaneFields: {
 				    	required: function(element) {
 				    		var fields = $('.propaneField');
-				    		console.log('hi');
 				    		if(fields.filter(':checked').length == 0 && $('#fuelType').val() == 'Propane'){
 				    			return true;
 				    		}
