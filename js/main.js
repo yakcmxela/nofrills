@@ -484,7 +484,6 @@ $(document).ready(function() {
 			// Hide N/A for selected fuel type
 			$("#fuelType").on('change', function() {
 				selected = $(this).val();
-				console.log(selected);
 				if(selected == 'Propane') {
 					$('.naPropane .checkbox').css('display', 'none');
 					$('.naPropane p').text('Required');
@@ -640,13 +639,14 @@ $(document).ready(function() {
 				    oilTankLocation: {
 				      required: true
 				    },
-				    oilTankFillLevel: {
-				      required: true,
-				      valueNotEquals: 'default'
-				    },
-				    "propaneAppliances[]": {
+				    propaneFields: {
 				    	required: function(element) {
-				    		return $("#fuelType").val() == 'Propane'
+				    		var fields = $('.propaneField');
+				    		console.log('hi');
+				    		if(fields.filter(':checked').length == 0 && $('#fuelType').val() == 'Propane'){
+				    			return true;
+				    		}
+				    		return false;
 				    	},
 				    	minlength: 1
 				    },
@@ -676,7 +676,7 @@ $(document).ready(function() {
 			  	oilTankFillLevel: {
 			  		valueNotEquals: "Please specify the current fill level."
 			  	},
-			  	"propaneAppliances[]": "Please select at least one appliance."
+			  	propaneFields: "Please select at least one appliance."
 			  },
 			  errorPlacement: function(error, element) {
 			  	error.appendTo( element.parent() );
@@ -687,7 +687,11 @@ $(document).ready(function() {
 			  invalidHandler: function(event, validator) {
 			  	$.each(validator.errorList, function() {
 			  		var element = this.element.id;
+			  		var elementName = this.element.name;
 			  		var formSection = $('#' + element).parent().data('formsection');
+			  		if(elementName == 'propaneFields') {
+			  			formSection = 'fuel-info';
+			  		}
 			  		$('#nav-' + formSection).addClass('Errors');
 			  	});
 			  }

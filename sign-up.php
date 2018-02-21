@@ -676,32 +676,33 @@ $email_disclaimer = get_field('email_disclaimer');
 					<div class="col-12" style="max-width: 100%;">
 						<p>Please select all the appliances in your home that use propane:</p>
 						<div class="row">
+							<input name="propaneFields" id="propaneFields" style="visibility: hidden; position: absolute;"/>
 							<div class="col-sm-4">
-								<input class="form-check-input" id="propaneAppliancesRange" name="propaneAppliances[]" type="checkbox" value="Yes">	
+								<input class="form-check-input propaneField" id="propaneAppliancesRange" name="propaneAppliancesRange" type="checkbox" value="Yes">	
 								<label class="mx-4" for="propaneAppliancesRange">Range</label>
 							</div>
 							<div class="col-sm-4">
-								<input class="form-check-input" id="propaneAppliancesFurnace" name="propaneAppliances[]" type="checkbox" value="Yes">	
+								<input class="form-check-input propaneField" id="propaneAppliancesFurnace" name="propaneAppliancesFurnace" type="checkbox" value="Yes">	
 								<label class="mx-4" for="propaneAppliancesFurnace">Furnace</label>
 							</div>
 							<div class="col-sm-4">
-								<input class="form-check-input" id="propaneAppliancesBoiler" name="propaneAppliances[]" type="checkbox" value="Yes">	
+								<input class="form-check-input propaneField" id="propaneAppliancesBoiler" name="propaneAppliancesBoiler" type="checkbox" value="Yes">	
 								<label class="mx-4" for="propaneAppliancesBoiler">Boiler</label>
 							</div>
 							<div class="col-sm-4">
-								<input class="form-check-input" id="propaneAppliancesWaterheater" name="propaneAppliances[]" type="checkbox" value="Yes">	
+								<input class="form-check-input propaneField" id="propaneAppliancesWaterheater" name="propaneAppliancesWaterheater" type="checkbox" value="Yes">	
 								<label class="mx-4" for="propaneAppliancesWaterheater">Water Heater</label>
 							</div>
 							<div class="col-sm-4">
-								<input class="form-check-input" id="propaneAppliancesSpaceheater" name="propaneAppliances[]" type="checkbox" value="Yes">	
+								<input class="form-check-input propaneField" id="propaneAppliancesSpaceheater" name="propaneAppliancesSpaceheater" type="checkbox" value="Yes">	
 								<label class="mx-4" for="propaneAppliancesSpaceheater">Space Heater</label>
 							</div>
 							<div class="col-sm-4">
-								<input class="form-check-input" id="propaneAppliancesDryer" name="propaneAppliances[]" type="checkbox" value="Yes">	
+								<input class="form-check-input propaneField" id="propaneAppliancesDryer" name="propaneAppliancesDryer" type="checkbox" value="Yes">	
 								<label class="mx-4" for="propaneAppliancesDryer">Dryer</label>
 							</div>
 							<div class="col-sm-4">
-								<input class="form-check-input" id="propaneAppliancesFireplace" name="propaneAppliances[]" type="checkbox" value="Yes">	
+								<input class="form-check-input propaneField" id="propaneAppliancesFireplace" name="propaneAppliancesFireplace" type="checkbox" value="Yes">	
 								<label class="mx-4" for="propaneAppliancesFireplace">Fire Place</label>
 							</div>
 						</div>
