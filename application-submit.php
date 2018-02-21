@@ -32,6 +32,7 @@ header("Location: http://nofrillsoil.com/application-submit");
 
 	$coApplicantFirstName = $_POST["coApplicantFirstName"];
 	$coApplicantLastName = $_POST["coApplicantLastName"];
+	$coApplicantPhone = $_POST["coApplicantPhone"];
 	$coApplicantSSN = $_POST["coApplicantSocial"];
 	$coApplicantLicense = $_POST["coApplicantLicense"];
 
@@ -72,6 +73,7 @@ header("Location: http://nofrillsoil.com/application-submit");
 
 	$encryptedCoAppFirstName = Crypto::encrypt($coApplicantFirstName, $key, false);
 	$encryptedCoAppLastName = Crypto::encrypt($coApplicantLastName, $key, false);
+	$encryptedCoAppPhone = Crypto::encrypt($coApplicantPhone, $key, false);
 	$encrypedCoAppSSN = Crypto::encrypt($coApplicantSSN, $key, false);
 	$encryptedCoAppLicense = Crypto::encrypt($coApplicantLicense, $key, false);
 
@@ -113,6 +115,7 @@ header("Location: http://nofrillsoil.com/application-submit");
 		"coApplicantFirstName" => $encryptedCoAppFirstName,
 		"coApplicantLastName" => $encryptedCoAppLastName,
 		"coApplicantDOB" => htmlspecialchars($_POST["coApplicantDOB"]),
+		"coApplicantPhone" => $encryptedCoAppPhone,
 		"coApplicantLicense" => $encryptedCoAppLicense,
 		"coApplicantSocial" => $encrypedCoAppSSN,
 		"employerName" => $encryptedEmployerName,

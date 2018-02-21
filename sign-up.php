@@ -177,11 +177,15 @@ $email_disclaimer = get_field('email_disclaimer');
 						<label class="date" for="coApplicantDOB">Date of Birth</label>
 						<input type="date" class="coApplicant form-control" name="coApplicantDOB" id="coApplicantDOB">
 					</div>
-					<div class="col-lg-6">
+					<div class="col-lg-4">
+						<label class="sr-only" for="coApplicantPhone">Co Applicant Telephone</label>
+						<input type="text" class="coApplicant form-control" name="coApplicantPhone" id="coApplicantLicense" placeholder="Telephone">
+					</div>
+					<div class="col-lg-4">
 						<label class="sr-only" for="coApplicantLicense">Co Applicant Driver's License Number</label>
 						<input type="text" class="coApplicant form-control" name="coApplicantLicense" id="coApplicantLicense" placeholder="Driver's License #">
 					</div>
-					<div class="col-lg-6">
+					<div class="col-lg-4">
 						<label class="sr-only" for="coApplicantSocial">Co Applicant Social Security Number</label>
 						<input type="text" class="coApplicant form-control" name="coApplicantSocial" id="coApplicantSocial" placeholder="Social Security #">
 					</div>
@@ -370,8 +374,8 @@ $email_disclaimer = get_field('email_disclaimer');
 						<input type="text" class="form-control" name="propertyZip" id="propertyZip" placeholder="Zip *">
 					</div>
 					<div class="col-12">
-						<label class="sr-only" for="propertyDetails">Additional Property Details and Directions</label>
-						<textarea class="form-control" rows="4" name="propertyDetails" id="propertyDetails" placeholder="Detailed/additional directions to your location."></textarea>
+						<label class="sr-only" for="propertyDetails">Detailed description of home/ building and additional directions</label>
+						<textarea class="form-control" rows="4" name="propertyDetails" id="propertyDetails" placeholder="Detailed description of home/ building and additional directions"></textarea>
 					</div>
 					<div class="col-lg-6">
 						<label class="sr-only" for="propertyType">Property Type *</label>
@@ -573,7 +577,7 @@ $email_disclaimer = get_field('email_disclaimer');
 				<h5>Home Heating Oil</h5>
 				<div class="form-row">
 					<div class="col-12">
-						<div class="not-applicable d-flex" data-applicable="true">
+						<div class="not-applicable naHeatingOil d-flex" data-applicable="true">
 							<div class="checkbox"><span>x</span></div>
 							<p>Not applicable.</p>
 						</div>
@@ -612,7 +616,15 @@ $email_disclaimer = get_field('email_disclaimer');
 					</div>
 					<div class="col-lg-4">
 						<label class="sr-only" for="oilTankFillLevel">Current fill level</label>
-						<input class="form-control" type="number" name="oilTankFillLevel" id="oilTankFillLevel" placeholder="Current fill level">
+						<select class="form-control" name="oilTankFillLevel" id="oilTankFillLevel">
+							<option value="default">Current fill level</option>
+							<option value="0">0</option>
+							<option value="1/8">1/8</option>
+							<option value="1/4">1/4</option>
+							<option value="1/2">1/2</option>
+							<option value="3/4">3/4</option>
+							<option value="Full">Full</option>
+						</select>
 					</div>
 					<div class="col-lg-4">
 						<label class="sr-only" for="oilTankLocation">Tank Location</label>
@@ -656,7 +668,7 @@ $email_disclaimer = get_field('email_disclaimer');
 				<h5>Propane</h5>
 				<div class="form-row">
 					<div class="col-12">
-						<div class="not-applicable d-flex" data-applicable="true">
+						<div class="not-applicable naPropane d-flex" data-applicable="true">
 							<div class="checkbox"><span>x</span></div>
 							<p>Not applicable.</p>
 						</div>
@@ -665,31 +677,31 @@ $email_disclaimer = get_field('email_disclaimer');
 						<p>Please select all the appliances in your home that use propane:</p>
 						<div class="row">
 							<div class="col-sm-4">
-								<input class="form-check-input" id="propaneAppliancesRange" name="propaneAppliancesRange" type="checkbox" value="Yes">	
+								<input class="form-check-input" id="propaneAppliancesRange" name="propaneAppliances[]" type="checkbox" value="Yes">	
 								<label class="mx-4" for="propaneAppliancesRange">Range</label>
 							</div>
 							<div class="col-sm-4">
-								<input class="form-check-input" id="propaneAppliancesFurnace" name="propaneAppliancesFurnace" type="checkbox" value="Yes">	
+								<input class="form-check-input" id="propaneAppliancesFurnace" name="propaneAppliances[]" type="checkbox" value="Yes">	
 								<label class="mx-4" for="propaneAppliancesFurnace">Furnace</label>
 							</div>
 							<div class="col-sm-4">
-								<input class="form-check-input" id="propaneAppliancesBoiler" name="propaneAppliancesBoiler" type="checkbox" value="Yes">	
+								<input class="form-check-input" id="propaneAppliancesBoiler" name="propaneAppliances[]" type="checkbox" value="Yes">	
 								<label class="mx-4" for="propaneAppliancesBoiler">Boiler</label>
 							</div>
 							<div class="col-sm-4">
-								<input class="form-check-input" id="propaneAppliancesWaterheater" name="propaneAppliancesWaterheater" type="checkbox" value="Yes">	
+								<input class="form-check-input" id="propaneAppliancesWaterheater" name="propaneAppliances[]" type="checkbox" value="Yes">	
 								<label class="mx-4" for="propaneAppliancesWaterheater">Water Heater</label>
 							</div>
 							<div class="col-sm-4">
-								<input class="form-check-input" id="propaneAppliancesSpaceheater" name="propaneAppliancesSpaceheater" type="checkbox" value="Yes">	
+								<input class="form-check-input" id="propaneAppliancesSpaceheater" name="propaneAppliances[]" type="checkbox" value="Yes">	
 								<label class="mx-4" for="propaneAppliancesSpaceheater">Space Heater</label>
 							</div>
 							<div class="col-sm-4">
-								<input class="form-check-input" id="propaneAppliancesDryer" name="propaneAppliancesDryer" type="checkbox" value="Yes">	
+								<input class="form-check-input" id="propaneAppliancesDryer" name="propaneAppliances[]" type="checkbox" value="Yes">	
 								<label class="mx-4" for="propaneAppliancesDryer">Dryer</label>
 							</div>
 							<div class="col-sm-4">
-								<input class="form-check-input" id="propaneAppliancesFireplace" name="propaneAppliancesFireplace" type="checkbox" value="Yes">	
+								<input class="form-check-input" id="propaneAppliancesFireplace" name="propaneAppliances[]" type="checkbox" value="Yes">	
 								<label class="mx-4" for="propaneAppliancesFireplace">Fire Place</label>
 							</div>
 						</div>
@@ -754,7 +766,15 @@ $email_disclaimer = get_field('email_disclaimer');
 					</div>
 					<div class="col-lg-3">
 						<label class="sr-only" for="tankChangeCurrentFillLevel">Current fill level</label>
-						<input type="number" class="form-control" name="tankChangeCurrentFillLevel" id="tankChangeCurrentFillLevel" placeholder="Current fill level">
+						<select class="form-control" name="tankChangeCurrentFillLevel" id="tankChangeCurrentFillLevel">
+							<option value="default">Current fill level</option>
+							<option value="0">0</option>
+							<option value="1/8">1/8</option>
+							<option value="1/4">1/4</option>
+							<option value="1/2">1/2</option>
+							<option value="3/4">3/4</option>
+							<option value="Full">Full</option>
+						</select>
 					</div>
 					<div class="col-lg-3">
 						<label class="sr-only" for="tankChangeUse">Anticipated fuel usage (gal)</label>

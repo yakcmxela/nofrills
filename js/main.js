@@ -481,6 +481,22 @@ $(document).ready(function() {
 
 	// Validation
 		// Sign up form
+			// Hide N/A for selected fuel type
+			$("#fuelType").on('change', function() {
+				selected = $(this).val();
+				console.log(selected);
+				if(selected == 'Propane') {
+					$('.naPropane .checkbox').css('display', 'none');
+					$('.naPropane p').text('Required');
+					$('.naHeatingOil .checkbox').css('display', 'block');
+					$('.naHeatingOil p').text('Not applicable');
+				} else if(selected == '#2 Oil') {
+					$('.naHeatingOil .checkbox').css('display', 'none');
+					$('.naHeatingOil p').text('Required');
+					$('.naPropane .checkbox').css('display', 'block');
+					$('.naPropane p').text('Not applicable');
+				}
+			});
 			// Add US Phone Validation
 			jQuery.validator.addMethod('phoneUS', function(phone_number, element) {
 			    phone_number = phone_number.replace(/\s+/g, ''); 
@@ -571,6 +587,9 @@ $(document).ready(function() {
 				      required: true,
 				      minlength: 5
 				    },
+				    propertyDetails: {
+				   	  required: true
+				    },
 				    propertyType: {
 				      required: true
 				    },
@@ -618,6 +637,19 @@ $(document).ready(function() {
 				      required: true,
 				      minlength: 5
 				    },
+				    oilTankLocation: {
+				      required: true
+				    },
+				    oilTankFillLevel: {
+				      required: true,
+				      valueNotEquals: 'default'
+				    },
+				    "propaneAppliances[]": {
+				    	required: function(element) {
+				    		return $("#fuelType").val() == 'Propane'
+				    	},
+				    	minlength: 1
+				    },
 				    newPropaneWhoLinesTelephone: {
 				      phoneUS: true
 				    },
@@ -640,7 +672,11 @@ $(document).ready(function() {
 			  	},
 			  	fuelType: {
 			  		valueNotEquals: "Please select a fuel type to deliver."
-			  	}
+			  	},
+			  	oilTankFillLevel: {
+			  		valueNotEquals: "Please specify the current fill level."
+			  	},
+			  	"propaneAppliances[]": "Please select at least one appliance."
 			  },
 			  errorPlacement: function(error, element) {
 			  	error.appendTo( element.parent() );
