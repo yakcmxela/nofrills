@@ -421,6 +421,59 @@ $(document).ready(function() {
 			}
 		});
 
+	// Add additional fuel types
+		duplicateCount = 1;
+		$('.propertyInfo').on('click', '.add-fuelType', function() {
+			var limit = $('#fuelType1').children().length - 1
+			console.log(limit);
+			if(duplicateCount < limit) {
+				duplicateCount++;
+				var duplicate = document.createElement('div');
+				duplicate.setAttribute('id', 'fuelTypeContainer' + duplicateCount );
+				duplicate.setAttribute('class', 'col-lg-6 d-flex align-items-center');
+				$('.propertyInfo').append(duplicate);
+
+				var content = '<label class="sr-only" for="fuelType">Fuel Type to Deliver ' + duplicateCount + '</label>';
+				content += '<select class="form-control fuelTypeDuplicates" name="fuelType' + duplicateCount + '" id="fuelType' + duplicateCount + '">';
+				content += '<option value="n/a">Fuel Type to Deliver *</option>';
+				content += '<option value="#2 Oil">#2 Oil</option>';
+				content += '<option value="Kerosene">Kerosene</option>';
+				content += '<option value="Clear On-Road Diesel">Clear On-Road Diesel</option>';
+				content += '<option value="Dyed Off-Road Diesel">Dyed Off-Road Diesel</option>';
+				content += '<option value="Propane">Propane</option>';
+				content += '</select>';
+				if(duplicateCount < limit) {
+					content += '<i class="fa fa-plus-circle add-fuelType" title="Add fuel type."></i>';
+				}	
+				if(duplicateCount > 1) {
+					content += '<i class="fa fa-minus-circle remove-fuelType" title="Remove fuel type."></i>';
+				}
+				content += '</div>';
+
+				$('#fuelTypeContainer' + duplicateCount).html(content);
+			}		
+		});
+
+		$('.propertyInfo').on('click', '.remove-fuelType', function() {
+			$('#fuelTypeContainer' + duplicateCount).remove();
+			setFuelType();
+			duplicateCount--;
+		});
+
+		$('.propertyInfo').on('change', '.fuelTypeDuplicates', function() {
+			setFuelType();
+		});
+
+		function setFuelType() {
+			var valString = '';
+			$.each($('.fuelTypeDuplicates'), function() {
+				var val = $(this).val();
+				valString = valString + ', ' + val;
+			});
+			valString = valString.slice(2);
+			$('#fuelType').val(valString);
+		}
+
 	// Copy fields if same as first
 
 		$('.same-as-applicant').on('click', function(e) {
@@ -482,20 +535,42 @@ $(document).ready(function() {
 	// Validation
 		// Sign up form
 			// Hide N/A for selected fuel type
-			$("#fuelType").on('change', function() {
-				selected = $(this).val();
-				if(selected == 'Propane') {
-					$('.naPropane .checkbox').css('display', 'none');
-					$('.naPropane p').text('Required');
-					$('.naHeatingOil .checkbox').css('display', 'block');
-					$('.naHeatingOil p').text('Not applicable');
-				} else if(selected == '#2 Oil') {
-					$('.naHeatingOil .checkbox').css('display', 'none');
-					$('.naHeatingOil p').text('Required');
-					$('.naPropane .checkbox').css('display', 'block');
-					$('.naPropane p').text('Not applicable');
+			$('.propertyInfo').on('change', '.fuelTypeDuplicates', function(e) {
+				selected = $('#fuelType').val();
+
+				if(selected.indexOf('#2 Oil') > -1) {
+					$('#currentFillLevelDefault').attr('value', 'default');
+					$('#tankLocationDefault').attr('value', 'default');
+					$('#fillLocationDefault').attr('value', 'default');
+					$('#oilHotWaterDefault').attr('value', 'default');
+					$('#needDeliveryDefault').attr('value', 'default');
+				} else {
+					$('#currentFillLevelDefault').attr('value', 'n/a');
+					$('#tankLocationDefault').attr('value', 'n/a');
+					$('#fillLocationDefault').attr('value', 'n/a');
+					$('#oilHotWaterDefault').attr('value', 'n/a');
+					$('#needDeliveryDefault').attr('value', 'n/a');
 				}
 			});
+			// Change first option value to n/a when checkbox clicked.
+			function dropdownRequired(el) {
+				var value = el.attr('value');
+				if(value == 'n/a') {
+					el.attr('value', 'default');
+				} else {
+					el.attr('value', 'n/a');
+				}
+			}
+			$('#newPropane').on('click', function(){
+				dropdownRequired( $('#newPropaneDefault') );
+				$('.newPropaneRow').toggleClass('Active');
+			});
+			$('#tankChangeOut').on('click', function() {
+				dropdownRequired( $('#tankChangeOutDefault') );
+				$('.tankChangeOutRow').toggleClass('Active');
+			});
+			
+	
 			// Add US Phone Validation
 			jQuery.validator.addMethod('phoneUS', function(phone_number, element) {
 			    phone_number = phone_number.replace(/\s+/g, ''); 
@@ -590,25 +665,28 @@ $(document).ready(function() {
 				   	  required: true
 				    },
 				    propertyType: {
-				      required: true
+				      valueNotEquals: 'n/a'
 				    },
 				    propertyOccupied: {
-				      required: true
+				      valueNotEquals: 'n/a'
 				    },
 				    automaticDeliveries: {
-				      required: true
+				      valueNotEquals: 'n/a'
+				    },
+				    propertySeasonal: {
+				      valueNotEquals: 'n/a'
 				    },
 				    woodHeating: {
-				      required: true
+				      valueNotEquals: 'n/a'
 				    },
 				    deliveryMethod: {
-				      required: true
+				      valueNotEquals: 'n/a'
 				    },
 				    fuelType: { 
-				    	valueNotEquals: 'n/a' 
+				      valueNotEquals: 'n/a' 
 				    },
 				    propertyCaretaker: {
-				      required: true
+				      valueNotEquals: 'n/a'
 				    },
 				    caretakerTelephone: {
 				      phoneUS: true
@@ -636,21 +714,58 @@ $(document).ready(function() {
 				      required: true,
 				      minlength: 5
 				    },
+				    oilTankFillLevel: {
+				    	valueNotEquals: 'default'
+				    },
 				    oilTankLocation: {
-				      required: true
+				    	valueNotEquals: 'default'
+				    },
+				    oilFillLocation: {
+				    	valueNotEquals: 'default'
+				    },
+				    oilHotWater: {
+				    	valueNotEquals: 'default'
+				    },
+				    oilNeedDelivery: {
+				    	valueNotEquals: 'default'
+				    },
+				    oilTankFillLevelRequested: {
+				    	required: function(element) {
+				    		return $('#oilNeedDelivery').val() == 'Yes'
+				    	}
 				    },
 				    propaneFields: {
 				    	required: function(element) {
 				    		var fields = $('.propaneField');
-				    		if(fields.filter(':checked').length == 0 && $('#fuelType').val() == 'Propane'){
+				    		if(fields.filter(':checked').length == 0 && $('#fuelType').val().indexOf('Propane') > -1){
 				    			return true;
 				    		}
 				    		return false;
 				    	},
 				    	minlength: 1
 				    },
+				    newPropaneLinesOut: {
+				    	required: '#newPropane:checked',
+				    	valueNotEquals: 'default'
+				    },
+				    newPropaneTankSize: {
+				    	required: '#newPropane:checked'
+				    },
+				    newPropaneTankQuantity: {
+				    	required: '#newPropane:checked'
+				    },
 				    newPropaneWhoLinesTelephone: {
 				      phoneUS: true
+				    },
+				    tankChangeCurrentTank: {
+				    	required: '#tankChangeOut:checked'
+				    },
+				    tankChangeCurrentQuantity: {
+				    	required: '#tankChangeOut:checked'
+				    },
+				    tankChangeCurrentFillLevel: {
+				    	required: '#tankChangeOut:checked',
+				    	valueNotEquals: 'default'
 				    },
 				    applicantNameSignature: {
 				      equalTo: '#applicantFullName'
@@ -672,8 +787,50 @@ $(document).ready(function() {
 			  	fuelType: {
 			  		valueNotEquals: "Please select a fuel type to deliver."
 			  	},
+			  	propertyType: {
+			      valueNotEquals: "This field is required."
+			    },
+			    propertyOccupied: {
+			      valueNotEquals: "This field is required."
+			    },
+			    automaticDeliveries: {
+			      valueNotEquals: "This field is required."
+			    },
+			    propertySeasonal: {
+			      valueNotEquals: "This field is required."
+			    },
+			    woodHeating: {
+			      valueNotEquals: "This field is required."
+			    },
+			    deliveryMethod: {
+			      valueNotEquals: "This field is required."
+			    },
+			    fuelType: { 
+			      valueNotEquals: "This field is required." 
+			    },
+			    propertyCaretaker: {
+			      valueNotEquals: "This field is required."
+			    },
 			  	oilTankFillLevel: {
-			  		valueNotEquals: "Please specify the current fill level."
+			  		valueNotEquals: "This field is required."
+			  	},
+			    oilTankLocation: {
+			    	valueNotEquals: 'This field is required.'
+			    },
+			    oilFillLocation: {
+			    	valueNotEquals: 'This field is required.'
+			    },
+			    oilHotWater: {
+			    	valueNotEquals: 'This field is required.'
+			    },
+			    oilNeedDelivery: {
+			    	valueNotEquals: 'This field is required.'
+			    },
+			  	newPropaneLinesOut: {
+			  		valueNotEquals: "This field is required."
+			  	},
+			  	tankChangeCurrentFillLevel: {
+			  		valueNotEquals: "This field is required."
 			  	},
 			  	propaneFields: "Please select at least one appliance."
 			  },
@@ -756,5 +913,28 @@ $(document).ready(function() {
 			  	error.remove();
 			  },
 			});
+	// Review before submit
+
+		$('.close-review').on('click', function() {
+			$('.final-review').removeClass('Active');
+		});
+
+		$('.goback').on('click', function() {
+			$('.final-review').removeClass('Active');
+		});
+
+		$('#review-button').on('click', function(e) {
+			if(signUpForm.valid()) {
+				input = $('.form-control');
+				$.each(input, function() {
+					value = $(this).val();
+					label = $(this).siblings().text();
+					labelClean = label.replace(' *', '');
+					$('.final-review .application .fields').append('<p><strong>' + labelClean + '</strong>: ' + value + '</p>');
+				})
+				e.preventDefault();
+				$('.final-review').addClass('Active');
+			}
+		})
 
 });

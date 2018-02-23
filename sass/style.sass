@@ -910,7 +910,8 @@ nav
 					color: #ff0000
 				.not-applicable,
 				.yes-applicable,
-				.same-as-applicant
+				.same-as-applicant,
+				.selective-fields
 					color: $green
 					p
 						font-weight: 700
@@ -1023,7 +1024,8 @@ nav
 					color: #ff0000
 				.not-applicable,
 				.yes-applicable,
-				.same-as-applicant
+				.same-as-applicant,
+				.selective-fields
 					color: $green
 					p
 						font-weight: 700
@@ -1048,6 +1050,12 @@ nav
 				.form-row
 					margin: 0
 					margin-bottom: 24px
+					&.tankChangeOutRow,
+					&.newPropaneRow
+						opacity: .5
+						transition: all .15s linear
+						&.Active
+							opacity: 1
 				button
 					line-height: 24px
 				h5
@@ -1103,6 +1111,82 @@ nav
 				#tank-change,
 				#additional-info-general,
 				#form-signature
+		+keyframes(fade-in)
+			0%
+				opacity: 0
+			100%
+				opacity: 1
+		#fuelTypeHidden
+			position: absolute
+			opacity: 0
+			z-index: -1
+		.fa-plus-circle,
+		.fa-minus-circle
+			color: $green
+			margin-left: 6px
+			cursor: pointer
+			font-size: 24px
+		.final-review
+			position: fixed
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background-color: white
+			z-index: 99999
+			opacity: 0
+			visibility: hidden
+			+transition(all .25s linear)
+			.application
+				position: absolute
+				left: 50%
+				top: 50%
+				transform: translate(-50%, -50%)
+				box-shadow: 0px 0px 30px rgba(0, 0, 0, .25)
+				width: 900px
+				overflow-y: scroll
+				max-width: 100%
+				max-height: 85vh
+				padding: 64px
+				background-color: white
+				margin: auto
+				text-align: center
+				h4
+					margin-bottom: 12px
+					padding: 12px
+					background-color: $dark-grey
+					color: white
+					border-bottom: 5px solid $yellow
+				.fields
+					text-align: left
+					padding: 12px
+				button
+					margin: 12px
+				.goback
+					margin-right: 6px
+					background-color: $green
+					cursor: pointer
+					padding: 1px
+					border-radius: .25rem
+					+transition(all .15s ease-in-out)
+					p
+						padding: 12px 24px
+						color: white
+						margin-bottom: 0px
+					&:hover
+						background-color: $green-three-quarters
+						transform: translateY(-4px)
+				.fa
+					position: absolute
+					right: 12px
+					top: 12px
+					cursor: pointer
+					&:hover
+						color: $yellow
+			&.Active
+				opacity: 1
+				visibility: visible
+				background-color: rgba(0, 0, 0, .5)
 	&.Policy,
 	&.FourOFour
 		padding-top: 140px
@@ -1534,6 +1618,9 @@ nav
 							h6
 								font-size: 12px
 				form
+					.final-review
+						.application
+							padding: 12px
 					.form-group
 						.buttons
 							justify-content: center

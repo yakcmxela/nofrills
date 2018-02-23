@@ -1319,16 +1319,19 @@ nav .blanket {
         color: #ff0000; }
       .page-content.ACH-Auth .form-container form .not-applicable,
       .page-content.ACH-Auth .form-container form .yes-applicable,
-      .page-content.ACH-Auth .form-container form .same-as-applicant {
+      .page-content.ACH-Auth .form-container form .same-as-applicant,
+      .page-content.ACH-Auth .form-container form .selective-fields {
         color: #00853c; }
         .page-content.ACH-Auth .form-container form .not-applicable p,
         .page-content.ACH-Auth .form-container form .yes-applicable p,
-        .page-content.ACH-Auth .form-container form .same-as-applicant p {
+        .page-content.ACH-Auth .form-container form .same-as-applicant p,
+        .page-content.ACH-Auth .form-container form .selective-fields p {
           font-weight: 700;
           cursor: default; }
         .page-content.ACH-Auth .form-container form .not-applicable .checkbox,
         .page-content.ACH-Auth .form-container form .yes-applicable .checkbox,
-        .page-content.ACH-Auth .form-container form .same-as-applicant .checkbox {
+        .page-content.ACH-Auth .form-container form .same-as-applicant .checkbox,
+        .page-content.ACH-Auth .form-container form .selective-fields .checkbox {
           width: 24px;
           height: 24px;
           border: 1px solid #c4c4c3;
@@ -1336,7 +1339,8 @@ nav .blanket {
           position: relative; }
           .page-content.ACH-Auth .form-container form .not-applicable .checkbox span,
           .page-content.ACH-Auth .form-container form .yes-applicable .checkbox span,
-          .page-content.ACH-Auth .form-container form .same-as-applicant .checkbox span {
+          .page-content.ACH-Auth .form-container form .same-as-applicant .checkbox span,
+          .page-content.ACH-Auth .form-container form .selective-fields .checkbox span {
             position: absolute;
             left: 50%;
             top: 50%;
@@ -1346,7 +1350,8 @@ nav .blanket {
             cursor: default; }
           .page-content.ACH-Auth .form-container form .not-applicable .checkbox.Selected span,
           .page-content.ACH-Auth .form-container form .yes-applicable .checkbox.Selected span,
-          .page-content.ACH-Auth .form-container form .same-as-applicant .checkbox.Selected span {
+          .page-content.ACH-Auth .form-container form .same-as-applicant .checkbox.Selected span,
+          .page-content.ACH-Auth .form-container form .selective-fields .checkbox.Selected span {
             opacity: 1; }
       .page-content.ACH-Auth .form-container form .form-row {
         margin: 0;
@@ -1442,16 +1447,19 @@ nav .blanket {
         color: #ff0000; }
       .page-content.Sign-Up .form-container form .not-applicable,
       .page-content.Sign-Up .form-container form .yes-applicable,
-      .page-content.Sign-Up .form-container form .same-as-applicant {
+      .page-content.Sign-Up .form-container form .same-as-applicant,
+      .page-content.Sign-Up .form-container form .selective-fields {
         color: #00853c; }
         .page-content.Sign-Up .form-container form .not-applicable p,
         .page-content.Sign-Up .form-container form .yes-applicable p,
-        .page-content.Sign-Up .form-container form .same-as-applicant p {
+        .page-content.Sign-Up .form-container form .same-as-applicant p,
+        .page-content.Sign-Up .form-container form .selective-fields p {
           font-weight: 700;
           cursor: default; }
         .page-content.Sign-Up .form-container form .not-applicable .checkbox,
         .page-content.Sign-Up .form-container form .yes-applicable .checkbox,
-        .page-content.Sign-Up .form-container form .same-as-applicant .checkbox {
+        .page-content.Sign-Up .form-container form .same-as-applicant .checkbox,
+        .page-content.Sign-Up .form-container form .selective-fields .checkbox {
           width: 24px;
           height: 24px;
           border: 1px solid #c4c4c3;
@@ -1459,7 +1467,8 @@ nav .blanket {
           position: relative; }
           .page-content.Sign-Up .form-container form .not-applicable .checkbox span,
           .page-content.Sign-Up .form-container form .yes-applicable .checkbox span,
-          .page-content.Sign-Up .form-container form .same-as-applicant .checkbox span {
+          .page-content.Sign-Up .form-container form .same-as-applicant .checkbox span,
+          .page-content.Sign-Up .form-container form .selective-fields .checkbox span {
             position: absolute;
             left: 50%;
             top: 50%;
@@ -1469,11 +1478,17 @@ nav .blanket {
             cursor: default; }
           .page-content.Sign-Up .form-container form .not-applicable .checkbox.Selected span,
           .page-content.Sign-Up .form-container form .yes-applicable .checkbox.Selected span,
-          .page-content.Sign-Up .form-container form .same-as-applicant .checkbox.Selected span {
+          .page-content.Sign-Up .form-container form .same-as-applicant .checkbox.Selected span,
+          .page-content.Sign-Up .form-container form .selective-fields .checkbox.Selected span {
             opacity: 1; }
       .page-content.Sign-Up .form-container form .form-row {
         margin: 0;
         margin-bottom: 24px; }
+        .page-content.Sign-Up .form-container form .form-row.tankChangeOutRow, .page-content.Sign-Up .form-container form .form-row.newPropaneRow {
+          opacity: 0.5;
+          transition: all 0.15s linear; }
+          .page-content.Sign-Up .form-container form .form-row.tankChangeOutRow.Active, .page-content.Sign-Up .form-container form .form-row.newPropaneRow.Active {
+            opacity: 1; }
       .page-content.Sign-Up .form-container form button {
         line-height: 24px; }
       .page-content.Sign-Up .form-container form h5 {
@@ -1528,6 +1543,105 @@ nav .blanket {
               transform: translateY(-4px); }
         .page-content.Sign-Up .form-container form .form-group .back {
           background-color: #e9ecef; }
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-ms-keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+  .page-content.Sign-Up #fuelTypeHidden {
+    position: absolute;
+    opacity: 0;
+    z-index: -1; }
+  .page-content.Sign-Up .fa-plus-circle,
+  .page-content.Sign-Up .fa-minus-circle {
+    color: #00853c;
+    margin-left: 6px;
+    cursor: pointer;
+    font-size: 24px; }
+  .page-content.Sign-Up .final-review {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -ms-transition: all 0.25s linear;
+    transition: all 0.25s linear; }
+    .page-content.Sign-Up .final-review .application {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+      width: 900px;
+      overflow-y: scroll;
+      max-width: 100%;
+      max-height: 85vh;
+      padding: 64px;
+      background-color: white;
+      margin: auto;
+      text-align: center; }
+      .page-content.Sign-Up .final-review .application h4 {
+        margin-bottom: 12px;
+        padding: 12px;
+        background-color: #101e28;
+        color: white;
+        border-bottom: 5px solid #ffc600; }
+      .page-content.Sign-Up .final-review .application .fields {
+        text-align: left;
+        padding: 12px; }
+      .page-content.Sign-Up .final-review .application button {
+        margin: 12px; }
+      .page-content.Sign-Up .final-review .application .goback {
+        margin-right: 6px;
+        background-color: #00853c;
+        cursor: pointer;
+        padding: 1px;
+        border-radius: 0.25rem;
+        -webkit-transition: all 0.15s ease-in-out;
+        -o-transition: all 0.15s ease-in-out;
+        -moz-transition: all 0.15s ease-in-out;
+        -ms-transition: all 0.15s ease-in-out;
+        transition: all 0.15s ease-in-out; }
+        .page-content.Sign-Up .final-review .application .goback p {
+          padding: 12px 24px;
+          color: white;
+          margin-bottom: 0px; }
+        .page-content.Sign-Up .final-review .application .goback:hover {
+          background-color: rgba(0, 133, 60, 0.75);
+          transform: translateY(-4px); }
+      .page-content.Sign-Up .final-review .application .fa {
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        cursor: pointer; }
+        .page-content.Sign-Up .final-review .application .fa:hover {
+          color: #ffc600; }
+    .page-content.Sign-Up .final-review.Active {
+      opacity: 1;
+      visibility: visible;
+      background-color: rgba(0, 0, 0, 0.5); }
 .page-content.Policy, .page-content.FourOFour {
   padding-top: 140px; }
   .page-content.Policy .section-block p,
@@ -1839,6 +1953,8 @@ nav .blanket {
         padding: 4px; }
         .page-content.Sign-Up .form-container .form-nav ol li h6 {
           font-size: 12px; }
+      .page-content.Sign-Up .form-container form .final-review .application {
+        padding: 12px; }
       .page-content.Sign-Up .form-container form .form-group .buttons {
         justify-content: center; }
     .page-content.Contact {

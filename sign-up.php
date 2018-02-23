@@ -193,27 +193,27 @@ $email_disclaimer = get_field('email_disclaimer');
 				<h5>Current Employer</h5>
 				<div class="form-row">
 					<div class="col-lg-6">
-						<label class="sr-only" for="employerName">Name</label>
+						<label class="sr-only" for="employerName">Employer Name</label>
 						<input type="text" class="form-control" name="employerName" id="employerName" placeholder="Current Employer">
 					</div>
 					<div class="col-lg-6">
-						<label class="sr-only" for="employerTelephone">Telephone</label>
+						<label class="sr-only" for="employerTelephone">Employer Telephone</label>
 						<input type="tel" class="form-control" name="employerTelephone" id="employerTelephone" placeholder="Telephone">
 					</div>
 					<div class="col-12">
-						<label class="sr-only" for="employerStreetAddress">Address</label>
+						<label class="sr-only" for="employerStreetAddress">Employer Address</label>
 						<input type="text" class="form-control" name="employerStreetAddress" id="employerStreetAddress" placeholder="Street Address (123 Water St.)">
 					</div>
 					<div class="col-12">
-						<label class="sr-only" for="employerStreetAddress2">Address 2 (Apartment, Studio, Floor)</label>
+						<label class="sr-only" for="employerStreetAddress2">Employer Address 2 (Apartment, Studio, Floor)</label>
 						<input type="text" class="form-control" name="employerStreetAddress2" id="employerStreetAddress2" placeholder="Address 2 (Apartment, studio, floor)">
 					</div>
 					<div class="col-lg-6">
-						<label class="sr-only" for="employerCity">City</label>
+						<label class="sr-only" for="employerCity">Employer City</label>
 						<input type="text" class="form-control" name="employerCity" id="employerCity" placeholder="City">
 					</div>
 					<div class="col-lg-3">
-						<label class="sr-only" for="employerState">State</label>
+						<label class="sr-only" for="employerState">Employer State</label>
 						<select class="form-control" name="employerState" id="employerState">
 							<option value="ME">Maine</option>
 							<option value="AL">Alabama</option>
@@ -270,7 +270,7 @@ $email_disclaimer = get_field('email_disclaimer');
 						</select>
 					</div>
 					<div class="col-lg-3">
-						<label class="sr-only" for="employerZip">Zip</label>
+						<label class="sr-only" for="employerZip">Employer Zip</label>
 						<input type="text" class="form-control" name="employerZip" id="employerZip" placeholder="Zip">
 					</div>
 					<div class="col-lg-4">
@@ -293,7 +293,7 @@ $email_disclaimer = get_field('email_disclaimer');
 			</div>
 			<div class="form-group" id="property">
 				<h5>Property</h5>
-				<div class="form-row">
+				<div class="form-row propertyInfo">
 					<div class="col-12" data-subsection="property">
 						<div class="same-as-applicant d-flex" data-sameas="true">
 							<div class="checkbox"><span>x</span></div>
@@ -301,19 +301,19 @@ $email_disclaimer = get_field('email_disclaimer');
 						</div>
 					</div>
 					<div class="col-12">
-						<label class="sr-only" for="propertyStreetAddress">Address *</label>
+						<label class="sr-only" for="propertyStreetAddress">Property Address *</label>
 						<input type="text" class="form-control" name="propertyStreetAddress" id="propertyStreetAddress" placeholder="Street Address *">
 					</div>
 					<div class="col-12">
-						<label class="sr-only" for="propertyStreetAddress2">Address 2 (Apartment, Studio, Floor)</label>
+						<label class="sr-only" for="propertyStreetAddress2">Property Address 2 (Apartment, Studio, Floor)</label>
 						<input type="text" class="form-control" name="propertyStreetAddress2" id="propertyStreetAddress2" placeholder="Address 2 (Apartment, studio, floor)">
 					</div>
 					<div class="col-lg-6">
-						<label class="sr-only" for="propertyCity">City *</label>
+						<label class="sr-only" for="propertyCity">Property City *</label>
 						<input type="text" class="form-control" name="propertyCity" id="propertyCity" placeholder="City *">
 					</div>
 					<div class="col-lg-3">
-						<label class="sr-only" for="propertyState">State *</label>
+						<label class="sr-only" for="propertyState">Property State *</label>
 						<select class="form-control" name="propertyState" id="propertyState">
 							<option value="ME">Maine</option>
 							<option value="AL">Alabama</option>
@@ -370,7 +370,7 @@ $email_disclaimer = get_field('email_disclaimer');
 						</select>
 					</div>
 					<div class="col-lg-3">
-						<label class="sr-only" for="propertyZip">Zip *</label>
+						<label class="sr-only" for="propertyZip">Property Zip *</label>
 						<input type="text" class="form-control" name="propertyZip" id="propertyZip" placeholder="Zip *">
 					</div>
 					<div class="col-12">
@@ -392,17 +392,6 @@ $email_disclaimer = get_field('email_disclaimer');
 						</select>
 					</div>
 					<div class="col-lg-6">
-						<label class="sr-only" for="fuelType">Fuel Type to Deliver *</label>
-						<select class="form-control" name="fuelType" id="fuelType">
-							<option value="n/a">Fuel Type to Deliver *</option>
-							<option value="#2 Oil">#2 Oil</option>
-							<option value="Kerosene">Kerosene</option>
-							<option value="Clear On-Road Diesel">Clear On-Road Diesel</option>
-							<option value="Dyed Off-Road Diesel">Dyed Off-Road Diesel</option>
-							<option value="Propane">Propane</option>
-						</select>
-					</div>
-					<div class="col-lg-6">
 						<label class="sr-only" for="propertyOccupied">Does anyone live here?</label>
 						<select class="form-control" name="propertyOccupied" id="propertyOccupied">
 							<option value="n/a">Does anyone live here? *</option>
@@ -418,6 +407,14 @@ $email_disclaimer = get_field('email_disclaimer');
 							<option value="No">No</option>
 						</select>
 					</div>
+					<div class="col-lg-6">
+						<label class="sr-only" for="propertySeasonal">Is this a seasonal property *?</label>
+						<select class="form-control" name="propertySeasonal" id="propertySeasonal">
+							<option value="n/a">Is this a seasonal property? *</option>
+							<option value="Yes">Yes</option>
+							<option value="No">No</option>
+						</select>
+					</div>
 					<div class="col-12">
 						<p style="font-size: 12px">*Automatic deliveries: If yes, then only with approved credit. Please contact the office should you add, remove, or stop using a second source of heat (wood, propane, heat pumps, etc). You will be at risk of running out oil/propane if the office is not notified in a timely manner of this change.</p>
 					</div>
@@ -425,14 +422,6 @@ $email_disclaimer = get_field('email_disclaimer');
 						<label class="sr-only" for="woodHeating">Is wood heating used? *</label>
 						<select class="form-control" name="woodHeating" id="woodHeating">
 							<option value="n/a">Is wood heating used? *</option>
-							<option value="Yes">Yes</option>
-							<option value="No">No</option>
-						</select>
-					</div>
-					<div class="col-lg-6">
-						<label class="sr-only" for="propertySeasonal">Is this a seasonal property *?</label>
-						<select class="form-control" name="propertySeasonal" id="propertySeasonal">
-							<option value="n/a">Is this a seasonal property? *</option>
 							<option value="Yes">Yes</option>
 							<option value="No">No</option>
 						</select>
@@ -454,19 +443,35 @@ $email_disclaimer = get_field('email_disclaimer');
 							<option value="No">No</option>
 						</select>
 					</div>
+					<div class="col-lg-6" id="fuelTypeHidden">
+						<label class="sr-only" for="fuelTypeContainer1">Fuel Type(s) to Deliver *</label>
+						<input class="form-control" name="fuelType" id="fuelType">
+					</div>
+					<div class="col-lg-6 d-flex align-items-center" id="fuelTypeContainer1">
+						<label class="sr-only" for="fuelType1">Fuel Type to Deliver 1 *</label>
+						<select class="form-control fuelTypeDuplicates" name="fuelType1" id="fuelType1">
+							<option value="n/a">Fuel Type to Deliver *</option>
+							<option value="#2 Oil">#2 Oil</option>
+							<option value="Kerosene">Kerosene</option>
+							<option value="Clear On-Road Diesel">Clear On-Road Diesel</option>
+							<option value="Dyed Off-Road Diesel">Dyed Off-Road Diesel</option>
+							<option value="Propane">Propane</option>
+						</select>
+						<i class="fa fa-plus-circle add-fuelType fa-2x" title="Add fuel type."></i>
+					</div>
 				</div>
 				<h5>Caretaker</h5>
 				<div class="form-row">
 					<div class="col-lg-4 caretaker-info">
-						<label class="sr-only" for="caretakerFirstName">First Name</label>
+						<label class="sr-only" for="caretakerFirstName">Caretaker First Name</label>
 						<input type="text" class="form-control" name="caretakerFirstName" id="caretakerFirstName" placeholder="First name">
 					</div>
 					<div class="col-lg-4 caretaker-info">
-						<label class="sr-only" for="caretakerLastName">Last Name</label>
+						<label class="sr-only" for="caretakerLastName">Caretaker Last Name</label>
 						<input type="text" class="form-control" name="caretakerLastName" id="caretakerLastName" placeholder="Last name">
 					</div>
 					<div class="col-lg-4 caretaker-info">
-						<label class="sr-only" for="caretakerTelephone">Telephone</label>
+						<label class="sr-only" for="caretakerTelephone">Caretaker Telephone</label>
 						<input type="tel" class="form-control" name="caretakerTelephone" id="caretakerTelephone" placeholder="Telephone">
 					</div>
 				</div>
@@ -576,12 +581,6 @@ $email_disclaimer = get_field('email_disclaimer');
 			<div class="form-group" id="fuel-info">
 				<h5>Home Heating Oil</h5>
 				<div class="form-row">
-					<div class="col-12">
-						<div class="not-applicable naHeatingOil d-flex" data-applicable="true">
-							<div class="checkbox"><span>x</span></div>
-							<p>Not applicable.</p>
-						</div>
-					</div>
 					<div class="col-lg-4">
 						<label class="sr-only" for="oilNewTank">New tank?</label>
 						<select class="form-control" name="oilNewTank" id="oilNewTank">
@@ -617,7 +616,7 @@ $email_disclaimer = get_field('email_disclaimer');
 					<div class="col-lg-4">
 						<label class="sr-only" for="oilTankFillLevel">Current fill level</label>
 						<select class="form-control" name="oilTankFillLevel" id="oilTankFillLevel">
-							<option value="default">Current fill level</option>
+							<option id="currentFillLevelDefault" value="n/a">Current fill level</option>
 							<option value="0">0</option>
 							<option value="1/8">1/8</option>
 							<option value="1/4">1/4</option>
@@ -629,7 +628,7 @@ $email_disclaimer = get_field('email_disclaimer');
 					<div class="col-lg-4">
 						<label class="sr-only" for="oilTankLocation">Tank Location</label>
 						<select class="form-control" name="oilTankLocation" id="oilTankLocation">
-							<option value="n/a">Tank Location</option>
+							<option id="tankLocationDefault" value="n/a">Tank Location</option>
 							<option value="Inside">Inside</option>
 							<option value="Outside">Outside</option>
 						</select>
@@ -637,7 +636,7 @@ $email_disclaimer = get_field('email_disclaimer');
 					<div class="col-lg-4">
 						<label class="sr-only" for="oilFillLocation">Fill Location (looking at front of building)</label>
 						<select class="form-control" name="oilFillLocation" id="oilFillLocation">
-							<option value="n/a">Fill Location (From front of building)</option>
+							<option id="fillLocationDefault" value="n/a">Fill Location (From front of building)</option>
 							<option value="Front">Front</option>
 							<option value="Back">Back</option>
 							<option value="Left Side">Left Side</option>
@@ -647,7 +646,7 @@ $email_disclaimer = get_field('email_disclaimer');
 					<div class="col-lg-4">
 						<label class="sr-only" for="oilHotWater">Furnace heat your hot water?</label>
 						<select class="form-control" name="oilHotWater" id="oilHotWater">
-							<option value="n/a">Does your furnace heat your hot water?</option>
+							<option id="oilHotWaterDefault" value="n/a">Does your furnace heat your hot water?</option>
 							<option value="Yes">Yes</option>
 							<option value="No">No</option>
 						</select>
@@ -655,7 +654,7 @@ $email_disclaimer = get_field('email_disclaimer');
 					<div class="col-lg-4">
 						<label class="sr-only" for="oilNeedDelivery">Need Delivery?</label>
 						<select class="form-control" name="oilNeedDelivery" id="oilNeedDelivery">
-							<option value="n/a">Need Delivery?</option>
+							<option id="needDeliveryDefault" value="n/a">Need Delivery?</option>
 							<option value="Yes">Yes</option>
 							<option value="No">No</option>
 						</select>
@@ -667,12 +666,6 @@ $email_disclaimer = get_field('email_disclaimer');
 				</div>
 				<h5>Propane</h5>
 				<div class="form-row">
-					<div class="col-12">
-						<div class="not-applicable naPropane d-flex" data-applicable="true">
-							<div class="checkbox"><span>x</span></div>
-							<p>Not applicable.</p>
-						</div>
-					</div>
 					<div class="col-12" style="max-width: 100%;">
 						<p>Please select all the appliances in your home that use propane:</p>
 						<div class="row">
@@ -712,18 +705,16 @@ $email_disclaimer = get_field('email_disclaimer');
 						<input class="form-control" type="text" name="propaneAppliancesAdditional" id="propaneAppliancesAdditional" placeholder="Additional appliances">
 					</div>
 				</div>
-				<h5>New Propane Installation</h5>
-				<div class="form-row">
-					<div class="col-12">
-						<div class="not-applicable d-flex" data-applicable="true">
-							<div class="checkbox"><span>x</span></div>
-							<p>Not applicable.</p>
-						</div>
-					</div>
+				<div class="d-flex align-items-center">
+					<h5>New Propane Installation</h5>
+					<input class="ml-2" type="checkbox" id="newPropane" name="newPropane" value="checked">
+					<label class="sr-only" for="newPropane">New propane installation?</label>
+				</div>
+				<div class="form-row newPropaneRow">
 					<div class="col-lg-4">
 						<label class="sr-only" for="newPropaneLinesOut">Do all the lines inside the home run to the outside?</label>
-						<select class="form-control" name="newPropaneLinesOut" id="newPropaneLinesOut">
-							<option value="n/a">Are all the lines inside the home run to the outside?</option>
+						<select class="form-control newPropaneField" name="newPropaneLinesOut" id="newPropaneLinesOut">
+							<option id="newPropaneDefault" value="n/a">Are all the lines inside the home run to the outside?</option>
 							<option value="Yes">Yes</option>
 							<option value="No">No</option>
 						</select>
@@ -738,25 +729,23 @@ $email_disclaimer = get_field('email_disclaimer');
 					</div>
 					<div class="col-lg-4">
 						<label class="sr-only" for="newPropaneTankSize">Tank size needed</label>
-						<input type="number" class="form-control" name="newPropaneTankSize" id="newPropaneTankSize" placeholder="Tank size needed">
+						<input type="number" class="form-control newPropaneField" name="newPropaneTankSize" id="newPropaneTankSize" placeholder="Tank size needed">
 					</div>
 					<div class="col-lg-4">
 						<label class="sr-only" for="newPropaneTankQuantity">How many?</label>
-						<input type="number" class="form-control" name="newPropaneTankQuantity" id="newPropaneTankQuantity" placeholder="How many?">
+						<input type="number" class="form-control newPropaneField" name="newPropaneTankQuantity" id="newPropaneTankQuantity" placeholder="How many?">
 					</div>
 					<div class="col-lg-4">
 						<label class="sr-only" for="newPropaneUse">Anticipated fuel usage (gal)</label>
 						<input type="number" class="form-control" name="newPropaneUse" id="newPropaneUse" placeholder="Anticipated fuel usage (gal)">
 					</div>
 				</div>
-				<h5>Tank Change Out</h5>
-				<div class="form-row">
-					<div class="col-12">
-						<div class="not-applicable d-flex" data-applicable="true">
-							<div class="checkbox"><span>x</span></div>
-							<p>Not applicable.</p>
-						</div>
-					</div>
+				<div class="d-flex align-items-center">
+					<h5>Tank Change Out</h5>
+					<input class="ml-2" type="checkbox" id="tankChangeOut" name="tankChangeOut" value="checked">
+					<label class="sr-only" for="tankChangeOut">Tank Change Out?</label>
+				</div>
+				<div class="form-row tankChangeOutRow">
 					<div class="col-lg-3">
 						<label class="sr-only" for="tankChangeCurrentTank">Current tank size</label>
 						<input type="number" class="form-control" name="tankChangeCurrentTank" id="tankChangeCurrentTank" placeholder="Current tank size">
@@ -768,7 +757,7 @@ $email_disclaimer = get_field('email_disclaimer');
 					<div class="col-lg-3">
 						<label class="sr-only" for="tankChangeCurrentFillLevel">Current fill level</label>
 						<select class="form-control" name="tankChangeCurrentFillLevel" id="tankChangeCurrentFillLevel">
-							<option value="default">Current fill level</option>
+							<option id="tankChangeOutDefault" value="n/a">Current fill level</option>
 							<option value="0">0</option>
 							<option value="1/8">1/8</option>
 							<option value="1/4">1/4</option>
@@ -797,22 +786,38 @@ $email_disclaimer = get_field('email_disclaimer');
 				<div class="terms-conditions"><?php echo $terms_conditions ?></div>
 				<div class="form-row">
 					<div class="col-lg-12">
-						<label class="sr-only" for="applicantNameSignature">Applicant Full Name</label>
+						<label class="sr-only" for="applicantNameSignature">Applicant Full Name |</label>
 						<input type="text" class="form-control" name="applicantNameSignature" id="applicantNameSignature" placeholder="Applicant Full Name">
 						<input class="form-check-input" id="applicantSignatureAuthorization" name="applicantSignatureAuthorization" type="checkbox" value="Applicant DOES AGREE to terms and conditions.">
-						<label for="applicantSignatureAuthorization" class="mx-4">I acknowledge that I have read and understand the disclosures.</label>
+						<label for="applicantSignatureAuthorization" class="mx-4"> I acknowledge that I have read and understand the disclosures.</label>
 					</div>
 					<div class="col-lg-12">
-						<label class="sr-only" for="coApplicantNameSignature">Co-applicant Full Name</label>
+						<label class="sr-only" for="coApplicantNameSignature">Co-applicant Full Name |</label>
 						<input type="text" class="form-control" name="coApplicantNameSignature" id="coApplicantNameSignature" placeholder="Co-applicant Full Name">
 						<input class="form-check-input" id="coApplicantSignatureAuthorization" name="coApplicantSignatureAuthorization" type="checkbox" value="Co-applicant DOES AGREE to terms and conditions.">
-						<label for="coApplicantSignatureAuthorization" class="mx-4">I acknowledge that I have read and understand the disclosures.</label>
+						<label for="coApplicantSignatureAuthorization" class="mx-4"> I acknowledge that I have read and understand the disclosures.</label>
 					</div>
 				</div>
 				<div class="d-flex buttons mt-5">
 					<div class="back"><p>Back</p></div>
 					<div class="next"><p>Next</p></div>
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<button type="submit" id="review-button" class="btn btn-primary">Review &amp; Submit</button>
+				</div>
+				<div class="final-review">
+					<div class="application">
+						<h4>Review your application.</h4>
+						<div class="d-flex align-items-center justify-content-center">
+							<div class="goback"><p>Go Back</p></div>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+						<i class="fa fa-close fa-2x close-review"></i>
+						<div class="fields">
+						</div>
+						<div class="d-flex align-items-center justify-content-center">
+							<div class="goback"><p>Go Back</p></div>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</form>
