@@ -425,7 +425,6 @@ $(document).ready(function() {
 		duplicateCount = 1;
 		$('.propertyInfo').on('click', '.add-fuelType', function() {
 			var limit = $('#fuelType1').children().length - 1
-			console.log(limit);
 			if(duplicateCount < limit) {
 				duplicateCount++;
 				var duplicate = document.createElement('div');
@@ -857,7 +856,7 @@ $(document).ready(function() {
 			achForm.validate({
 			  success: "valid",
 			  rules: {
-			  	nameInsitution: {
+			  	nameInstitution: {
 			  		required: true
 			  	},
 			  	streetInstitution: {
@@ -877,6 +876,11 @@ $(document).ready(function() {
 			  	},
 			  	routingNumber: {
 			  		required: true
+			  	},
+			  	accountType: {
+			  		required: function(element) {
+			      	return $('#accountType').val() != 'default';
+			      },
 			  	},
 			  	withdrawAmount: {
 			  		required: true

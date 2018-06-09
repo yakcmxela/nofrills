@@ -3,11 +3,17 @@ header("Location: http://nofrillsoil.com/application-submit");
 // WP functions
 	require_once('../../../wp-load.php');
 // Defuse
+	// Dev
+	//require_once('C:/xampp/php/lib/defuse-crypto.phar');
+	// Live
 	require_once('/var/www/lib/defuse-crypto.phar');
 	use Defuse\Crypto\Crypto;
 	use Defuse\Crypto\Key;
 // Connection to db
-	require('/etc/lib/db.php');
+	// Dev
+	//require_once('C:/xampp/key/db.php');
+	// Live
+	require_once('/etc/lib/db.php');
 
 	$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
@@ -21,6 +27,9 @@ header("Location: http://nofrillsoil.com/application-submit");
 
 // Fetch Key
 	function loadEncryptionKey() {
+		// Dev
+		//$keyAscii = file_get_contents('C:/xampp/key/llave.txt');
+		// Live
 		$keyAscii = file_get_contents('/etc/lib/llave.txt');
 		return Key::loadFromAsciiSafeString($keyAscii);
 	}
@@ -38,6 +47,7 @@ header("Location: http://nofrillsoil.com/application-submit");
 	    "zipInstitution" => Crypto::encrypt($_POST["zipInstitution"], $key, false),
 		"accountNumber" => Crypto::encrypt($_POST["accountNumber"], $key, false),
 		"routingNumber" => Crypto::encrypt($_POST["routingNumber"], $key, false),
+		"accountType" => Crypto::encrypt($_POST["accountType"], $key, false),
 		"withdrawAmount" => Crypto::encrypt($_POST["withdrawAmount"], $key, false),
 		"amount" => Crypto::encrypt($_POST["amount"], $key, false),
 		"email" => Crypto::encrypt($_POST["email"], $key, false),

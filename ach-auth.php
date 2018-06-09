@@ -97,19 +97,30 @@ $ach_fee = get_field('ach_fee');
 						<label class="sr-only" for="zipInstitution">Zip</label>
 						<input type="text" class="form-control" name="zipInstitution" id="zipInstitution" placeholder="Zip">
 					</div>
-					<div class="col-lg-12">
+					<div class="col-lg-4">
 						<label class="sr-only" for="accountNumber">Checking/Savings Account Number</label>
 						<input type="text" class="form-control" name="accountNumber" id="accountNumber" placeholder="Checking/Savings Account Number">
 					</div>
-					<div class="col-lg-12">
+					<div class="col-lg-4">
 						<label class="sr-only" for="routingNumber">Account Routing Number</label>
 						<input type="text" class="form-control" name="routingNumber" id="routingNumber" placeholder="Account Routing Number">
+					</div>
+					<div class="col-lg-4">
+						<label class="sr-only" for="Account Type">Account Type:</label>
+						<select class="form-control" id="accountType" name="accountType">
+							<option value="default" disabled selected>Account Type:</option>
+							<option value="Checking">Personal Checking</option>
+							<option value="Checking">Business Checking</option>
+							<option value="Savings">Personal Savings</option>
+							<option value="Savings">Business Savings</option>
+						</select>
 					</div>
 					<div class="col-lg-6">
 						<label class="sr-only" for="withdrawAmount">Select amount to withdraw:</label>
 						<select class="form-control" id="withdrawAmount" name="withdrawAmount">
 							<option value="Set">Set amount: </option>
 							<option value="Maxiumum">Maximum amount: </option>
+							<option value="Maxiumum">Amount of each delivery: </option>
 						</select>
 					</div>
 					<div class="col-lg-6">
