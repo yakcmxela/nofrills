@@ -18,7 +18,7 @@ $ach_fee = get_field('ach_fee');
 			<?php echo $intro_text; ?>
 		</div>
 		<form id="ach-form" action="<?php echo get_template_directory_uri(); ?>/ach-submit.php" method="POST">
-			<div class="form-group">
+			<div class="form-group" style="width: 100%">
 				<div class="form-row">
 					<div class="col-lg-12">
 						<label class="sr-only" for="nameInstitution">Name of Financial Institution</label>

@@ -17,7 +17,7 @@ $banner_position = get_field('banner_position');
 <div class="page-content Landing">
 	<div class="banner d-flex flex-column justify-content-center align-items-start">
 		<div class="landing-page-banner" style="background-image: url('<?php echo $banner_image['url']; ?>'); background-position: <?php echo $banner_position; ?>"></div>
-		<div class="banner-contents">
+		<div class="banner-contents" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
 			<?php echo $banner_header_text ?>
 			<div class="button mt-m d-flex justify-content-center">
 				<?php echo $banner_link ?>

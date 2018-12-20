@@ -28,7 +28,7 @@ $email_disclaimer = get_field('email_disclaimer');
 			</ol>
 		</div>
 		<form id="sign-up-form" action="<?php bloginfo("template_directory"); ?>/application-submit.php" method="POST">
-			<div class="form-group Active has-warning" id="applicant">
+			<div class="form-group Active has-warning" id="applicant" style="width: 100%">
 				<h5>Applicant</h5>
 				<div class="form-row" id="applicant-info">
 					<div class="col-lg-4">
@@ -291,7 +291,7 @@ $email_disclaimer = get_field('email_disclaimer');
 					<div class="next"><p>Next</p></div>
 				</div>
 			</div>
-			<div class="form-group" id="property">
+			<div class="form-group" id="property" style="width: 100%">
 				<h5>Property</h5>
 				<div class="form-row propertyInfo">
 					<div class="col-12" data-subsection="property">
@@ -578,7 +578,7 @@ $email_disclaimer = get_field('email_disclaimer');
 					<div class="next"><p>Next</p></div>
 				</div>
 			</div>
-			<div class="form-group" id="fuel-info">
+			<div class="form-group" id="fuel-info" style="width: 100%">
 				<h5>Home Heating Oil</h5>
 				<div class="form-row">
 					<div class="col-lg-4">
@@ -781,7 +781,7 @@ $email_disclaimer = get_field('email_disclaimer');
 					<div class="next"><p>Next</p></div>
 				</div>
 			</div>
-			<div class="form-group" id="form-signature">
+			<div class="form-group" id="form-signature" style="width: 100%">
 				<h5>Authorization</h5>
 				<div class="terms-conditions"><?php echo $terms_conditions ?></div>
 				<div class="form-row">
